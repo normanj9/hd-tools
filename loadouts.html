@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HD2 Loadouts</title>
+<style>
+:root {
+  --bg: #0d0d14;
+  --surface: #14141e;
+  --surface2: #1a1a28;
+  --border: #252535;
+  --accent: #f5c400;
+  --accent-dim: #9a7c00;
+  --text: #e0e0e0;
+  --text-dim: #666;
+  --bugs: #4caf50;
+  --bots: #ef5350;
+  --squids: #8b7cf6;
+  --bugs-bg: #0f2312;
+  --bots-bg: #200f0f;
+  --squids-bg: #150f2a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 13px;
+  min-height: 100vh;
+  padding: 20px 24px;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+h1 {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.search-wrap {
+  position: relative;
+  flex: 0 0 200px;
+}
+.search-wrap input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 5px 10px 5px 28px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+}
+.search-wrap input:focus { outline: none; border-color: var(--accent-dim); }
+.search-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  font-size: 12px;
+  pointer-events: none;
+}
+.divider { width: 1px; height: 22px; background: var(--border); flex-shrink: 0; }
+.filter-btn {
+  padding: 4px 13px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-dim);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  transition: color 0.12s, border-color 0.12s;
+  white-space: nowrap;
+}
+.filter-btn:hover { border-color: var(--accent-dim); color: var(--text); }
+.filter-btn.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 700; }
+.filter-btn.bugs.active { background: var(--bugs); border-color: var(--bugs); color: #000; }
+.filter-btn.bots.active { background: var(--bots); border-color: var(--bots); color: #000; }
+.filter-btn.squids.active { background: var(--squids); border-color: var(--squids); color: #000; }
+.spacer { flex: 1; }
+.btn-add {
+  padding: 5px 15px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.btn-add:hover { background: #ffd000; }
+.btn-export {
+  padding: 5px 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.btn-export:hover { border-color: var(--accent-dim); color: var(--text); }
+.count { font-size: 11px; color: var(--text-dim); }
+table { width: 100%; border-collapse: collapse; }
+colgroup col:nth-child(1) { width: 16%; }
+colgroup col:nth-child(2) { width: 11%; }
+colgroup col:nth-child(3) { width: 33%; }
+colgroup col:nth-child(4) { width: 35%; }
+colgroup col:nth-child(5) { width: 5%; }
+th {
+  text-align: left;
+  padding: 7px 12px;
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+}
+th.sortable { cursor: pointer; }
+th.sortable:hover { color: #fff; }
+th.sort-asc::after { content: ' ↑'; }
+th.sort-desc::after { content: ' ↓'; }
+td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  white-space: pre-wrap;
+  line-height: 1.55;
+}
+tr:hover td { background: var(--surface2); }
+.col-name { font-weight: 600; color: #fff; }
+.col-factions { white-space: normal; }
+.badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  margin: 1px 2px 1px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.badge-bugs { background: var(--bugs-bg); color: var(--bugs); }
+.badge-bots { background: var(--bots-bg); color: var(--bots); }
+.badge-squids { background: var(--squids-bg); color: var(--squids); }
+.badge-gen { color: var(--text-dim); font-size: 10px; font-weight: normal; font-style: italic; }
+.col-edit { text-align: center; }
+.btn-edit {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 1;
+}
+.btn-edit:hover { color: var(--accent); background: var(--surface2); }
+.empty { text-align: center; color: var(--text-dim); padding: 40px; font-style: italic; }
+.notes-block {
+  margin-top: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-dim);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.notes-block-title {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.notes-block p { color: var(--text-dim); line-height: 1.7; }
+
+/* Modal */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+.overlay.open { display: flex; }
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  width: 480px;
+  max-width: 96vw;
+  max-height: 92vh;
+  overflow-y: auto;
+}
+.modal-title {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.field { margin-bottom: 15px; }
+.field label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 5px;
+}
+.field input, .field textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  resize: vertical;
+}
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--accent-dim); }
+.field input.error { border-color: var(--bots); }
+.faction-checks { display: flex; gap: 18px; }
+.faction-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text);
+}
+.faction-check input[type=checkbox] {
+  width: auto;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.modal-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.btn-save {
+  padding: 7px 20px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: inherit;
+}
+.btn-save:hover { background: #ffd000; }
+.btn-cancel {
+  padding: 7px 16px;
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+}
+.btn-cancel:hover { color: var(--text); }
+.btn-delete {
+  margin-right: auto;
+  padding: 7px 14px;
+  background: transparent;
+  color: var(--bots);
+  border: 1px solid var(--bots);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+}
+.btn-delete:hover { background: var(--bots-bg); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚡ HD2 Loadouts</h1>
+  <div class="spacer"></div>
+  <button class="btn-export" onclick="exportHTML()">⬇ Save as file</button>
+</header>
+
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon">&#9906;</span>
+    <input type="text" id="searchInput" placeholder="Search…" oninput="render()">
+  </div>
+  <div class="divider"></div>
+  <button class="filter-btn active" data-faction="all" onclick="setFaction(this)">All</button>
+  <button class="filter-btn bugs"   data-faction="bugs"   onclick="setFaction(this)">🦟 Bugs</button>
+  <button class="filter-btn bots"   data-faction="bots"   onclick="setFaction(this)">🤖 Bots</button>
+  <button class="filter-btn squids" data-faction="squids" onclick="setFaction(this)">🦑 Squids</button>
+  <div class="divider"></div>
+  <span class="count" id="countLabel"></span>
+  <div class="spacer"></div>
+  <button class="btn-add" onclick="openModal()">+ Add Loadout</button>
+</div>
+
+<table>
+  <colgroup><col><col><col><col><col></colgroup>
+  <thead>
+    <tr>
+      <th class="sortable" id="th-name" onclick="setSort('name')">Name</th>
+      <th>Factions</th>
+      <th class="sortable" id="th-build" onclick="setSort('build')">Core Build</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+
+<div class="notes-block">
+  <div class="notes-block-title">General Notes</div>
+  <p>Throwing: ~45–50m at 45°, ~75–80m with dive<br>
+  Command Bunker: target lower 3 heat sinks → hatch opens → toss any throwable. Top slots optional; the slot-shaped thing is <em>not</em> part of the body.</p>
+</div>
+
+<!-- Modal -->
+<div class="overlay" id="overlay" onclick="overlayClick(event)">
+  <div class="modal">
+    <div class="modal-title" id="modalTitle">Add Loadout</div>
+    <div class="field">
+      <label>Name</label>
+      <input type="text" id="fName" placeholder="e.g. 💎 Anti-tank">
+    </div>
+    <div class="field">
+      <label>Factions</label>
+      <div class="faction-checks">
+        <label class="faction-check"><input type="checkbox" id="fBugs"> 🦟 Bugs</label>
+        <label class="faction-check"><input type="checkbox" id="fBots"> 🤖 Bots</label>
+        <label class="faction-check"><input type="checkbox" id="fSquids"> 🦑 Squids</label>
+      </div>
+    </div>
+    <div class="field">
+      <label>Core Build</label>
+      <textarea id="fBuild" rows="7" placeholder="armor, primary, secondary, grenade&#10;&#10;stratagem 1&#10;stratagem 2&#10;stratagem 3&#10;stratagem 4"></textarea>
+    </div>
+    <div class="field">
+      <label>Notes</label>
+      <textarea id="fNotes" rows="5" placeholder="tips, breakpoints, synergies…"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-delete" id="btnDelete" onclick="deleteRow()" style="display:none">Delete</button>
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-save" onclick="saveRow()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// SEED_BEGIN
+const SEED = [
+    {
+        "id": 1,
+        "name": "Anti-tank",
+        "factions": ["squids"],
+        "build": "eruptor, coyote, trident\n\nquasar/recoilless\nflex",
+        "notes": "vs harvester leg joint:\nquasar 1\ncommando 1\nrailgun 2-3\nAMR, auto-c 4\n\nvs eye:\nrecoilless 1"
+    },
+    {
+        "id": 2,
+        "name": "Anti-tank (HMG)",
+        "factions": ["squids"],
+        "build": "demolition specialist\n\nHMG full auto",
+        "notes": "go prone and let it rip on the leg joint\nalso works with MMG technically"
+    },
+    {
+        "id": 3,
+        "name": "⚡🔥 Anti-tank",
+        "factions": ["squids"],
+        "build": "arc-resist light\n\ncremator\ntesla tower",
+        "notes": "aim for the hip joint, ignore shields\nfire & lightning"
+    },
+    {
+        "id": 4,
+        "name": "💎 Anti-tank",
+        "factions": ["bots"],
+        "build": "siege ready med\ndeadeye\nmissile pistol\npyrotech grenades\n\nguard dog\nquasar\nat emplacement\neagle strafing run",
+        "notes": ""
+    },
+    {
+        "id": 5,
+        "name": "Blitz",
+        "factions": [],
+        "build": "demolition specialist\nthermite\n\nwarp pack\nlaser\n500 kg",
+        "notes": ""
+    },
+    {
+        "id": 6,
+        "name": "💎 Grenadier",
+        "factions": ["bugs", "squids"],
+        "build": "demolition specialist\neruptor\nwarrant\ngrenade of choice :)\n\nsupply pack\ngrenade battlement\ncommando\nmg sentry",
+        "notes": "skip for bots"
+    },
+    {
+        "id": 7,
+        "name": "🧪 Expendables",
+        "factions": [],
+        "build": "jaguar\neruptor, dagger, gas\n\nportable hellbomb\nleveler\neat\nbullet storm",
+        "notes": "great fun!"
+    },
+    {
+        "id": 8,
+        "name": "💎 AMR",
+        "factions": ["bots"],
+        "build": "peak phys\nplasma\nultimatum/pissile\nthermite\n\nsupply pack\nAMR\norbital gatling\neagle strafing run",
+        "notes": "3 shots vs war strider\n1 for hulks (30m)\n2 for fact chin guns\n\nreally fun. mg sentry okay, but what else is there?\n\nonly issue: fact striders — can't reliably deal with their cannon in 2s. leveler? ops? laser? airstrike?"
+    },
+    {
+        "id": 9,
+        "name": "Machine Guns",
+        "factions": [],
+        "build": "jaguar armor\neruptor, ultimatum, giga\n\nsupply pack, MMG\n2 flex",
+        "notes": "alternate ultimatum + giga\non cyborgs switch to frag"
+    },
+    {
+        "id": 10,
+        "name": "💎 Guard Dog",
+        "factions": [],
+        "build": "med tactical\neruptor, ultimatum, gas\nscythe, ultimatum, frag\n\nguard dog, quasar\nflame sentry, gas strike",
+        "notes": "fart dog vs bugs"
+    },
+    {
+        "id": 11,
+        "name": "🥷👻 Ghost",
+        "factions": ["squids"],
+        "build": "sanctioner\ndeadeye\nsenator\ngas grenade\n\nc4\nairstrike\ncluster bomb\nmg sentry",
+        "notes": "c4: 2 for harvester, 1 for ships\ngas to disengage\nsentry is a decoy\neagles for hit and run"
+    },
+    {
+        "id": 12,
+        "name": "🧪 Gas Juggernaut",
+        "factions": [],
+        "build": "heavy gas armor\ngas\n\ncremator\ngas mines\ngas strike\n\nvitality booster",
+        "notes": "heavy gas + vitality = 100% gas resistance"
+    },
+    {
+        "id": 13,
+        "name": "💎 Fire",
+        "factions": [],
+        "build": "med tactical, med fire\nxbow, ultimatum, giga\n\ncremator\norbital railcannon\nsentry (flame, gatling)\norbital gas",
+        "notes": "yes the fire armor is helpful, but... not sure self-fire is the main concern"
+    },
+    {
+        "id": 14,
+        "name": "🧪 Brawler",
+        "factions": ["squids"],
+        "build": "siege ready light\nxbow, warrant, incend\n\ndirectional shield\nquasar\n2 flex",
+        "notes": "mg sentry, strafing run\norbital EMS maybe, especially on city maps?"
+    },
+    {
+        "id": 15,
+        "name": "Crowd Control",
+        "factions": [],
+        "build": "trident, ultimatum, gas\n\nbelt-fed grenade launcher\nnapalm + 120\n\neagle 500 / orbital gas",
+        "notes": ""
+    },
+    {
+        "id": 16,
+        "name": "Vehicles??",
+        "factions": [],
+        "build": "",
+        "notes": ""
+    }
+];
+// SEED_END
+
+// ── Storage ────────────────────────────────────────────────────────────────
+const KEY = 'hd2_v1';
+
+function loadData() {
+  const raw = localStorage.getItem(KEY);
+  if (!raw) { localStorage.setItem(KEY, JSON.stringify(SEED)); return SEED.map(r => ({...r})); }
+  return JSON.parse(raw);
+}
+
+function persist(data) {
+  localStorage.setItem(KEY, JSON.stringify(data));
+}
+
+// ── State ──────────────────────────────────────────────────────────────────
+let rows = loadData();
+let faction = 'all';
+let sortKey = 'name';
+let sortDir = 1;
+let editId = null;
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function render() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  let visible = rows.filter(r => {
+    const matchFaction = faction === 'all' || r.factions.length === 0 || r.factions.includes(faction);
+    const matchSearch = !q || r.name.toLowerCase().includes(q) || r.build.toLowerCase().includes(q) || r.notes.toLowerCase().includes(q);
+    return matchFaction && matchSearch;
+  });
+
+  visible.sort((a, b) => {
+    const av = (a[sortKey] || '').toLowerCase();
+    const bv = (b[sortKey] || '').toLowerCase();
+    return av < bv ? -sortDir : av > bv ? sortDir : 0;
+  });
+
+  const tbody = document.getElementById('tbody');
+  if (!visible.length) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty">No loadouts match.</td></tr>';
+  } else {
+    tbody.innerHTML = visible.map(r => `
+      <tr>
+        <td class="col-name">${x(r.name)}</td>
+        <td class="col-factions">${factionBadges(r.factions)}</td>
+        <td>${x(r.build)}</td>
+        <td>${x(r.notes)}</td>
+        <td class="col-edit"><button class="btn-edit" onclick="openModal(${r.id})" title="Edit">✎</button></td>
+      </tr>`).join('');
+  }
+
+  document.getElementById('countLabel').textContent = `${visible.length} / ${rows.length}`;
+
+  ['name', 'build'].forEach(k => {
+    const th = document.getElementById('th-' + k);
+    th.classList.remove('sort-asc', 'sort-desc');
+    if (sortKey === k) th.classList.add(sortDir === 1 ? 'sort-asc' : 'sort-desc');
+  });
+}
+
+function factionBadges(factions) {
+  if (!factions.length) return '<span class="badge badge-gen">general</span>';
+  return factions.map(f => `<span class="badge badge-${f}">${f}</span>`).join('');
+}
+
+function x(str) {
+  return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// ── Sort & Filter ──────────────────────────────────────────────────────────
+function setSort(key) {
+  if (sortKey === key) sortDir *= -1; else { sortKey = key; sortDir = 1; }
+  render();
+}
+
+function setFaction(btn) {
+  faction = btn.dataset.faction;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+// ── Modal ──────────────────────────────────────────────────────────────────
+function openModal(id) {
+  editId = id || null;
+  document.getElementById('modalTitle').textContent = id ? 'Edit Loadout' : 'Add Loadout';
+  document.getElementById('btnDelete').style.display = id ? 'block' : 'none';
+  document.getElementById('fName').classList.remove('error');
+
+  const r = id ? rows.find(r => r.id === id) : null;
+  document.getElementById('fName').value    = r ? r.name  : '';
+  document.getElementById('fBugs').checked  = r ? r.factions.includes('bugs')   : false;
+  document.getElementById('fBots').checked  = r ? r.factions.includes('bots')   : false;
+  document.getElementById('fSquids').checked = r ? r.factions.includes('squids') : false;
+  document.getElementById('fBuild').value   = r ? r.build : '';
+  document.getElementById('fNotes').value   = r ? r.notes : '';
+
+  document.getElementById('overlay').classList.add('open');
+  setTimeout(() => document.getElementById('fName').focus(), 50);
+}
+
+function closeModal() {
+  document.getElementById('overlay').classList.remove('open');
+  editId = null;
+}
+
+function overlayClick(e) {
+  if (e.target === document.getElementById('overlay')) closeModal();
+}
+
+function saveRow() {
+  const name = document.getElementById('fName').value.trim();
+  if (!name) { document.getElementById('fName').classList.add('error'); document.getElementById('fName').focus(); return; }
+
+  const factions = ['bugs', 'bots', 'squids'].filter(f =>
+    document.getElementById('f' + f[0].toUpperCase() + f.slice(1)).checked
+  );
+  const build = document.getElementById('fBuild').value;
+  const notes = document.getElementById('fNotes').value;
+
+  if (editId) {
+    const i = rows.findIndex(r => r.id === editId);
+    rows[i] = { ...rows[i], name, factions, build, notes };
+  } else {
+    const nextId = rows.reduce((m, r) => Math.max(m, r.id), 0) + 1;
+    rows.push({ id: nextId, name, factions, build, notes });
+  }
+
+  persist(rows);
+  render();
+  closeModal();
+}
+
+function deleteRow() {
+  if (!editId || !confirm('Delete this loadout?')) return;
+  rows = rows.filter(r => r.id !== editId);
+  persist(rows);
+  render();
+  closeModal();
+}
+
+// ── Export HTML ────────────────────────────────────────────────────────────
+function exportHTML() {
+  let html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  const newSeed = JSON.stringify(rows, null, 4);
+  html = html.replace(
+    /\/\/ SEED_BEGIN\n[\s\S]*?\/\/ SEED_END/,
+    `// SEED_BEGIN\nconst SEED = ${newSeed};\n// SEED_END`
+  );
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([html], { type: 'text/html; charset=utf-8' }));
+  a.download = 'loadouts.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+// ── Keyboard ───────────────────────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+  if ((e.key === 'Enter') && document.getElementById('overlay').classList.contains('open')) {
+    if (document.activeElement.tagName !== 'TEXTAREA') saveRow();
+  }
+});
+
+render();
+</script>
+</body>
+</html>
