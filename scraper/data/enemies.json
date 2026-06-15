@@ -1,0 +1,7269 @@
+[
+  {
+    "id": "war-strider",
+    "name": "War Strider",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/War_Strider",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 3500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Torso",
+        "health": 3300,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 80,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Eyes (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Fusion Cannons (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 40
+      },
+      {
+        "name": "Grenade Launchers (2)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Crotch",
+        "health": 1800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Heatsink",
+        "health": 700,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 70,
+        "overflow_cap": true,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Hip Joints (2)",
+        "health": 750,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 80,
+        "overflow_cap": true,
+        "durable_pct": 80,
+        "exdr": 40
+      },
+      {
+        "name": "Greaves (2)",
+        "health": 150,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "factory-strider",
+    "name": "Factory Strider",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Factory_Strider",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 10000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Stratagem Scrambler",
+        "health": 5000,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Cannon Turret",
+        "health": 900,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Fusion Gatling Guns (2)",
+        "health": 300,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Head Armor",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Head Body",
+        "health": 2500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Neck Armor",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Neck",
+        "health": 2500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Front Top Armor",
+        "health": 2200,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Front Engine Weakspot",
+        "health": 2000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Front Armor",
+        "health": 2200,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Side Armor (2)",
+        "health": 2200,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Rear Engine Armor",
+        "health": 2200,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Rear Engine Weakspot",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 40
+      },
+      {
+        "name": "Rear Armor",
+        "health": 2200,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Leg Armor (8)",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Knee Armor (4)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Leg Assembly (4)",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 40,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 40
+      },
+      {
+        "name": "Belly Panels (2)",
+        "health": 1200,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 40
+      }
+    ]
+  },
+  {
+    "id": "hulk-bruiser",
+    "name": "Hulk Bruiser",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Hulk_Bruiser",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 1800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 250,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 25,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Heatsink",
+        "health": 900,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 60,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "hulk-scorcher",
+    "name": "Hulk Scorcher",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Hulk_Scorcher",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 1800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 250,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 25,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Heatsink",
+        "health": 900,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 60,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "hulk-obliterator",
+    "name": "Hulk Obliterator",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Hulk_Obliterator",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 1800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 250,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 25,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Heatsink",
+        "health": 900,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 60,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "hulk-firebomber",
+    "name": "Hulk Firebomber",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Hulk_Firebomber",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 1800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 250,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 25,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Heatsink",
+        "health": 900,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "devastator",
+    "name": "Devastator",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Devastator",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 110,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 425,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Shoulders (2)",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 260,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Stomach",
+        "health": 350,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pelvis",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "heavy-devastator",
+    "name": "Heavy Devastator",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Heavy_Devastator",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 110,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 425,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Shoulders (2)",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 260,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Stomach",
+        "health": 350,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pelvis",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Backpack",
+        "health": 600,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 40,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Shield",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "rocket-devastator",
+    "name": "Rocket Devastator",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Rocket_Devastator",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 110,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 425,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Shoulders (2)",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 260,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Stomach",
+        "health": 350,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pelvis",
+        "health": 500,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Rockets",
+        "health": 200,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Rocket Pods",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "annihilator-tank",
+    "name": "Annihilator Tank",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Annihilator_Tank",
+    "parts": [
+      {
+        "name": "Turret Main",
+        "health": 2100,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Turret Front",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Turret Heatsink",
+        "health": 750,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 200,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Hull Main",
+        "health": 4000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Hull Front",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 35
+      },
+      {
+        "name": "Hull Sides (2)",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 35
+      },
+      {
+        "name": "Engine Bay",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 150,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Tracks (2)",
+        "health": 750,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "shredder-tank",
+    "name": "Shredder Tank",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Shredder_Tank",
+    "parts": [
+      {
+        "name": "Turret Main",
+        "health": 2100,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Turret Front and Sides",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Turret Heatsink",
+        "health": 750,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 200,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Hull Main",
+        "health": 4000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Hull Front",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 35
+      },
+      {
+        "name": "Hull Side (2)",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 35
+      },
+      {
+        "name": "Engine Bay",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 150,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Tracks (2)",
+        "health": 750,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "barrager-tank",
+    "name": "Barrager Tank",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Barrager_Tank",
+    "parts": [
+      {
+        "name": "Turret Main",
+        "health": 2100,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Launch Tubes",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 200,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Hull Main",
+        "health": 4000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Hull Front",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 35
+      },
+      {
+        "name": "Hull Sides (2)",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 35
+      },
+      {
+        "name": "Engine Bay",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 150,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Tracks (2)",
+        "health": 750,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "berserker",
+    "name": "Berserker",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Berserker",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 110,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Chest",
+        "health": 425,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 40,
+        "exdr": 100
+      },
+      {
+        "name": "Stomach",
+        "health": 350,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pelvis",
+        "health": 600,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Shoulder (2)",
+        "health": 180,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arm (2)",
+        "health": 260,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Leg (2)",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "marauder",
+    "name": "Marauder",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Marauder",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "gunship",
+    "name": "Gunship",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Gunship",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 950,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Fuselage",
+        "health": -1,
+        "health_is_main": true,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Front Thrusters (2)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 85,
+        "exdr": 0
+      },
+      {
+        "name": "Rear Thrusters (2)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 80,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "scout-strider",
+    "name": "Scout Strider",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Scout_Strider",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Pilot",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 50
+      },
+      {
+        "name": "Front Plate",
+        "health": 350,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 40,
+        "exdr": 0
+      },
+      {
+        "name": "HMG",
+        "health": 300,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Turret System",
+        "health": 300,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Waist",
+        "health": 300,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "reinforced-scout-strider",
+    "name": "Reinforced Scout Strider",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Reinforced_Scout_Strider",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Faceplate",
+        "health": 400,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 40,
+        "exdr": 0
+      },
+      {
+        "name": "HMG",
+        "health": 300,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Rocket Rails (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 80
+      },
+      {
+        "name": "Rockets (4)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Turret System",
+        "health": 300,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Waist",
+        "health": 300,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "dropship",
+    "name": "Dropship",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Dropship",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 3500,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Fuselage",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Thruster (4)",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "trooper",
+    "name": "Trooper",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Trooper",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "brawler",
+    "name": "Brawler",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Brawler",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Left Arm",
+        "health": 85,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Right Arm",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Leg (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "commissar",
+    "name": "Commissar",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Commissar",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "mg-raider",
+    "name": "MG Raider",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MG_Raider",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Backpack Main",
+        "health": 10,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Backpack",
+        "health": 50,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "rocket-raider",
+    "name": "Rocket Raider",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Rocket_Raider",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "assault-raider",
+    "name": "Assault Raider",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Assault_Raider",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Jetpack",
+        "health": 50,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "jet-brigade-commissar",
+    "name": "Jet Brigade Commissar",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Commissar",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Jetpack",
+        "health": 50,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "jet-brigade-trooper",
+    "name": "Jet Brigade Trooper",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Trooper",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Jetpack",
+        "health": 50,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "jet-brigade-mg-raider",
+    "name": "Jet Brigade MG Raider",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_MG_Raider",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Jetpack",
+        "health": 50,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "jet-brigade-devastator",
+    "name": "Jet Brigade Devastator",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Devastator",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 110,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 425,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Shoulders (2)",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 260,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Stomach",
+        "health": 350,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pelvis",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Jetpack",
+        "health": 300,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "jet-brigade-hulk-scorcher",
+    "name": "Jet Brigade Hulk Scorcher",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Hulk_Scorcher",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 1800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 250,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 25,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Jetpack",
+        "health": 750,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "jet-brigade-hulk-bruiser",
+    "name": "Jet Brigade Hulk Bruiser",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Hulk_Bruiser",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 1800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 250,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 25,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Jetpack",
+        "health": 750,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 50
+      }
+    ]
+  },
+  {
+    "id": "pyro-trooper",
+    "name": "Pyro Trooper",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Pyro_Trooper",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Fuel Tanks Main",
+        "health": 10,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Fuel Tanks",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "incendiary-rocket-raider",
+    "name": "Incendiary Rocket Raider",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Incendiary_Rocket_Raider",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 90,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 65,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "incendiary-mg-devastator",
+    "name": "Incendiary MG Devastator",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Incendiary_MG_Devastator",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 110,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 425,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Shoulders (2)",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 260,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Stomach",
+        "health": 350,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pelvis",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Shield",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "conflagration-devastator",
+    "name": "Conflagration Devastator",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Conflagration_Devastator",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 110,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 425,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Shoulders (2)",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 260,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Stomach",
+        "health": 350,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pelvis",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Shield",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "radical",
+    "name": "Radical",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Radical",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 150,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso Circuits",
+        "health": 1200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pauldron",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 65
+      },
+      {
+        "name": "Upper Arms (2)",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 55
+      },
+      {
+        "name": "Forearms (2)",
+        "health": 300,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pelvis and Left Leg",
+        "health": 1400,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Right Leg",
+        "health": 1400,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "agitator",
+    "name": "Agitator",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Agitator",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 0
+      },
+      {
+        "name": "Helmet",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 65
+      },
+      {
+        "name": "Head",
+        "health": 150,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso Armor",
+        "health": 300,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 65
+      },
+      {
+        "name": "Torso",
+        "health": 1200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pauldrons (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 65
+      },
+      {
+        "name": "Upper Arms (2)",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 80,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 55
+      },
+      {
+        "name": "Forearms (2)",
+        "health": 300,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pelvis and Left Leg",
+        "health": 1400,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Right Leg",
+        "health": 1400,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "vox-engine",
+    "name": "Vox Engine",
+    "faction": "bots",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Vox_Engine",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 11000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Sarcophagus",
+        "health": 7000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 21000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 60
+      },
+      {
+        "name": "Cannons (2)",
+        "health": 8000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 60
+      },
+      {
+        "name": "Missile Launchers (2)",
+        "health": 1200,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 60,
+        "exdr": 100
+      },
+      {
+        "name": "Miniguns (2)",
+        "health": 300,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Speakers (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Fog Lights (2)",
+        "health": 50,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 100
+      },
+      {
+        "name": "Torso Flaps (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 60
+      },
+      {
+        "name": "Vents (6)",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 100
+      },
+      {
+        "name": "Hatches (2)",
+        "health": 0,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Undercarriage",
+        "health": 11000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 60
+      },
+      {
+        "name": "Trackpod Latches (4)",
+        "health": 2000,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 60
+      },
+      {
+        "name": "Tracks (4)",
+        "health": 3000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 60
+      }
+    ]
+  },
+  {
+    "id": "bile-titan",
+    "name": "Bile Titan",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Bile_Titan",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 6500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Head",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 95,
+        "exdr": 50
+      },
+      {
+        "name": "Torso Armor (2)",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Inner Flesh",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 70,
+        "exdr": 50
+      },
+      {
+        "name": "Butt Armor",
+        "health": 3500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Upper Sac",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Lower Sac",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Underside",
+        "health": 4000,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 0
+      },
+      {
+        "name": "Claws (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 50
+      },
+      {
+        "name": "Leg Armor (12)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Front Left Leg Flesh",
+        "health": 2000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Leg Flesh (3)",
+        "health": 2000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      }
+    ]
+  },
+  {
+    "id": "charger",
+    "name": "Charger",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Charger",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 2400,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 25
+      },
+      {
+        "name": "Head",
+        "health": 1200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 75,
+        "exdr": 25
+      },
+      {
+        "name": "Torso Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 85,
+        "exdr": 25
+      },
+      {
+        "name": "Inner Flesh",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 300,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Underside",
+        "health": -1,
+        "health_is_main": true,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Armor Plates",
+        "health": 2200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Butt",
+        "health": 950,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 150,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 25
+      },
+      {
+        "name": "Claws (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Front Leg Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      },
+      {
+        "name": "Rear Leg Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      },
+      {
+        "name": "Leg Flesh (4)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      }
+    ]
+  },
+  {
+    "id": "charger-behemoth",
+    "name": "Charger Behemoth",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Charger_Behemoth",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 3000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 25
+      },
+      {
+        "name": "Head",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 25
+      },
+      {
+        "name": "Torso Armor (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 85,
+        "exdr": 25
+      },
+      {
+        "name": "Inner Flesh",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 300,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Underside",
+        "health": -1,
+        "health_is_main": true,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Armor Plates",
+        "health": 2200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Butt",
+        "health": 950,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 25
+      },
+      {
+        "name": "Claws (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Front Leg Armor (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 25
+      },
+      {
+        "name": "Rear Leg Armor (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 25
+      },
+      {
+        "name": "Leg Flesh (4)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      }
+    ]
+  },
+  {
+    "id": "impaler",
+    "name": "Impaler",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Impaler",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 4000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 1250,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 150,
+        "overflow_cap": false,
+        "durable_pct": 75,
+        "exdr": 0
+      },
+      {
+        "name": "Tentacle Armor (3)",
+        "health": -1,
+        "health_is_main": true,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 0
+      },
+      {
+        "name": "Tentacle Flesh (3)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 0
+      },
+      {
+        "name": "Crest Armor",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 80,
+        "exdr": 0
+      },
+      {
+        "name": "Torso Armor (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 0
+      },
+      {
+        "name": "Inner Flesh",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 150,
+        "overflow_cap": true,
+        "durable_pct": 90,
+        "exdr": 100
+      },
+      {
+        "name": "Underside",
+        "health": -1,
+        "health_is_main": true,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 150,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Armor Plates",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 0
+      },
+      {
+        "name": "Butt",
+        "health": 1100,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 140,
+        "overflow_cap": false,
+        "durable_pct": 85,
+        "exdr": 0
+      },
+      {
+        "name": "Leg Armor (4)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 0
+      },
+      {
+        "name": "Leg Flesh (4)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "hive-guard",
+    "name": "Hive Guard",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Hive_Guard",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 30,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 250,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 35,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Frontal Tarsal Plate Armor (2)",
+        "health": 125,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 45,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Front Legs (2)",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 45,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Legs (2)",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 35,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "brood-commander",
+    "name": "Brood Commander",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Brood_Commander",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 800,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 60,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": 170,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 40,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "alpha-commander",
+    "name": "Alpha Commander",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Alpha_Commander",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 250,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "shrieker",
+    "name": "Shrieker",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Shrieker",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 80,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 30,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Limbs",
+        "health": 30,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Wings (2)",
+        "health": 20,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "stalker",
+    "name": "Stalker",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Stalker",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 800,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 175,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Body Armor",
+        "health": -1,
+        "health_is_main": true,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Underbelly",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Wings",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "nursing-spewer",
+    "name": "Nursing Spewer",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Nursing_Spewer",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 300,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Mouth",
+        "health": 250,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Spinal Plates",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 20,
+        "overflow_cap": true,
+        "durable_pct": 80,
+        "exdr": 0
+      },
+      {
+        "name": "Butt",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Front Legs (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Legs (2)",
+        "health": 250,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 30,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "bile-spewer",
+    "name": "Bile Spewer",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Bile_Spewer",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 300,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Mouth",
+        "health": 250,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Spinal Plates",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 20,
+        "overflow_cap": true,
+        "durable_pct": 80,
+        "exdr": 0
+      },
+      {
+        "name": "Butt",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Front Legs (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Legs (2)",
+        "health": 250,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 30,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "warrior",
+    "name": "Warrior",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Warrior",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 0,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 0,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 0,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": 0,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "alpha-warrior",
+    "name": "Alpha Warrior",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Alpha_Warrior",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 325,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 150,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "bile-warrior",
+    "name": "Bile Warrior",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Bile_Warrior",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 325,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 150,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs(4)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "hunter",
+    "name": "Hunter",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Hunter",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 0,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 0,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": 0,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Wings (2)",
+        "health": 20,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "pouncer",
+    "name": "Pouncer",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Pouncer",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 60,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 20,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Limbs (6)",
+        "health": 30,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "scavenger",
+    "name": "Scavenger",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Scavenger",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 60,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 20,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Limbs (6)",
+        "health": 30,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "bile-spitter",
+    "name": "Bile Spitter",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Bile_Spitter",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 60,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 20,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Limbs (6)",
+        "health": 30,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "hive-lord",
+    "name": "Hive Lord",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Hive_Lord",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 150000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 25
+      },
+      {
+        "name": "Crown",
+        "health": 150000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Jaws",
+        "health": 150000,
+        "health_is_main": false,
+        "av": 6,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Mandibles (2)",
+        "health": 10000,
+        "health_is_main": false,
+        "av": 6,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Mouth",
+        "health": 150000,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Dorsal Plate Armor (6)",
+        "health": 15000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 10,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 25
+      },
+      {
+        "name": "Sterna Plate Armor (6)",
+        "health": 15000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 10,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 25
+      },
+      {
+        "name": "Lower Sterna Plate Armor",
+        "health": 20000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 10,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Inner Flesh (6)",
+        "health": 150000,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Fins (14)",
+        "health": 5000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 50
+      }
+    ]
+  },
+  {
+    "id": "spore-charger",
+    "name": "Spore Charger",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Spore_Charger",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 2400,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 25
+      },
+      {
+        "name": "Head",
+        "health": 1200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 75,
+        "exdr": 25
+      },
+      {
+        "name": "Torso Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 85,
+        "exdr": 25
+      },
+      {
+        "name": "Inner Flesh",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 300,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Underside",
+        "health": -1,
+        "health_is_main": true,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Armor Plates",
+        "health": 2200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Butt",
+        "health": 950,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 150,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 25
+      },
+      {
+        "name": "Spore Flesh (6)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Front Leg Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      },
+      {
+        "name": "Rear Leg Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      },
+      {
+        "name": "Leg Flesh (4)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      }
+    ]
+  },
+  {
+    "id": "dragonroach",
+    "name": "Dragonroach",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Dragonroach",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 6500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Head",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 95,
+        "exdr": 50
+      },
+      {
+        "name": "Carapace (2)",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Claws (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 50
+      },
+      {
+        "name": "Wings (4)",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 30,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Thorax Sac",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Abdomen Sac",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Thorax Innards",
+        "health": 3000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Abdomen Innards",
+        "health": -1,
+        "health_is_main": true,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Abdomen Armor",
+        "health": 3500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Leg Armor (12)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 50
+      }
+    ]
+  },
+  {
+    "id": "predator-hunter",
+    "name": "Predator Hunter",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Predator_Hunter",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 175,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 60,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": 60,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Wings (2)",
+        "health": 20,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "predator-stalker",
+    "name": "Predator Stalker",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Predator_Stalker",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 650,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 175,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Body Armor",
+        "health": -1,
+        "health_is_main": true,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Underbelly",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Left Legs (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Right Legs (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Wings",
+        "health": 125,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "spore-burst-scavenger",
+    "name": "Spore Burst Scavenger",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Spore_Burst_Scavenger",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 60,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 20,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Limbs (6)",
+        "health": 30,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "spore-burst-hunter",
+    "name": "Spore Burst Hunter",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Spore_Burst_Hunter",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 160,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 35,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 60,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": 60,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 25,
+        "exdr": 100
+      },
+      {
+        "name": "Wings (2)",
+        "health": 20,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "spore-burst-warrior",
+    "name": "Spore Burst Warrior",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Spore_Burst_Warrior",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 325,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 150,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 40,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 25,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 35,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "spore-burst-bile-titan",
+    "name": "Spore Burst Bile Titan",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Spore_Burst_Bile_Titan",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 7000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Head",
+        "health": 2500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 95,
+        "exdr": 50
+      },
+      {
+        "name": "Torso Armor (2)",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Inner Flesh",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 70,
+        "exdr": 50
+      },
+      {
+        "name": "Butt Armor",
+        "health": 3500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Upper Sac",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Lower Sac",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Underside",
+        "health": 4000,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 0
+      },
+      {
+        "name": "Claws (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 50
+      },
+      {
+        "name": "Leg Armor (12)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Front Left Leg Flesh",
+        "health": 2000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      },
+      {
+        "name": "Leg Flesh (3)",
+        "health": 2000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 50
+      }
+    ]
+  },
+  {
+    "id": "rupture-warrior",
+    "name": "Rupture Warrior",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Rupture_Warrior",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 250,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 110,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 20,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (4)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 75,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "rupture-spewer",
+    "name": "Rupture Spewer",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Rupture_Spewer",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 750,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 300,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Mouth",
+        "health": 250,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Spinal Plates",
+        "health": 500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 20,
+        "overflow_cap": true,
+        "durable_pct": 80,
+        "exdr": 0
+      },
+      {
+        "name": "Butt",
+        "health": 750,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Front Legs (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Legs (2)",
+        "health": 250,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 30,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "rupture-charger",
+    "name": "Rupture Charger",
+    "faction": "bugs",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Rupture_Charger",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 2400,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 25
+      },
+      {
+        "name": "Head",
+        "health": 1200,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 75,
+        "exdr": 25
+      },
+      {
+        "name": "Torso Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 85,
+        "exdr": 25
+      },
+      {
+        "name": "Inner Flesh",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 300,
+        "overflow_cap": true,
+        "durable_pct": 30,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Armor Plates",
+        "health": 2200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Butt",
+        "health": 950,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 150,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 25
+      },
+      {
+        "name": "Underside",
+        "health": -1,
+        "health_is_main": true,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Claws (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 70,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Frontal Tarsal Plate Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      },
+      {
+        "name": "Front Leg Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 60,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      },
+      {
+        "name": "Rear Leg Armor (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      },
+      {
+        "name": "Leg Flesh (4)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 25
+      }
+    ]
+  },
+  {
+    "id": "harvester",
+    "name": "Harvester",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Harvester",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 3000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 0
+      },
+      {
+        "name": "Eye",
+        "health": 350,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 120,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Shield Generators (3)",
+        "health": 350,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 10,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Chassis",
+        "health": 2000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 0
+      },
+      {
+        "name": "Carapace (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Carapace Weakspots (2)",
+        "health": 500,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Left Hip Joint",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 45,
+        "overflow_cap": true,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Right & Middle Hip Joints (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 70,
+        "exdr": 100
+      },
+      {
+        "name": "Left Upper Thigh Armor",
+        "health": 600,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Right & Middle Upper Thigh Armor (2)",
+        "health": 900,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Lower Thigh Armor (3)",
+        "health": 900,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Shin armor (3)",
+        "health": 900,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Left Foot Armor",
+        "health": 900,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Right & Middle Foot Armor (2)",
+        "health": 900,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 75,
+        "exdr": 100
+      },
+      {
+        "name": "Exposed Leg Internals",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 60,
+        "overflow_cap": true,
+        "durable_pct": 25,
+        "exdr": 100
+      },
+      {
+        "name": "Shield",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "warp-ship",
+    "name": "Warp Ship",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Warp_Ship",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 3500,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Beamer",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Frontal Fuselage (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Fuselage (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Engine",
+        "health": -1,
+        "health_is_main": true,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Stern (2)",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Bow",
+        "health": 1000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Shield",
+        "health": 2500,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "grounded-warp-ship",
+    "name": "Grounded Warp Ship",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Grounded_Warp_Ship",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 5000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": -150
+      },
+      {
+        "name": "Inner",
+        "health": 0,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Shield",
+        "health": 2500,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "elevated-overseer",
+    "name": "Elevated Overseer",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Elevated_Overseer",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 450,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Jetpack",
+        "health": 300,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Chest Armor",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Crotch Armor",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Limb Armor",
+        "health": 100,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 600,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Right Arm",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Left Arm",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 70,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "crescent-overseer",
+    "name": "Crescent Overseer",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Crescent_Overseer",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 600,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 150,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Chest Armor",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Crotch Armor",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Limb Armor",
+        "health": 100,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 600,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Right Arm",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Left Arm",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 70,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "overseer",
+    "name": "Overseer",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Overseer",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 600,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 150,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Chest Armor",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Crotch Armor",
+        "health": 200,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Limb Armor (8)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Torso",
+        "health": 600,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Right Arm",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Left Arm",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": -1,
+        "health_is_main": true,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 70,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Shield",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "voteless",
+    "name": "Voteless",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Voteless",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 40,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Upper Arms (2)",
+        "health": 50,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 40,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Forearms (2)",
+        "health": 50,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 30,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Legs",
+        "health": 80,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 30,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "watcher",
+    "name": "Watcher",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Watcher",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 600,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Body",
+        "health": 400,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Eye",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Upper Fin",
+        "health": 200,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Lower Fin",
+        "health": 200,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Side Fins (2)",
+        "health": 150,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "fleshmob",
+    "name": "Fleshmob",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Fleshmob",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 5000,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 40,
+        "exdr": 0
+      },
+      {
+        "name": "Head Chunks (6)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 150,
+        "overflow_cap": false,
+        "durable_pct": 25,
+        "exdr": 25
+      },
+      {
+        "name": "Stomach Chunks (2)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 40,
+        "exdr": 25
+      },
+      {
+        "name": "Arms (4)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 25,
+        "overflow_cap": true,
+        "durable_pct": 40,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (2)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 40,
+        "exdr": 25
+      }
+    ]
+  },
+  {
+    "id": "stingray",
+    "name": "Stingray",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Stingray",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 800,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 70,
+        "exdr": 0
+      },
+      {
+        "name": "Gun Ports",
+        "health": -1,
+        "health_is_main": true,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "leviathan",
+    "name": "Leviathan",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Leviathan",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 15000,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Turrets (4)",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 85,
+        "exdr": 0
+      },
+      {
+        "name": "Front Vertebra",
+        "health": 7000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 35
+      },
+      {
+        "name": "Front Fins (2)",
+        "health": 5500,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 35
+      },
+      {
+        "name": "Warp Disc",
+        "health": 3000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Forward-Middle Vertebra",
+        "health": 5500,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 35
+      },
+      {
+        "name": "Forward-Middle Fins (2)",
+        "health": 5000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 35
+      },
+      {
+        "name": "Rearward-Middle Vertebra",
+        "health": 5500,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 35
+      },
+      {
+        "name": "Rearward-Middle Fins (2)",
+        "health": 3900,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 35
+      },
+      {
+        "name": "Rear Vertebra",
+        "health": 5000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 35
+      },
+      {
+        "name": "Rear Fins (2)",
+        "health": 3000,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 35
+      },
+      {
+        "name": "Tail",
+        "health": 3900,
+        "health_is_main": false,
+        "av": 5,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 35
+      }
+    ]
+  },
+  {
+    "id": "illuminate-overship",
+    "name": "Illuminate Overship",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Illuminate_Overship",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 18001,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Port",
+        "health": 1500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 100,
+        "exdr": 100
+      },
+      {
+        "name": "Shield",
+        "health": 10000,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      }
+    ]
+  },
+  {
+    "id": "veracitor",
+    "name": "Veracitor",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Veracitor",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 3000,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Head",
+        "health": 300,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Chassis",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Carapace (2)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Internals (2)",
+        "health": 600,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Shield",
+        "health": 1300,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pilot",
+        "health": 700,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Cockpit",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Cockpit Weakspot",
+        "health": 800,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Shoulders (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Upper Arms (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Forearms (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Arm Weakspots (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Hips (2)",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Hip",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Upper Legs (2)",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Lower Legs (2)",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Leg",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "gatekeeper",
+    "name": "Gatekeeper",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Gatekeeper",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 2500,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 100,
+        "exdr": 0
+      },
+      {
+        "name": "Shield Generator",
+        "health": 50,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Chassis",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Carapace (2)",
+        "health": 400,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Rear Weakspot",
+        "health": 800,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Shield",
+        "health": 1300,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Pilot",
+        "health": 700,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Cockpit",
+        "health": 1200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": true,
+        "overflow_pct": 75,
+        "overflow_cap": true,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Cockpit Weakspot",
+        "health": 800,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 80,
+        "exdr": 100
+      },
+      {
+        "name": "Shoulder Armor (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arm Armor (2)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Arms (2)",
+        "health": 1600,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Guns (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Gun Weakspots (2)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 1,
+        "fatal": false,
+        "overflow_pct": 0,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Leg Armor (6)",
+        "health": 200,
+        "health_is_main": false,
+        "av": 4,
+        "fatal": false,
+        "overflow_pct": 20,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Hips (3)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      },
+      {
+        "name": "Legs (3)",
+        "health": 800,
+        "health_is_main": false,
+        "av": 3,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": false,
+        "durable_pct": 50,
+        "exdr": 100
+      }
+    ]
+  },
+  {
+    "id": "obtruder",
+    "name": "Obtruder",
+    "faction": "squids",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Obtruder",
+    "parts": [
+      {
+        "name": "Main",
+        "health": 400,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 0,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 0
+      },
+      {
+        "name": "Body",
+        "health": 400,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Eye",
+        "health": 300,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Vertical Fins (2)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      },
+      {
+        "name": "Lateral Fins (2)",
+        "health": 100,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": false,
+        "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100
+      }
+    ]
+  }
+]
