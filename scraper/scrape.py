@@ -741,6 +741,23 @@ _DATA_RE = re.compile(
     re.M
 )
 
+_STRAT_RE = re.compile(r'// DATA_BEGIN\r?\n[\s\S]*?// DATA_END')
+
+def update_randomizer_html(stratagems):
+    html_path = Path(__file__).parent.parent / 'randomizer.html'
+    if not html_path.exists():
+        print(f"  ⚠ randomizer.html not found — skipping")
+        return
+    src = html_path.read_text(encoding='utf-8', newline='')
+    compact = json.dumps(stratagems, ensure_ascii=False, separators=(',', ':'))
+    new_block = f"// DATA_BEGIN\nconst STRATAGEMS = {compact};\n// DATA_END"
+    updated, n = _STRAT_RE.subn(new_block, src)
+    if not n:
+        print(f"  ⚠ DATA_BEGIN/END markers not found in randomizer.html — skipping")
+        return
+    html_path.write_text(updated, encoding='utf-8', newline='')
+    print(f"  → randomizer.html updated ({len(stratagems)} stratagems)")
+
 def update_html(weapons, enemies):
     html_path = Path(__file__).parent.parent / 'damage-calc.html'
     if not html_path.exists():
@@ -880,6 +897,7 @@ def main():
             warbond_names = sorted({s['warbond'] for s in strats if s['warbond']})
             print(f"  ✓ {len(strats)} stratagems → {strats_path}")
             print(f"  Warbonds: {', '.join(warbond_names)}")
+            update_randomizer_html(strats)
         else:
             print("  ⚠ Failed to fetch stratagems page")
 
