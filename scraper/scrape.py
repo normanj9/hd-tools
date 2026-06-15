@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-HD2 Damage Calculator — Data Scraper
+HD2 Data Scraper
 
 Usage:
-  python scrape.py                     # full scrape of all enemies + weapons
+  python scrape.py                     # full scrape: enemies + weapons + stratagems
   python scrape.py --enemies           # scrape enemies only
   python scrape.py --weapons           # scrape weapons only
-  python scrape.py --only CQC          # scrape items whose name contains "CQC"
+  python scrape.py --stratagems        # scrape stratagems only (single page, fast)
+  python scrape.py --only CQC          # scrape enemies+weapons whose name contains "CQC"
   python scrape.py --only "Bile Titan" # single targeted scrape
   python scrape.py --verbose           # show per-item parse details
 
@@ -14,7 +15,7 @@ Usage:
 rest of the data is preserved.
 
 Requires: pip install requests beautifulsoup4
-Outputs:  data/enemies.json, data/weapons.json, ../damage-calc.html
+Outputs:  data/enemies.json, data/weapons.json, data/stratagems.json, ../damage-calc.html
 """
 
 import json, re, sys, time
@@ -27,9 +28,10 @@ from bs4 import BeautifulSoup
 
 BASE    = "https://helldivers.wiki.gg"
 DELAY   = 0.8   # seconds between requests — be polite
-VERBOSE        = "--verbose" in sys.argv or "-v" in sys.argv
-ENEMIES_ONLY   = "--enemies"  in sys.argv
-WEAPONS_ONLY   = "--weapons"  in sys.argv
+VERBOSE          = "--verbose"    in sys.argv or "-v" in sys.argv
+ENEMIES_ONLY     = "--enemies"    in sys.argv
+WEAPONS_ONLY     = "--weapons"    in sys.argv
+STRATAGEMS_ONLY  = "--stratagems" in sys.argv
 # --only PATTERN  filters by case-insensitive substring match on name
 _only_idx = next((i for i, a in enumerate(sys.argv) if a == '--only'), None)
 ONLY_PATTERN   = sys.argv[_only_idx + 1].lower() if _only_idx and _only_idx + 1 < len(sys.argv) else None
@@ -647,6 +649,91 @@ def _extract_component(sections, is_explosion):
         "ap":             ap,
     }
 
+# ── Stratagem parser ─────────────────────────────────────────────────────────
+# Single page: https://helldivers.wiki.gg/wiki/Stratagems
+# Current stratagems table: 7 cols (Icon, Name, Code, Cooldown, Cost, Level, Source)
+# Mission stratagems table: 4 cols — no Source column, so we stop before those.
+
+def parse_stratagem_page(html):
+    soup = BeautifulSoup(html, 'html.parser')
+    stratagems = []
+    current_category = 'Unknown'
+    in_mission_section = False
+
+    for elem in soup.find_all(['h2', 'h3', 'table']):
+        if elem.name in ('h2', 'h3'):
+            headline = elem.find(class_='mw-headline')
+            text = headline.get_text(strip=True) if headline else elem.get_text(strip=True)
+            if elem.name == 'h2' and 'Mission' in text:
+                in_mission_section = True
+            elif elem.name == 'h3' and not in_mission_section:
+                current_category = re.sub(r'\[edit.*?\]', '', text).strip()
+            continue
+
+        if in_mission_section:
+            continue
+
+        # Only process 7-column current-stratagem tables (they have a "Source" header)
+        headers = [th.get_text(strip=True) for th in elem.find_all('th')]
+        if 'Source' not in headers:
+            continue
+
+        for row in elem.find_all('tr'):
+            cells = row.find_all('td')
+            if len(cells) < 7:
+                continue
+
+            # Col 1 — name
+            name_link = cells[1].find('a')
+            name      = name_link.get_text(strip=True) if name_link else cells[1].get_text(strip=True)
+            wiki_path = name_link.get('href', '') if name_link else ''
+            if not name:
+                continue
+
+            # Col 2 — call-in code (arrow images)
+            code = []
+            for img in cells[2].find_all('img'):
+                m = re.search(r'Stratagem Arrow (\w+)\.svg', img.get('alt', ''), re.I)
+                if m:
+                    code.append(m.group(1).lower())
+
+            # Col 3 — cooldown ("480s" → 480)
+            cd_m = re.search(r'(\d+)', cells[3].get_text(strip=True))
+            cooldown_s = int(cd_m.group(1)) if cd_m else 0
+
+            # Col 6 — source / warbond
+            source_cell = cells[6]
+            source_link = source_cell.find('a')
+            warbond = None
+
+            if source_link:
+                href  = source_link.get('href', '')
+                title = source_link.get('title', '') or source_link.get_text(strip=True)
+                if 'Warbond' in href or 'Warbond' in title:
+                    warbond = re.sub(r'\s+Premium\s+Warbond.*', '', title).strip() or source_link.get_text(strip=True)
+                    source  = warbond
+                else:
+                    source = source_link.get_text(strip=True)
+            else:
+                source = source_cell.get_text(strip=True)
+
+            stratagems.append({
+                "id":         make_id(name),
+                "name":       name,
+                "category":   current_category,
+                "warbond":    warbond,
+                "source":     source,
+                "cooldown_s": cooldown_s,
+                "call_in":    code,
+                "wiki_url":   BASE + wiki_path if wiki_path else None,
+            })
+
+            if VERBOSE:
+                wb = f" [{warbond}]" if warbond else ""
+                print(f"    {name} ({current_category}){wb}  cd={cooldown_s}s  code={code}")
+
+    return stratagems
+
 # ── HTML updater ──────────────────────────────────────────────────────────────
 
 _DATA_RE = re.compile(
@@ -692,7 +779,7 @@ def main():
     data_dir = Path(__file__).parent / 'data'
     data_dir.mkdir(exist_ok=True)
 
-    targeted = ONLY_PATTERN or ENEMIES_ONLY or WEAPONS_ONLY
+    targeted = ONLY_PATTERN or ENEMIES_ONLY or WEAPONS_ONLY or STRATAGEMS_ONLY
 
     def matches(name):
         if ONLY_PATTERN:
@@ -707,7 +794,7 @@ def main():
     existing_weapons = _load_json(weapons_path) if targeted else {}
 
     # ── Enemies ───────────────────────────────────────────────────────────────
-    if not WEAPONS_ONLY:
+    if not WEAPONS_ONLY and not STRATAGEMS_ONLY:
         enemy_list = [(n, f, p) for n, f, p in ENEMY_PAGES if matches(n)]
         print("=" * 50)
         print(f"Scraping enemies ({len(enemy_list)})...")
@@ -733,7 +820,7 @@ def main():
         all_enemies = list(existing_enemies.values()) or list(_load_json(enemies_path).values())
 
     # ── Weapons ───────────────────────────────────────────────────────────────
-    if not ENEMIES_ONLY:
+    if not ENEMIES_ONLY and not STRATAGEMS_ONLY:
         weapon_list = [(n, c, p) for n, c, p in WEAPON_PAGES if matches(n)]
         print("=" * 50)
         print(f"Scraping weapons ({len(weapon_list)})...")
@@ -778,9 +865,28 @@ def main():
     else:
         all_weapons = list(existing_weapons.values()) or list(_load_json(weapons_path).values())
 
+    # ── Stratagems ────────────────────────────────────────────────────────────
+    # Runs on full scrape or --stratagems; skipped for --enemies/--weapons/--only
+    do_stratagems = STRATAGEMS_ONLY or not (ENEMIES_ONLY or WEAPONS_ONLY or ONLY_PATTERN)
+    if do_stratagems:
+        strats_path = data_dir / 'stratagems.json'
+        print("=" * 50)
+        print("Scraping stratagems (single page)...")
+        print("=" * 50)
+        html = fetch('/wiki/Stratagems')
+        if html:
+            strats = parse_stratagem_page(html)
+            _save_json(strats_path, strats)
+            warbond_names = sorted({s['warbond'] for s in strats if s['warbond']})
+            print(f"  ✓ {len(strats)} stratagems → {strats_path}")
+            print(f"  Warbonds: {', '.join(warbond_names)}")
+        else:
+            print("  ⚠ Failed to fetch stratagems page")
+
     # ── Update HTML ───────────────────────────────────────────────────────────
-    print("\nUpdating damage-calc.html...")
-    update_html(all_weapons, all_enemies)
+    if not STRATAGEMS_ONLY:
+        print("\nUpdating damage-calc.html...")
+        update_html(all_weapons, all_enemies)
     print("\nDone.")
 
 if __name__ == '__main__':
