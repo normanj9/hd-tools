@@ -110,6 +110,16 @@ h1 {
   white-space: nowrap;
 }
 .btn-add:hover { background: #ffd000; }
+/* ── File banner ─────────────────────────────────────────────── */
+#fileBanner { display: flex; align-items: center; gap: 8px; padding: 6px 10px; margin-bottom: 10px; border-radius: 4px; font-size: 11px; }
+#fileBanner.fb-unlinked { background: var(--surface); border: 1px solid var(--border); color: var(--text-dim); }
+#fileBanner.fb-resume   { background: var(--surface); border: 1px solid var(--accent-dim); }
+#fileBanner.fb-active   { background: var(--surface); border: 1px solid #1f3a1f; color: var(--text-dim); }
+.fb-btn { background: none; border: 1px solid var(--border); color: var(--accent); padding: 2px 8px; border-radius: 3px; cursor: pointer; font-size: 11px; font-family: inherit; }
+.fb-btn:hover { background: var(--accent); color: #000; }
+.fb-btn-dim { color: var(--text-dim); }
+.fb-btn-dim:hover { background: var(--surface2); color: var(--text); }
+
 .btn-export {
   padding: 5px 12px;
   background: transparent;
@@ -314,6 +324,8 @@ tr:hover td { background: var(--surface2); }
 </head>
 <body>
 
+<div id="fileBanner"></div>
+
 <header>
   <h1>⚡ HD2 Loadouts</h1>
   <div class="spacer"></div>
@@ -507,16 +519,108 @@ const SEED = [
 // SEED_END
 
 // ── Storage ────────────────────────────────────────────────────────────────
-const KEY = 'hd2_v1';
+const LS_KEY = 'hd2_v1';
 
 function loadData() {
-  const raw = localStorage.getItem(KEY);
-  if (!raw) { localStorage.setItem(KEY, JSON.stringify(SEED)); return SEED.map(r => ({...r})); }
+  const raw = localStorage.getItem(LS_KEY);
+  if (!raw) { localStorage.setItem(LS_KEY, JSON.stringify(SEED)); return SEED.map(r => ({...r})); }
   return JSON.parse(raw);
 }
 
 function persist(data) {
-  localStorage.setItem(KEY, JSON.stringify(data));
+  localStorage.setItem(LS_KEY, JSON.stringify(data));  // always keep as fallback
+  fsWrite(data);                                        // also write to file if linked
+}
+
+// ── File System API ────────────────────────────────────────────────────────
+let fsHandle  = null;   // FileSystemFileHandle
+let fsReady   = false;  // permission currently granted
+
+// Minimal IndexedDB wrapper — only used to persist the FileSystemFileHandle
+function _idb(mode, fn) {
+  return new Promise((res, rej) => {
+    const r = indexedDB.open('hd2_fs', 1);
+    r.onupgradeneeded = () => r.result.createObjectStore('kv');
+    r.onsuccess = () => { try { res(fn(r.result.transaction('kv', mode).objectStore('kv'))); } catch(e) { rej(e); } };
+    r.onerror   = () => rej(r.error);
+  });
+}
+const idbGet = k    => _idb('readonly',  s => new Promise(r => { const q = s.get(k); q.onsuccess = () => r(q.result ?? null); q.onerror = () => r(null); }));
+const idbSet = (k,v)=> _idb('readwrite', s => new Promise(r => { s.put(v,k); s.transaction.oncomplete = r; }));
+
+async function fsWrite(data) {
+  if (!fsHandle || !fsReady) return;
+  try {
+    const w = await fsHandle.createWritable();
+    await w.write(JSON.stringify(data, null, 2));
+    await w.close();
+  } catch { fsReady = false; updateBanner(); }
+}
+
+async function _activateHandle(handle) {
+  fsHandle = handle;
+  fsReady  = true;
+  await idbSet('fh', handle);
+  // Read file — if it has data, load it; if empty/new, seed it with current rows
+  let fileData = null;
+  try {
+    const txt = await (await handle.getFile()).text();
+    if (txt.trim()) fileData = JSON.parse(txt);
+  } catch {}
+  if (Array.isArray(fileData)) { rows = fileData; render(); }
+  else { await fsWrite(rows); }
+  updateBanner();
+}
+
+async function fsNew() {
+  try {
+    const h = await window.showSaveFilePicker({ suggestedName: 'loadouts.json', types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }] });
+    await _activateHandle(h);
+  } catch {}
+}
+
+async function fsOpen() {
+  try {
+    const [h] = await window.showOpenFilePicker({ types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }] });
+    await _activateHandle(h);
+  } catch {}
+}
+
+async function fsResume() {
+  if (!fsHandle) return;
+  try {
+    if (await fsHandle.requestPermission({ mode: 'readwrite' }) !== 'granted') return;
+    fsReady = true;
+    const txt = await (await fsHandle.getFile()).text();
+    if (txt.trim()) { const d = JSON.parse(txt); if (Array.isArray(d)) { rows = d; render(); } }
+    updateBanner();
+  } catch {}
+}
+
+function updateBanner() {
+  const el = document.getElementById('fileBanner');
+  if (!fsHandle) {
+    el.className = 'fb-unlinked';
+    el.innerHTML = `No save file linked &nbsp;<button class="fb-btn" onclick="fsNew()">New</button> <button class="fb-btn" onclick="fsOpen()">Open existing</button>`;
+  } else if (!fsReady) {
+    el.className = 'fb-resume';
+    el.innerHTML = `📂 <b>${fsHandle.name}</b> &nbsp;<button class="fb-btn" onclick="fsResume()">Load</button>`;
+  } else {
+    el.className = 'fb-active';
+    el.innerHTML = `💾 <b>${fsHandle.name}</b> &nbsp;<button class="fb-btn fb-btn-dim" onclick="fsOpen()">Change</button>`;
+  }
+}
+
+async function initFS() {
+  const handle = await idbGet('fh');
+  if (!handle) { updateBanner(); return; }
+  fsHandle = handle;
+  // If permission is still granted (same session), load silently
+  if (await handle.queryPermission({ mode: 'readwrite' }) === 'granted') {
+    await fsResume();
+  } else {
+    updateBanner(); // shows "Load" button for one-click resume
+  }
 }
 
 // ── State ──────────────────────────────────────────────────────────────────
@@ -669,6 +773,7 @@ document.addEventListener('keydown', e => {
 });
 
 render();
+initFS();  // async — loads from file if handle stored, re-renders if data differs
 </script>
 </body>
 </html>
