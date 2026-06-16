@@ -55,9 +55,32 @@ h1 { font-size: 15px; font-weight: 800; letter-spacing: 3px; text-transform: upp
 }
 .btn-randomize:hover { background: #ffd000; }
 .btn-randomize:active { transform: scale(0.99); }
+.btn-randomize:disabled {
+  background: #100e00; color: var(--accent); cursor: not-allowed;
+  border: 1px solid rgba(245,196,0,0.5);
+  animation: btn-deploying 0.9s ease-in-out infinite;
+}
+@keyframes btn-deploying {
+  0%, 100% { box-shadow: 0 0 10px rgba(245,196,0,0.15); }
+  50%       { box-shadow: 0 0 45px rgba(245,196,0,0.55), inset 0 0 30px rgba(245,196,0,0.06); }
+}
+
+@keyframes flip-in {
+  0%   { transform: rotateY(90deg) translateY(-10px); opacity: 0; }
+  100% { transform: rotateY(0deg)  translateY(0);     opacity: 1; }
+}
+.slot.flip-in { animation: flip-in 0.32s ease-out both; }
+
+@keyframes land-pulse {
+  0%   { transform: scale(1.06); box-shadow: 0 0 0 3px var(--accent), 0 0 50px rgba(245,196,0,0.7); border-color: var(--accent); }
+  14%  { transform: scale(0.98); box-shadow: 0 0 0 2px var(--accent), 0 0 30px rgba(245,196,0,0.5); }
+  30%  { transform: scale(1.0);  box-shadow: 0 0 0 2px var(--accent), 0 0 20px rgba(245,196,0,0.35); }
+  100% { transform: scale(1.0);  box-shadow: none; border-color: var(--border); }
+}
+.slot.landed { animation: land-pulse 1.5s ease-out forwards; }
 
 /* ── Slots grid ─────────────────────────────────────────────────── */
-.slots-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.slots-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; perspective: 800px; }
 @media (max-width: 500px) { .slots-grid { grid-template-columns: 1fr; } }
 
 .slot {
@@ -173,8 +196,9 @@ function saveWarbonds() {
 }
 
 let selectedWarbonds = loadWarbonds();
-let slots   = [null, null, null, null];
-let locked  = [false, false, false, false];
+let slots       = [null, null, null, null];
+let locked      = [false, false, false, false];
+let isAnimating = false;
 
 // ── Warbond toggles ───────────────────────────────────────────────────────────
 function buildWarbonds() {
@@ -217,11 +241,12 @@ function updatePoolInfo() {
 
 // ── Randomize ─────────────────────────────────────────────────────────────────
 function randomize() {
+  if (isAnimating) return;
+
   const pool = getPool();
   const lockedIds = new Set(slots.map((s, i) => locked[i] && s ? s.id : null).filter(Boolean));
   const avail = pool.filter(s => !lockedIds.has(s.id));
 
-  // Fisher-Yates shuffle
   for (let i = avail.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [avail[i], avail[j]] = [avail[j], avail[i]];
@@ -231,7 +256,37 @@ function randomize() {
   for (let i = 0; i < 4; i++) {
     if (!locked[i]) slots[i] = avail[pick++] || null;
   }
+
+  const btn = document.querySelector('.btn-randomize');
+  const unlocked = locked.map((l, i) => l ? null : i).filter(i => i !== null);
+  if (!unlocked.length) { renderSlots(); return; }
+
+  isAnimating = true;
+  btn.disabled = true;
+  btn.textContent = '⚡ DEPLOYING STRATAGEMS ⚡';
+
   renderSlots();
+  const cards = [...document.querySelectorAll('#slotsGrid .slot')];
+  unlocked.forEach(i => { cards[i].style.visibility = 'hidden'; });
+
+  const lastOrder = unlocked.length - 1;
+  unlocked.forEach((cardIdx, order) => {
+    setTimeout(() => {
+      const card = cards[cardIdx];
+      card.style.visibility = '';
+      card.classList.add('flip-in');
+      card.addEventListener('animationend', () => {
+        card.classList.remove('flip-in');
+        card.classList.add('landed');
+        setTimeout(() => card.classList.remove('landed'), 1500);
+        if (order === lastOrder) {
+          isAnimating = false;
+          btn.disabled = false;
+          btn.textContent = '🎲 Randomize';
+        }
+      }, { once: true });
+    }, 250 + order * 850);
+  });
 }
 
 function toggleLock(i) {
