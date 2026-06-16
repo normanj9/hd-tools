@@ -1,3 +1,0 @@
-- want to see an at a glance view per faction. so like, bile titan, charger, etc. on single page. or in general just organized by faction. still want to compare weapons too
-- railgun seems weird. both say default. dont' see the overcharged shot mechanics
-- some weapons are good as "hits" - some you might want to know seconds. like how long would I fire the laser canon etc.

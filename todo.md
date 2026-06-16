@@ -1,0 +1,4 @@
+- add some fanfare/drama to the randomizer. countdown, reveal animation, etc.
+- railgun is off. both say default. dont' see the overcharged shot mechanics playing out
+- some weapons are good as "hits" - some you might want to know seconds. like how long would I fire the laser canon, or the cremator, etc
+- certain stratagems like the mechs?
