@@ -136,5 +136,14 @@
     "factions": [],
     "build": "DE sickle + fire armor + vitality\n\nHover Pack\n\nflamethrower",
     "notes": "grenade launcher was meh"
+  },
+  {
+    "id": 18,
+    "name": "Hammertime",
+    "factions": [
+      "squids"
+    ],
+    "build": "arc resist armor\n\nbreaching hammer\nwarp pack",
+    "notes": "1 shots warp ships to the feet\n1-2 meatbobs\n2 on harvesters\n\ngreat on blitz. need to solo yolo a bit as you're melee lol"
   }
 ]

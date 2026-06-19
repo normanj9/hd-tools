@@ -612,15 +612,17 @@ function updateBanner() {
 }
 
 async function initFS() {
-  const handle = await idbGet('fh');
-  if (!handle) { updateBanner(); return; }
-  fsHandle = handle;
-  // If permission is still granted (same session), load silently
-  if (await handle.queryPermission({ mode: 'readwrite' }) === 'granted') {
-    await fsResume();
-  } else {
-    updateBanner(); // shows "Load" button for one-click resume
-  }
+  if (!('showOpenFilePicker' in window)) return; // file:// or unsupported browser — localStorage only
+  try {
+    const handle = await idbGet('fh');
+    if (!handle) { updateBanner(); return; }
+    fsHandle = handle;
+    if (await handle.queryPermission({ mode: 'readwrite' }) === 'granted') {
+      await fsResume();
+    } else {
+      updateBanner();
+    }
+  } catch { updateBanner(); }
 }
 
 // ── State ──────────────────────────────────────────────────────────────────
