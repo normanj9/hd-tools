@@ -10571,7 +10571,13 @@ let factionSel = 'bugs';
 const FACTION_HEAVIES = {
   bugs:   ['bile-titan', 'charger', 'charger-behemoth', 'impaler'],
   bots:   ['factory-strider', 'war-strider', 'hulk-bruiser', 'annihilator-tank', 'gunship'],
-  squids: ['harvester'],
+  squids: ['harvester', 'fleshmob', 'overseer', 'warp-ship'],
+};
+
+// Non-fatal parts that should always appear in compact view for specific enemies
+const FORCED_PARTS = {
+  'harvester': new Set(['Shield Generators (3)']),
+  'warp-ship': new Set(['Shield']),
 };
 
 // ── View / faction controls ───────────────────────────────────────────────────
@@ -11095,9 +11101,15 @@ function buildEnemyTable(enemy, cols, topN = null) {
         return bestA - bestB;
       });
     }
-    parts = fatal.slice(0, topN);
+    const topParts = fatal.slice(0, topN);
+    const forced   = FORCED_PARTS[enemy.id];
+    const extra    = forced ? enemy.parts.filter(p => forced.has(p.name) && !topParts.includes(p)) : [];
+    parts = [...extra, ...topParts];
   } else {
-    parts = enemy.parts.filter(p => p.fatal);
+    const fatal = enemy.parts.filter(p => p.fatal);
+    const forced = FORCED_PARTS[enemy.id];
+    const extra  = forced ? enemy.parts.filter(p => forced.has(p.name) && !fatal.includes(p)) : [];
+    parts = [...extra, ...fatal];
   }
   const sorted = sortParts(parts);
 
