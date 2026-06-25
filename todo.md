@@ -1,4 +1,3 @@
-- rescrape for vox changes
 - faction heavies vs infantry. on heavies id like some AT options preselected.
 - analysis function (pre-computed) to output the top x most "efficient" weapons for an enemy?
 - railgun is off. both say default. dont' see the overcharged shot mechanics playing out
