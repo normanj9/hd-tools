@@ -10574,11 +10574,13 @@ const FACTION_HEAVIES = {
   squids: ['harvester', 'fleshmob', 'overseer', 'grounded-warp-ship'],
 };
 
-// Non-fatal parts that should always appear in compact view for specific enemies
+// Parts that should always appear in compact view for specific enemies,
+// either because they're non-fatal (shields) or to bypass the top-N cap
 const FORCED_PARTS = {
   'harvester': new Set(['Shield']),
   'warp-ship': new Set(['Shield']),
-  'grounded-warp-ship': new Set(['Shield'])
+  'grounded-warp-ship': new Set(['Shield']),
+  'vox-engine': new Set(['Main', 'Cannons (2)', 'Hatches (2)'])
 };
 
 // ── View / faction controls ───────────────────────────────────────────────────
