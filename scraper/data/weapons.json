@@ -664,7 +664,7 @@
             "name": "Projectile",
             "damage": 650,
             "durable_damage": 275,
-            "type": "gas",
+            "type": "damage",
             "ap": 5
           }
         ]
@@ -758,6 +758,26 @@
             "durable_damage": 1,
             "type": "gas",
             "ap": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b-flam-80-cremator",
+    "name": "B/FLAM-80 Cremator",
+    "category": "Support",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/B/FLAM-80_Cremator",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Damage",
+            "damage": 3,
+            "durable_damage": 3,
+            "type": "fire",
+            "ap": 4
           }
         ]
       }
@@ -896,6 +916,26 @@
             "durable_damage": 2000,
             "type": "explosion",
             "ap": 7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cqc-9-defoliation-tool",
+    "name": "CQC-9 Defoliation Tool",
+    "category": "Support",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-9_Defoliation_Tool",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Damage",
+            "damage": 450,
+            "durable_damage": 225,
+            "type": "melee",
+            "ap": 3
           }
         ]
       }
@@ -2539,6 +2579,106 @@
     ]
   },
   {
+    "id": "cqc-2-saber",
+    "name": "CQC-2 Saber",
+    "category": "Secondary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-2_Saber",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Damage",
+            "damage": 188,
+            "durable_damage": 98,
+            "type": "melee",
+            "ap": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cqc-5-combat-hatchet",
+    "name": "CQC-5 Combat Hatchet",
+    "category": "Secondary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-5_Combat_Hatchet",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Damage",
+            "damage": 240,
+            "durable_damage": 120,
+            "type": "melee",
+            "ap": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cqc-19-stun-lance",
+    "name": "CQC-19 Stun Lance",
+    "category": "Secondary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-19_Stun_Lance",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Damage",
+            "damage": 165,
+            "durable_damage": 83,
+            "type": "melee",
+            "ap": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cqc-30-stun-baton",
+    "name": "CQC-30 Stun Baton",
+    "category": "Secondary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-30_Stun_Baton",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Damage",
+            "damage": 75,
+            "durable_damage": 38,
+            "type": "melee",
+            "ap": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cqc-42-machete",
+    "name": "CQC-42 Machete",
+    "category": "Secondary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-42_Machete",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Damage",
+            "damage": 300,
+            "durable_damage": 150,
+            "type": "melee",
+            "ap": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "g-6-frag",
     "name": "G-6 Frag",
     "category": "Throwable",
@@ -2867,146 +3007,6 @@
             "damage": 1000,
             "durable_damage": 1000,
             "type": "explosion",
-            "ap": 4
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "cqc-9-defoliation-tool",
-    "name": "CQC-9 Defoliation Tool",
-    "category": "Support",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-9_Defoliation_Tool",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Damage",
-            "damage": 450,
-            "durable_damage": 225,
-            "type": "melee",
-            "ap": 3
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "cqc-2-saber",
-    "name": "CQC-2 Saber",
-    "category": "Secondary",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-2_Saber",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Damage",
-            "damage": 188,
-            "durable_damage": 98,
-            "type": "melee",
-            "ap": 3
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "cqc-5-combat-hatchet",
-    "name": "CQC-5 Combat Hatchet",
-    "category": "Secondary",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-5_Combat_Hatchet",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Damage",
-            "damage": 240,
-            "durable_damage": 120,
-            "type": "melee",
-            "ap": 3
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "cqc-19-stun-lance",
-    "name": "CQC-19 Stun Lance",
-    "category": "Secondary",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-19_Stun_Lance",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Damage",
-            "damage": 165,
-            "durable_damage": 83,
-            "type": "melee",
-            "ap": 3
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "cqc-30-stun-baton",
-    "name": "CQC-30 Stun Baton",
-    "category": "Secondary",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-30_Stun_Baton",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Damage",
-            "damage": 75,
-            "durable_damage": 38,
-            "type": "melee",
-            "ap": 3
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "cqc-42-machete",
-    "name": "CQC-42 Machete",
-    "category": "Secondary",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-42_Machete",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Damage",
-            "damage": 300,
-            "durable_damage": 150,
-            "type": "melee",
-            "ap": 3
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "b-flam-80-cremator",
-    "name": "B/FLAM-80 Cremator",
-    "category": "Support",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/B/FLAM-80_Cremator",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Damage",
-            "damage": 3,
-            "durable_damage": 3,
-            "type": "fire",
             "ap": 4
           }
         ]

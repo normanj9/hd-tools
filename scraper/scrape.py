@@ -24,6 +24,9 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 # ── Config ────────────────────────────────────────────────────────────────────
 
 BASE    = "https://helldivers.wiki.gg"
@@ -830,6 +833,23 @@ def main():
             all_enemies = list(existing_enemies.values())
         else:
             all_enemies = list(new_enemies.values())
+
+        # Merge manual part-level overrides (wiki data the scraper gets wrong,
+        # e.g. a part confirmed fatal via in-game testing but listed non-fatal on the wiki)
+        enemy_overrides_path = data_dir / 'enemies_manual.json'
+        if enemy_overrides_path.exists():
+            enemy_overrides = json.loads(enemy_overrides_path.read_text(encoding='utf-8'))
+            applied = 0
+            for enemy in all_enemies:
+                part_overrides = enemy_overrides.get(enemy['id'])
+                if not part_overrides:
+                    continue
+                for part in enemy['parts']:
+                    if part['name'] in part_overrides:
+                        part.update(part_overrides[part['name']])
+                        applied += 1
+            if applied:
+                print(f"  ✓ Applied {applied} manual enemy override(s)")
 
         _save_json(enemies_path, all_enemies)
         print(f"\n  ✓ {len(new_enemies)}/{len(enemy_list)} scraped → {enemies_path}\n")

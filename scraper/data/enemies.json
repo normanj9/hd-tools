@@ -2856,14 +2856,14 @@
       },
       {
         "name": "Shield",
-        "health": -1,
-        "health_is_main": true,
-        "av": 5,
+        "health": 800,
+        "health_is_main": false,
+        "av": 4,
         "fatal": false,
         "overflow_pct": 0,
         "overflow_cap": false,
-        "durable_pct": 0,
-        "exdr": 100
+        "durable_pct": 70,
+        "exdr": 0
       }
     ]
   },
@@ -3089,7 +3089,7 @@
     "parts": [
       {
         "name": "Main",
-        "health": 11000,
+        "health": 9000,
         "health_is_main": false,
         "av": 5,
         "fatal": true,
@@ -3111,7 +3111,7 @@
       },
       {
         "name": "Torso",
-        "health": 21000,
+        "health": 9000,
         "health_is_main": false,
         "av": 5,
         "fatal": false,
@@ -3122,13 +3122,13 @@
       },
       {
         "name": "Cannons (2)",
-        "health": 8000,
+        "health": 3500,
         "health_is_main": false,
-        "av": 5,
-        "fatal": false,
+        "av": 4,
+        "fatal": true,
         "overflow_pct": 0,
         "overflow_cap": false,
-        "durable_pct": 100,
+        "durable_pct": 70,
         "exdr": 60
       },
       {
@@ -3210,7 +3210,7 @@
       },
       {
         "name": "Undercarriage",
-        "health": 11000,
+        "health": 9000,
         "health_is_main": false,
         "av": 5,
         "fatal": false,

@@ -1327,22 +1327,40 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/LIFT-182_Warp_Pack"
   },
   {
-    "id": "exo-45-patriot-exosuit",
-    "name": "EXO-45 Patriot Exosuit",
+    "id": "m-103-supply-frv",
+    "name": "M-103 Supply FRV",
     "category": "Vehicles",
     "warbond": null,
-    "source": "Robotics Workshop",
-    "cooldown_s": 600,
+    "source": "Hangar",
+    "cooldown_s": 480,
+    "call_in": [
+      "left",
+      "down",
+      "left",
+      "left",
+      "down",
+      "up",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/M-103_Supply_FRV"
+  },
+  {
+    "id": "m-104-incinerator-frv",
+    "name": "M-104 Incinerator FRV",
+    "category": "Vehicles",
+    "warbond": null,
+    "source": "Hangar",
+    "cooldown_s": 480,
     "call_in": [
       "left",
       "down",
       "right",
-      "up",
       "left",
       "down",
-      "down"
+      "up",
+      "up"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/EXO-45_Patriot_Exosuit"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/M-104_Incinerator_FRV"
   },
   {
     "id": "exo-49-emancipator-exosuit",
@@ -1350,7 +1368,7 @@
     "category": "Vehicles",
     "warbond": null,
     "source": "Robotics Workshop",
-    "cooldown_s": 600,
+    "cooldown_s": 420,
     "call_in": [
       "left",
       "down",
@@ -1361,6 +1379,24 @@
       "up"
     ],
     "wiki_url": "https://helldivers.wiki.gg/wiki/EXO-49_Emancipator_Exosuit"
+  },
+  {
+    "id": "exo-45-patriot-exosuit",
+    "name": "EXO-45 Patriot Exosuit",
+    "category": "Vehicles",
+    "warbond": null,
+    "source": "Robotics Workshop",
+    "cooldown_s": 420,
+    "call_in": [
+      "left",
+      "down",
+      "right",
+      "up",
+      "left",
+      "down",
+      "down"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/EXO-45_Patriot_Exosuit"
   },
   {
     "id": "m-102-fast-recon-vehicle",
@@ -1406,7 +1442,7 @@
     "category": "Vehicles",
     "warbond": "Exo Experts",
     "source": "Exo Experts",
-    "cooldown_s": 600,
+    "cooldown_s": 420,
     "call_in": [
       "left",
       "down",
@@ -1424,7 +1460,7 @@
     "category": "Vehicles",
     "warbond": "Exo Experts",
     "source": "Exo Experts",
-    "cooldown_s": 600,
+    "cooldown_s": 420,
     "call_in": [
       "left",
       "down",
