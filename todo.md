@@ -1,3 +1,6 @@
+- rescrape for vox changes
+- faction heavies vs infantry. on heavies id like some AT options preselected.
+- analysis function (pre-computed) to output the top x most "efficient" weapons for an enemy?
 - railgun is off. both say default. dont' see the overcharged shot mechanics playing out
 - some weapons are good as "hits" - some you might want to know seconds. like how long would I fire the laser canon, or the cremator, etc
 - certain stratagems like the mechs?
