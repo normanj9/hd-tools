@@ -320,6 +320,47 @@ tr:hover td { background: var(--surface2); }
   font-family: inherit;
 }
 .btn-delete:hover { background: var(--bots-bg); }
+
+/* ── Faction board panel ────────────────────────────────────────── */
+#factionPanel { margin-bottom: 12px; }
+.fp-wrap { padding: 10px 14px; border-radius: 6px; border-left: 3px solid; display: flex; flex-direction: column; gap: 7px; }
+.fp-wrap.fp-bugs   { border-color: var(--bugs);   background: rgba(76,175,80,.04); }
+.fp-wrap.fp-bots   { border-color: var(--bots);   background: rgba(239,83,80,.04); }
+.fp-wrap.fp-squids { border-color: var(--squids); background: rgba(139,124,246,.04); }
+.fp-row { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; min-height: 24px; }
+.fp-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;
+  color: var(--text-dim); min-width: 90px; cursor: pointer; line-height: 1; user-select: none; }
+.fp-label:hover { color: var(--text); }
+.fp-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.fp-chip { display: inline-flex; align-items: center; gap: 3px; padding: 2px 7px 2px 8px;
+  border-radius: 12px; font-size: 11px; background: var(--surface2); border: 1px solid var(--border); line-height: 1.4; }
+.fp-chip-bugs   { border-color: rgba(76,175,80,.45);  color: var(--bugs); }
+.fp-chip-bots   { border-color: rgba(239,83,80,.45);  color: var(--bots); }
+.fp-chip-squids { border-color: rgba(139,124,246,.45); color: var(--squids); }
+.fp-chip-strat-r { border-color: rgba(239,83,80,.45);  color: #ef5350; }
+.fp-chip-strat-b { border-color: rgba(74,158,255,.45); color: #4a9eff; }
+.fp-chip-strat-g { border-color: rgba(76,175,80,.45);  color: #4caf50; }
+.fp-chip[draggable] { cursor: grab; }
+.fp-chip[draggable]:active { cursor: grabbing; }
+.fp-chip.dragging { opacity: 0.35; }
+.fp-chip.drag-left  { box-shadow: -3px 0 0 var(--accent); }
+.fp-chip.drag-right { box-shadow:  3px 0 0 var(--accent); }
+.fp-chip-remove { background: none; border: none; cursor: pointer; font-size: 12px;
+  color: inherit; opacity: 0.45; padding: 0; line-height: 1; }
+.fp-chip-remove:hover { opacity: 1; }
+.fp-add-item { background: none; border: 1px dashed var(--border); color: var(--text-dim);
+  padding: 1px 8px; border-radius: 12px; font-size: 11px; cursor: pointer; font-family: inherit; line-height: 1.4; }
+.fp-add-item:hover { border-color: var(--accent); color: var(--accent); }
+.fp-input { background: var(--surface2); border: 1px solid var(--accent); color: var(--text);
+  padding: 2px 8px; border-radius: 12px; font-size: 11px; font-family: inherit; outline: none; width: 180px; }
+.fp-search-row { position: relative; padding: 2px 0 2px 96px; }
+.fp-dropdown { position: absolute; top: calc(100% + 2px); left: 96px; min-width: 220px; max-width: 320px;
+  background: var(--surface); border: 1px solid var(--accent); border-radius: 4px;
+  z-index: 100; max-height: 220px; overflow-y: auto; box-shadow: 0 4px 16px rgba(0,0,0,.5); }
+.fp-option { display: block; width: 100%; padding: 5px 11px; background: none; border: none;
+  color: var(--text); text-align: left; cursor: pointer; font-size: 12px; font-family: inherit; }
+.fp-option:hover, .fp-option:focus { background: var(--surface2); color: var(--accent); outline: none; }
+.fp-option-empty { padding: 6px 11px; font-size: 12px; color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -347,6 +388,8 @@ tr:hover td { background: var(--surface2); }
   <div class="spacer"></div>
   <button class="btn-add" onclick="openModal()">+ Add Loadout</button>
 </div>
+
+<div id="factionPanel"></div>
 
 <table>
   <colgroup><col><col><col><col><col></colgroup>
@@ -518,6 +561,13 @@ const SEED = [
 ];
 // SEED_END
 
+// ITEMS_BEGIN
+const WEAPONS_LIST=["AR-2 Coyote","AR-23 Liberator","AR-23A Liberator Carbine","AR-23C Liberator Concussive","AR-23P Liberator Penetrator","AR-32 Pacifier","AR-59 Suppressor","AR-61 Tenderizer","AR/GL-21 One-Two","ARC-12 Blitzer","BR-14 Adjudicator","CB-9 Exploding Crossbow","CQC-19 Stun Lance","CQC-2 Saber","CQC-30 Stun Baton","CQC-42 Machete","CQC-5 Combat Hatchet","DBS-2 Double Freedom","FLAM-66 Torcher","GP-20 Ultimatum","GP-31 Grenade Pistol","JAR-5 Dominator","LAS-13 Trident","LAS-16 Sickle","LAS-17 Double-Edge Sickle","LAS-5 Scythe","LAS-58 Talon","LAS-7 Dagger","M6C/SOCOM Pistol","M7S SMG","M90A Shotgun","MA5C Assault Rifle","MP-98 Knight","P-113 Verdict","P-19 Redeemer","P-2 Peacemaker","P-33 Missile Pistol","P-35 Re-Educator","P-4 Senator","P-69 Veto","P-72 Crisper","P-92 Warrant","PLAS-1 Scorcher","PLAS-101 Purifier","PLAS-15 Loyalist","PLAS-39 Accelerator Rifle","R-2 Amendment","R-2124 Constitution","R-36 Eruptor","R-6 Deadeye","R-63 Diligence","R-63CS Diligence Counter Sniper","R-72 Censor","SG-20 Halt","SG-22 Bushwhacker","SG-225 Breaker","SG-225IE Breaker Incendiary","SG-225SP Breaker Spray&Pray","SG-451 Cookout","SG-8 Punisher","SG-8P Punisher Plasma","SG-8S Slugger","SG-97 Sweeper","SMG-203 Gallant","SMG-32 Reprimand","SMG-37 Defender","SMG-72 Pummeler","SMG/FLAM-34 Stoker","StA-11 SMG","StA-52 Assault Rifle","VG-70 Variable"];
+const GRENADES_LIST=["G-10 Incendiary","G-109 Urchin","G-12 High Explosive","G-123 Thermite","G-13 Incendiary Impact","G-142 Pyrotech","G-16 Impact","G-31 Arc","G-4 Gas","G-48 Giga Grenade","G-50 Seeker","G-6 Frag","G-7 Pineapple","TED-63 Dynamite"];
+const STRATAGEMS_LIST=["A/AC-8 Autocannon Sentry","A/ARC-3 Tesla Tower","A/FLAM-40 Flame Sentry","A/G-16 Gatling Sentry","A/GM-17 Gas Mortar Sentry","A/LAS-98 Laser Sentry","A/M-12 Mortar Sentry","A/M-23 EMS Mortar Sentry","A/MG-43 Machine Gun Sentry","A/MLS-4X Rocket Sentry","AC-8 Autocannon","APW-1 Anti-Materiel Rifle","ARC-3 Arc Thrower","AX/AR-23 Guard Dog","AX/ARC-3 K-9","AX/FLAM-75 Hot Dog","AX/LAS-5 Rover","AX/TX-13 Dog Breath","B-1 Supply Pack","B-100 Portable Hellbomb","B/FLAM-80 Cremator","B/MD C4 Pack","CQC-1 One True Flag","CQC-20 Breaching Hammer","CQC-9 Defoliation Tool","E/AT-12 Anti-Tank Emplacement","E/GL-21 Grenadier Battlement","E/MG-101 HMG Emplacement","EAT-17 Expendable Anti-Tank","EAT-411 Leveller","EAT-700 Expendable Napalm","EXO-45 Patriot Exosuit","EXO-49 Emancipator Exosuit","EXO-51 Lumberer Exosuit","EXO-55 Breakthrough Exosuit","Eagle 110mm Rocket Pods","Eagle 500kg Bomb","Eagle Airstrike","Eagle Cluster Bomb","Eagle Napalm Airstrike","Eagle Smoke Strike","Eagle Strafing Run","FAF-14 Spear","FLAM-40 Flamethrower","FX-12 Shield Generator Relay","GL-21 Grenade Launcher","GL-28 Belt-Fed Grenade Launcher","GL-52 De-Escalator","GR-8 Recoilless Rifle","LAS-98 Laser Cannon","LAS-99 Quasar Cannon","LIFT-182 Warp Pack","LIFT-850 Jump Pack","LIFT-860 Hover Pack","M-1000 Maxigun","M-102 Fast Recon Vehicle","M-103 Supply FRV","M-104 Incinerator FRV","M-105 Stalwart","MD-17 Anti-Tank Mines","MD-6 Anti-Personnel Minefield","MD-8 Gas Mines","MD-I4 Incendiary Mines","MG-206 Heavy Machine Gun","MG-43 Machine Gun","MGX-42 Bullet Storm","MLS-4X Commando","MS-11 Solo Silo","Orbital 120mm HE Barrage","Orbital 380mm HE Barrage","Orbital Airburst Strike","Orbital EMS Strike","Orbital Gas Strike","Orbital Gatling Barrage","Orbital Laser","Orbital Napalm Barrage","Orbital Precision Strike","Orbital Railcannon Strike","Orbital Smoke Strike","Orbital Walking Barrage","PLAS-45 Epoch","RL-77 Airburst Rocket Launcher","RS-422 Railgun","S-11 Speargun","SH-20 Ballistic Shield Backpack","SH-32 Shield Generator Pack","SH-51 Directional Shield","StA-X3 W.A.S.P. Launcher","TD-220 Bastion MK XVI","TX-41 Sterilizer"];
+const STRATAGEM_CATS={"Airburst Rocket Launcher":"b","Anti-Materiel Rifle":"b","Anti-Personnel Minefield":"g","Anti-Tank Emplacement":"g","Anti-Tank Mines":"g","Arc Thrower":"b","Autocannon":"b","Autocannon Sentry":"g","B/MD C4 Pack":"b","Ballistic Shield Backpack":"b","Bastion MK XVI":"b","Belt-Fed Grenade Launcher":"b","Breaching Hammer":"b","Breakthrough Exosuit":"b","Bullet Storm":"b","Commando":"b","Cremator":"b","De-Escalator":"b","Defoliation Tool":"b","Directional Shield":"b","Dog Breath":"b","EMS Mortar Sentry":"g","Eagle 110mm Rocket Pods":"r","Eagle 500kg Bomb":"r","Eagle Airstrike":"r","Eagle Cluster Bomb":"r","Eagle Napalm Airstrike":"r","Eagle Smoke Strike":"r","Eagle Strafing Run":"r","Emancipator Exosuit":"b","Epoch":"b","Expendable Anti-Tank":"b","Expendable Napalm":"b","Fast Recon Vehicle":"b","Flame Sentry":"g","Flamethrower":"b","Gas Mines":"g","Gas Mortar Sentry":"g","Gatling Sentry":"g","Grenade Launcher":"b","Grenadier Battlement":"g","Guard Dog":"b","HMG Emplacement":"g","Heavy Machine Gun":"b","Hot Dog":"b","Hover Pack":"b","Incendiary Mines":"g","Incinerator FRV":"b","Jump Pack":"b","K-9":"b","Laser Cannon":"b","Laser Sentry":"g","Leveller":"b","Lumberer Exosuit":"b","Machine Gun":"b","Machine Gun Sentry":"g","Maxigun":"b","Mortar Sentry":"g","One True Flag":"b","Orbital 120mm HE Barrage":"r","Orbital 380mm HE Barrage":"r","Orbital Airburst Strike":"r","Orbital EMS Strike":"r","Orbital Gas Strike":"r","Orbital Gatling Barrage":"r","Orbital Laser":"r","Orbital Napalm Barrage":"r","Orbital Precision Strike":"r","Orbital Railcannon Strike":"r","Orbital Smoke Strike":"r","Orbital Walking Barrage":"r","Patriot Exosuit":"b","Portable Hellbomb":"b","Quasar Cannon":"b","Railgun":"b","Recoilless Rifle":"b","Rocket Sentry":"g","Rover":"b","Shield Generator Pack":"b","Shield Generator Relay":"g","Solo Silo":"b","Spear":"b","Speargun":"b","Stalwart":"b","Sterilizer":"b","Supply FRV":"b","Supply Pack":"b","Tesla Tower":"g","W.A.S.P. Launcher":"b","Warp Pack":"b"};
+// ITEMS_END
+
 // ── Storage ────────────────────────────────────────────────────────────────
 const LS_KEY = 'hd2_v1';
 
@@ -678,6 +728,16 @@ function factionBadges(factions) {
 function x(str) {
   return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
+// Strip leading code designator (e.g. "G-31 Arc" → "Arc", "Eagle Airstrike" unchanged)
+function shortName(s) { return s.replace(/^\S*\d\S* /, ''); }
+const GENERIC_WEAPON_WORDS = new Set(['Pistol','Shotgun']);
+function displayName(name, source) {
+  const short = shortName(name);
+  if (source.some(s => s !== name && shortName(s) === short)) return name; // duplicate → keep full
+  if (GENERIC_WEAPON_WORDS.has(short)) return name;                        // bare type word → keep full
+  return short;
+}
+function stratColor(name) { const c = STRATAGEM_CATS[name]; return `fp-chip-strat-${c || 'b'}`; }
 
 // ── Sort & Filter ──────────────────────────────────────────────────────────
 function setSort(key) {
@@ -689,7 +749,188 @@ function setFaction(btn) {
   faction = btn.dataset.faction;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  renderPanel();
   render();
+}
+
+// ── Faction boards ─────────────────────────────────────────────────────────────
+const BOARDS_KEY = LS_KEY + '_boards';
+const BOARD_ROWS = [
+  { key: 'weapons',    label: 'Weapons',    source: () => WEAPONS_LIST    },
+  { key: 'grenades',   label: 'Grenades',   source: () => GRENADES_LIST   },
+  { key: 'stratagems', label: 'Stratagems', source: () => STRATAGEMS_LIST },
+];
+
+function loadBoards() { try { return JSON.parse(localStorage.getItem(BOARDS_KEY) || '{}'); } catch { return {}; } }
+function saveBoards() { localStorage.setItem(BOARDS_KEY, JSON.stringify(boards)); }
+
+let boards = loadBoards();
+let dragState = null;
+
+function clearDragIndicators() {
+  document.querySelectorAll('.fp-chip.drag-left,.fp-chip.drag-right')
+    .forEach(c => c.classList.remove('drag-left','drag-right'));
+}
+function attachChipDrag(chip) {
+  chip.draggable = true;
+  chip.addEventListener('dragstart', e => {
+    dragState = { key: chip.dataset.key, fromIdx: parseInt(chip.dataset.idx) };
+    chip.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+  });
+  chip.addEventListener('dragend', () => {
+    chip.classList.remove('dragging');
+    clearDragIndicators();
+    dragState = null;
+  });
+  chip.addEventListener('dragover', e => {
+    if (!dragState || dragState.key !== chip.dataset.key) return;
+    e.preventDefault();
+    clearDragIndicators();
+    const rect = chip.getBoundingClientRect();
+    chip.classList.add(e.clientX > rect.left + rect.width / 2 ? 'drag-right' : 'drag-left');
+  });
+  chip.addEventListener('dragleave', e => {
+    if (!chip.contains(e.relatedTarget)) chip.classList.remove('drag-left','drag-right');
+  });
+  chip.addEventListener('drop', e => {
+    e.preventDefault();
+    clearDragIndicators();
+    if (!dragState || chip.dataset.key !== dragState.key) return;
+    const fromIdx = dragState.fromIdx;
+    const toIdx = parseInt(chip.dataset.idx);
+    const rect = chip.getBoundingClientRect();
+    let insertIdx = e.clientX > rect.left + rect.width / 2 ? toIdx + 1 : toIdx;
+    const arr = boards[faction][dragState.key];
+    const [item] = arr.splice(fromIdx, 1);
+    if (insertIdx > fromIdx) insertIdx--;
+    arr.splice(insertIdx, 0, item);
+    saveBoards();
+    renderPanel();
+  });
+}
+// Migrate old array-based data
+for (const f of ['bugs','bots','squids']) { if (Array.isArray(boards[f])) boards[f] = {}; }
+
+function renderPanel() {
+  const panel = document.getElementById('factionPanel');
+  if (faction === 'all') { panel.innerHTML = ''; return; }
+  const fc = faction;
+  const fData = boards[fc] || {};
+  let html = `<div class="fp-wrap fp-${fc}">`;
+  BOARD_ROWS.forEach(row => {
+    const items = fData[row.key] || [];
+    html += `<div class="fp-row" id="fp-row-${row.key}">
+      <span class="fp-label">${row.label}</span>
+      <div class="fp-chips" id="fp-chips-${row.key}">
+        ${items.map((item, idx) =>
+          `<span class="fp-chip ${row.key === 'stratagems' ? stratColor(item) : 'fp-chip-' + fc}" data-key="${row.key}" data-idx="${idx}">${x(item)}<button class="fp-chip-remove" data-key="${row.key}" data-idx="${idx}">×</button></span>`
+        ).join('')}
+      </div>
+      <button class="fp-add-item" data-key="${row.key}">+ item</button>
+    </div>`;
+  });
+  html += `</div>`;
+  panel.innerHTML = html;
+
+  panel.querySelectorAll('.fp-chip-remove').forEach(btn =>
+    btn.addEventListener('click', () => removeBoardChip(btn.dataset.key, parseInt(btn.dataset.idx))));
+  panel.querySelectorAll('.fp-add-item').forEach(btn =>
+    btn.addEventListener('click', () => startAddItem(btn.dataset.key)));
+  panel.querySelectorAll('.fp-chip[data-key]').forEach(chip => attachChipDrag(chip));
+}
+
+function startAddItem(key) {
+  // Close any already-open search
+  document.getElementById('fp-search-active')?.remove();
+
+  const rowEl = document.getElementById(`fp-row-${key}`);
+  if (!rowEl) return;
+  const source = BOARD_ROWS.find(r => r.key === key)?.source() || [];
+  const existing = new Set((boards[faction]?.[key] || []));
+
+  const searchDiv = document.createElement('div');
+  searchDiv.id = 'fp-search-active';
+  searchDiv.className = 'fp-search-row';
+
+  const input = document.createElement('input');
+  input.type = 'text'; input.className = 'fp-input'; input.placeholder = `Search ${key}…`;
+
+  const dropdown = document.createElement('div');
+  dropdown.className = 'fp-dropdown';
+
+  searchDiv.appendChild(input);
+  searchDiv.appendChild(dropdown);
+  rowEl.after(searchDiv);
+
+  function refreshDropdown() {
+    const q = input.value.toLowerCase();
+    const results = source.filter(s => !existing.has(s) && (!q || s.toLowerCase().includes(q)));
+    dropdown.innerHTML = results.length
+      ? results.map(s => `<button class="fp-option">${x(displayName(s, source))}</button>`).join('')
+      : `<div class="fp-option-empty">No matches</div>`;
+    dropdown.querySelectorAll('.fp-option').forEach(btn =>
+      btn.addEventListener('mousedown', e => { e.preventDefault(); selectItem(btn.textContent); }));
+  }
+
+  function selectItem(name) {
+    if (!boards[faction]) boards[faction] = {};
+    if (!boards[faction][key]) boards[faction][key] = [];
+    if (!boards[faction][key].includes(name)) {
+      boards[faction][key].push(name);
+      saveBoards();
+      existing.add(name);
+      // Append chip inline without full re-render
+      const chipsDiv = document.getElementById(`fp-chips-${key}`);
+      if (chipsDiv) {
+        const idx = boards[faction][key].length - 1;
+        const chip = document.createElement('span');
+        chip.className = `fp-chip ${key === 'stratagems' ? stratColor(name) : 'fp-chip-' + faction}`;
+        chip.dataset.key = key; chip.dataset.idx = String(idx);
+        const rm = document.createElement('button');
+        rm.className = 'fp-chip-remove'; rm.textContent = '×';
+        rm.dataset.key = key; rm.dataset.idx = String(idx);
+        rm.addEventListener('click', () => removeBoardChip(key, parseInt(rm.dataset.idx)));
+        chip.append(document.createTextNode(name), rm);
+        chipsDiv.appendChild(chip);
+        attachChipDrag(chip);
+      }
+    }
+    input.value = ''; refreshDropdown(); input.focus();
+  }
+
+  refreshDropdown();
+  input.addEventListener('input', refreshDropdown);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { searchDiv.remove(); }
+    else if (e.key === 'Enter') { const first = dropdown.querySelector('.fp-option'); if (first) first.dispatchEvent(new MouseEvent('mousedown')); }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); dropdown.querySelector('.fp-option')?.focus(); }
+  });
+  dropdown.addEventListener('keydown', e => {
+    const opts = [...dropdown.querySelectorAll('.fp-option')];
+    const i = opts.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') { e.preventDefault(); opts[i+1]?.focus(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); i > 0 ? opts[i-1].focus() : input.focus(); }
+    else if (e.key === 'Enter' && i >= 0) { e.preventDefault(); opts[i].dispatchEvent(new MouseEvent('mousedown')); input.focus(); }
+    else if (e.key === 'Escape') { searchDiv.remove(); }
+  });
+
+  // Close on outside click
+  setTimeout(() => {
+    function outsideClick(e) { if (!searchDiv.contains(e.target)) { searchDiv.remove(); document.removeEventListener('mousedown', outsideClick); } }
+    document.addEventListener('mousedown', outsideClick);
+  }, 0);
+
+  input.focus();
+}
+
+function removeBoardChip(key, idx) {
+  document.getElementById('fp-search-active')?.remove();
+  const data = boards[faction]?.[key];
+  if (!data) return;
+  data.splice(idx, 1);
+  saveBoards();
+  renderPanel();
 }
 
 // ── Modal ──────────────────────────────────────────────────────────────────
@@ -775,6 +1016,7 @@ document.addEventListener('keydown', e => {
 });
 
 render();
+renderPanel();
 initFS();  // async — loads from file if handle stored, re-renders if data differs
 </script>
 </body>
