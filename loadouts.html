@@ -598,11 +598,11 @@ function _idb(mode, fn) {
 const idbGet = k    => _idb('readonly',  s => new Promise(r => { const q = s.get(k); q.onsuccess = () => r(q.result ?? null); q.onerror = () => r(null); }));
 const idbSet = (k,v)=> _idb('readwrite', s => new Promise(r => { s.put(v,k); s.transaction.oncomplete = r; }));
 
-async function fsWrite(data) {
+async function fsWrite(rowsData) {
   if (!fsHandle || !fsReady) return;
   try {
     const w = await fsHandle.createWritable();
-    await w.write(JSON.stringify(data, null, 2));
+    await w.write(JSON.stringify({ rows: rowsData, boards }, null, 2));
     await w.close();
   } catch { fsReady = false; updateBanner(); }
 }
@@ -617,8 +617,12 @@ async function _activateHandle(handle) {
     const txt = await (await handle.getFile()).text();
     if (txt.trim()) fileData = JSON.parse(txt);
   } catch {}
-  if (Array.isArray(fileData)) { rows = fileData; render(); }
-  else { await fsWrite(rows); }
+  if (fileData !== null) {
+    const fileRows   = Array.isArray(fileData) ? fileData : fileData.rows;
+    const fileBoards = !Array.isArray(fileData) ? fileData.boards : null;
+    if (Array.isArray(fileRows))  { rows   = fileRows;   render(); }
+    if (fileBoards)               { boards = fileBoards; renderPanel(); }
+  } else { await fsWrite(rows); }
   updateBanner();
 }
 
@@ -642,7 +646,13 @@ async function fsResume() {
     if (await fsHandle.requestPermission({ mode: 'readwrite' }) !== 'granted') return;
     fsReady = true;
     const txt = await (await fsHandle.getFile()).text();
-    if (txt.trim()) { const d = JSON.parse(txt); if (Array.isArray(d)) { rows = d; render(); } }
+    if (txt.trim()) {
+      const d = JSON.parse(txt);
+      const fileRows   = Array.isArray(d) ? d : d.rows;
+      const fileBoards = !Array.isArray(d) ? d.boards : null;
+      if (Array.isArray(fileRows))  { rows   = fileRows;   render(); }
+      if (fileBoards)               { boards = fileBoards; renderPanel(); }
+    }
     updateBanner();
   } catch {}
 }
@@ -762,7 +772,7 @@ const BOARD_ROWS = [
 ];
 
 function loadBoards() { try { return JSON.parse(localStorage.getItem(BOARDS_KEY) || '{}'); } catch { return {}; } }
-function saveBoards() { localStorage.setItem(BOARDS_KEY, JSON.stringify(boards)); }
+function saveBoards() { localStorage.setItem(BOARDS_KEY, JSON.stringify(boards)); fsWrite(rows); }
 
 let boards = loadBoards();
 let dragState = null;
