@@ -327,11 +327,12 @@ tr:hover td { background: var(--surface2); }
 .fp-wrap.fp-bugs   { border-color: var(--bugs);   background: rgba(76,175,80,.04); }
 .fp-wrap.fp-bots   { border-color: var(--bots);   background: rgba(239,83,80,.04); }
 .fp-wrap.fp-squids { border-color: var(--squids); background: rgba(139,124,246,.04); }
-.fp-row { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; min-height: 24px; }
+.fp-row { display: flex; align-items: flex-start; flex-wrap: nowrap; gap: 5px; min-height: 24px; }
 .fp-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;
-  color: var(--text-dim); min-width: 90px; cursor: pointer; line-height: 1; user-select: none; }
+  color: var(--text-dim); min-width: 90px; cursor: pointer; line-height: 1; user-select: none;
+  padding-top: 3px; flex-shrink: 0; }
 .fp-label:hover { color: var(--text); }
-.fp-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.fp-chips { display: flex; flex-wrap: wrap; gap: 4px; flex: 1; align-items: center; }
 .fp-chip { display: inline-flex; align-items: center; gap: 3px; padding: 2px 7px 2px 8px;
   border-radius: 12px; font-size: 11px; background: var(--surface2); border: 1px solid var(--border); line-height: 1.4; }
 .fp-chip-bugs   { border-color: rgba(76,175,80,.45);  color: var(--bugs); }
@@ -836,8 +837,8 @@ function renderPanel() {
         ${items.map((item, idx) =>
           `<span class="fp-chip ${row.key === 'stratagems' ? stratColor(item) : 'fp-chip-' + fc}" data-key="${row.key}" data-idx="${idx}">${x(item)}<button class="fp-chip-remove" data-key="${row.key}" data-idx="${idx}">×</button></span>`
         ).join('')}
+        <button class="fp-add-item" data-key="${row.key}">+ item</button>
       </div>
-      <button class="fp-add-item" data-key="${row.key}">+ item</button>
     </div>`;
   });
   html += `</div>`;
@@ -902,7 +903,8 @@ function startAddItem(key) {
         rm.dataset.key = key; rm.dataset.idx = String(idx);
         rm.addEventListener('click', () => removeBoardChip(key, parseInt(rm.dataset.idx)));
         chip.append(document.createTextNode(name), rm);
-        chipsDiv.appendChild(chip);
+        const addBtn = chipsDiv.querySelector('.fp-add-item');
+        chipsDiv.insertBefore(chip, addBtn ?? null);
         attachChipDrag(chip);
       }
     }
