@@ -74,16 +74,21 @@ optgroup { color: var(--dim); font-style: normal; }
 /* ── Results table ─────────────────────────────────────────────────── */
 #results-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; min-width: 500px; }
-th { text-align: left; padding: 7px 10px; background: var(--surface); border-bottom: 2px solid var(--border); font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); white-space: nowrap; user-select: none; }
+table.compact { min-width: 0; table-layout: fixed; }
+th { text-align: left; padding: 4px 8px; background: var(--surface); border-bottom: 2px solid var(--border); font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); white-space: nowrap; user-select: none; }
 th.th-weapon { text-align: center; max-width: 120px; overflow: hidden; text-overflow: ellipsis; }
 th.th-weapon span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 110px; }
-td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+table.compact th, table.compact td { padding-left: 4px; padding-right: 4px; }
+table.compact th.th-weapon { max-width: none; }
+table.compact th.th-weapon span { max-width: none; font-size: 9px; }
+td { padding: 3px 8px; border-bottom: 1px solid var(--border); vertical-align: middle; }
 tr:hover td { background: var(--surface2); }
 
 /* Part info cells */
 .cell-name { font-weight: 600; }
 .fatal-star { color: var(--accent); margin-right: 4px; }
 .tag { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+table.compact .tag { white-space: normal; text-align: center; line-height: 1.15; padding: 1px 3px; }
 .tag-av0 { background: #1a2a1a; color: #66bb6a; }
 .tag-av1 { background: #1a2a1a; color: #66bb6a; }
 .tag-av2 { background: #1f2a12; color: #aed581; }
@@ -94,9 +99,9 @@ tr:hover td { background: var(--surface2); }
 .cell-num { color: var(--dim); text-align: right; }
 
 /* STK cells */
-.stk-cell { text-align: center; min-width: 70px; position: relative; cursor: default; }
-.stk-val { font-weight: 700; font-size: 14px; }
-.stk-dmg { font-size: 10px; color: var(--dim); display: block; }
+.stk-cell { text-align: center; min-width: 70px; position: relative; cursor: default; line-height: 1.25; }
+.stk-val { font-weight: 700; font-size: 13px; }
+.stk-dmg { font-size: 9px; color: var(--dim); display: block; }
 .stk-inf { color: var(--bots); }
 /* Color scale */
 .stk-1  { color: #00e676; }
@@ -184,8 +189,12 @@ tr:hover td { background: var(--surface2); }
 .faction-btn.active.squids { background: var(--squids); color: #fff; border-color: var(--squids); font-weight: 700; }
 
 /* ── Faction view sections ──────────────────────────────────────── */
-.faction-section { margin-bottom: 28px; }
-.faction-section-hdr { font-size: 13px; font-weight: 700; padding: 5px 0 7px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid; }
+.faction-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4px 14px; align-items: start; }
+.faction-stack .faction-section { margin-bottom: 20px; }
+.faction-section { overflow-x: auto; }
+.faction-section-hdr { font-size: 12px; font-weight: 700; padding: 2px 0 3px; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 2px solid; }
+.tier-hdr { grid-column: 1 / -1; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--border); }
+.tier-hdr:first-child { margin-top: 0; padding-top: 0; border-top: none; }
 .faction-section-hdr.bugs   { color: var(--bugs);   border-color: var(--bugs); }
 .faction-section-hdr.bots   { color: var(--bots);   border-color: var(--bots); }
 .faction-section-hdr.squids { color: var(--squids); border-color: var(--squids); }
@@ -10674,6 +10683,27 @@ const FACTION_HEAVIES = {
   squids: ['harvester', 'fleshmob', 'overseer', 'grounded-warp-ship'],
 };
 
+// ── Faction lights ──────────────────────────────────────────────────────────
+// Curated, deduped against near-identical body/armor twins (same HP+AV+fatal-part
+// shape as another entry here or in FACTION_HEAVIES) and against sub-faction
+// reskins (Jet Brigade, Incineration Corps, Predator/Spore Burst/Rupture strains)
+// whose stats mirror their base-roster counterpart.
+const FACTION_LIGHTS = {
+  bugs: [
+    'scavenger', 'hunter', 'bile-spitter', 'warrior', 'alpha-warrior',
+    'brood-commander', 'alpha-commander', 'stalker', 'hive-guard',
+    'shrieker', 'bile-spewer',
+  ],
+  bots: [
+    'trooper', 'devastator', 'heavy-devastator', 'scout-strider',
+    'reinforced-scout-strider', 'berserker', 'radical',
+  ],
+  squids: [
+    'voteless', 'watcher', 'elevated-overseer', 'stingray', 'obtruder',
+    'gatekeeper', 'veracitor',
+  ],
+};
+
 // Parts that should always appear in compact view for specific enemies,
 // either because they're non-fatal (shields) or to bypass the top-N cap
 const FORCED_PARTS = {
@@ -11181,7 +11211,7 @@ function renderExtraTable(eid) {
 
 // ── Main render ───────────────────────────────────────────────────────────────
 
-function buildEnemyTable(enemy, cols, topN = null) {
+function buildEnemyTable(enemy, cols, topN = null, compact = false) {
   const mainPart = enemy.parts.find(p => p.name === 'Main') || enemy.parts[0];
   const mainHP   = mainPart ? mainPart.health : 0;
   const pinSet   = pinnedParts[enemy.id] || new Set();
@@ -11217,21 +11247,19 @@ function buildEnemyTable(enemy, cols, topN = null) {
   const sorted = sortParts(parts);
 
   let html = `
-    <table>
+    <table class="${compact ? 'compact' : ''}">
       <colgroup>
-        <col style="min-width:140px">
-        <col style="width:55px">
-        <col style="width:55px">
-        <col style="width:48px">
-        <col style="width:48px">
-        ${cols.map(() => '<col style="min-width:80px">').join('')}
+        <col style="${compact ? 'width:88px' : 'min-width:140px'}">
+        <col style="width:${compact ? 34 : 55}px">
+        <col style="width:${compact ? 40 : 55}px">
+        ${compact ? '' : '<col style="width:48px"><col style="width:48px">'}
+        ${cols.map(() => compact ? '<col style="width:58px">' : '<col style="min-width:80px">').join('')}
       </colgroup>
       <thead><tr>
         <th>Body Part</th>
         <th class="cell-num">HP</th>
         <th>AV</th>
-        <th class="cell-num" title="Durable %">Dur%</th>
-        <th class="cell-num" title="Explosion Damage Resistance">ExDR</th>
+        ${compact ? '' : '<th class="cell-num" title="Durable %">Dur%</th><th class="cell-num" title="Explosion Damage Resistance">ExDR</th>'}
         ${cols.map(c => `<th class="th-weapon"><span title="${c.label}">${c.label.replace('\n', '<br>')}</span></th>`).join('')}
       </tr></thead>
       <tbody>
@@ -11249,8 +11277,7 @@ function buildEnemyTable(enemy, cols, topN = null) {
       </td>
       <td class="cell-num">${hp > 0 ? hp.toLocaleString() : '?'}</td>
       <td><span class="tag tag-av${part.av}">${AP_NAMES[part.av] || 'AV'+part.av}</span></td>
-      <td class="cell-num">${part.durable_pct}%</td>
-      <td class="cell-num">${part.exdr}%</td>`;
+      ${compact ? '' : `<td class="cell-num">${part.durable_pct}%</td><td class="cell-num">${part.exdr}%</td>`}`;
 
     const hitData = cols.map(c => calcHit(c.weapon, c.slot.modeIdx, part));
 
@@ -11291,16 +11318,22 @@ function render() {
       return;
     }
     const cols    = resolveCols(activeSlots);
-    const ids     = FACTION_HEAVIES[factionSel] || [];
-    const enemies = ids.map(id => ENEMIES.find(e => e.id === id)).filter(Boolean);
-    if (!enemies.length) { wrap.innerHTML = '<div class="no-selection">No data for this faction.</div>'; return; }
-
-    wrap.innerHTML = enemies.map(enemy =>
-      `<div class="faction-section">
-        <div class="faction-section-hdr ${enemy.faction}">${esc(enemy.name)}</div>
-        ${buildEnemyTable(enemy, cols, showDetail ? null : 2)}
-      </div>`
-    ).join('');
+    const compact = !showDetail;
+    const tier = (label, ids) => {
+      const enemies = ids.map(id => ENEMIES.find(e => e.id === id)).filter(Boolean);
+      if (!enemies.length) return '';
+      return `<div class="tier-hdr">${label}</div>` + enemies.map(enemy =>
+        `<div class="faction-section">
+          <div class="faction-section-hdr ${enemy.faction}">${esc(enemy.name)}</div>
+          ${buildEnemyTable(enemy, cols, compact ? 2 : null, compact)}
+        </div>`
+      ).join('');
+    };
+    const gridHtml = tier('Heavies', FACTION_HEAVIES[factionSel] || [])
+                    + tier('Lights',  FACTION_LIGHTS[factionSel]  || []);
+    wrap.innerHTML = gridHtml
+      ? `<div class="${compact ? 'faction-grid' : 'faction-stack'}">${gridHtml}</div>`
+      : '<div class="no-selection">No data for this faction.</div>';
     extraEnemies.forEach(e => renderExtraTable(e.id));
     return;
   }
