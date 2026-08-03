@@ -48,6 +48,9 @@ optgroup { color: var(--dim); font-style: normal; }
 .btn-add { padding: 7px 14px; background: var(--accent); color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: 700; font-size: 12px; font-family: inherit; align-self: flex-end; white-space: nowrap; }
 .btn-add:hover { background: #ffd000; }
 .slots-wrap { display: flex; flex-direction: column; gap: 8px; }
+.charge-ctrl { display: none; align-items: center; gap: 6px; font-size: 10px; color: var(--dim); }
+.charge-ctrl input[type=range] { width: 90px; accent-color: var(--accent); cursor: pointer; }
+.charge-ctrl .charge-label { white-space: nowrap; font-variant-numeric: tabular-nums; min-width: 92px; }
 .divider { width: 1px; height: 40px; background: var(--border); align-self: flex-end; margin: 0 4px; }
 
 /* ── Sort controls ─────────────────────────────────────────────────── */
@@ -256,6 +259,7 @@ table.compact .tag { white-space: normal; text-align: center; line-height: 1.15;
   <button class="sort-btn active" id="sort-fatal" onclick="setSort('fatal')">Fatal first</button>
   <button class="sort-btn" id="sort-av" onclick="setSort('av')">AV ↑</button>
   <button class="sort-btn" id="sort-hp" onclick="setSort('hp')">HP ↑</button>
+  <button class="sort-btn" id="unit-toggle" onclick="toggleUnit()" title="Show sustained-fire time instead of hit count, where the weapon's fire rate is known">⏱ Seconds</button>
   <button class="toggle-detail" onclick="toggleDetail()">All parts ▾</button>
 </div>
 
@@ -298,11 +302,13 @@ const WEAPONS = [
             "damage": 450,
             "durable_damage": 225,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 400.0
   },
   {
     "id": "ac-8-autocannon",
@@ -318,14 +324,16 @@ const WEAPONS = [
             "damage": 325,
             "durable_damage": 260,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 150,
             "durable_damage": 150,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -337,14 +345,16 @@ const WEAPONS = [
             "damage": 150,
             "durable_damage": 150,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 190,
             "durable_damage": 190,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -356,11 +366,13 @@ const WEAPONS = [
             "damage": 110,
             "durable_damage": 35,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 190.0
   },
   {
     "id": "gr-8-recoilless-rifle",
@@ -376,14 +388,16 @@ const WEAPONS = [
             "damage": 3200,
             "durable_damage": 3200,
             "type": "ballistic",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 150,
             "durable_damage": 150,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -395,18 +409,21 @@ const WEAPONS = [
             "damage": 750,
             "durable_damage": 750,
             "type": "ballistic",
-            "ap": 5
+            "ap": 5,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 800,
             "durable_damage": 800,
             "type": "explosion",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "las-99-quasar-cannon",
@@ -422,18 +439,21 @@ const WEAPONS = [
             "damage": 2000,
             "durable_damage": 2000,
             "type": "ballistic",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 150,
             "durable_damage": 150,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 10.0
   },
   {
     "id": "rs-422-railgun",
@@ -449,23 +469,19 @@ const WEAPONS = [
             "damage": 600,
             "durable_damage": 225,
             "type": "ballistic",
-            "ap": 5
+            "ap": 5,
+            "pellets": 1
           }
-        ]
-      },
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Explosion",
-            "damage": 300,
-            "durable_damage": 300,
-            "type": "explosion",
-            "ap": 3
-          }
-        ]
+        ],
+        "charge": {
+          "min_s": 0.45,
+          "max_s": 3.0,
+          "min_mult": 1.0,
+          "max_mult": 2.5
+        }
       }
-    ]
+    ],
+    "fire_rate_rpm": 60.0
   },
   {
     "id": "mg-206-heavy-machine-gun",
@@ -481,11 +497,13 @@ const WEAPONS = [
             "damage": 150,
             "durable_damage": 35,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "mg-43-machine-gun",
@@ -501,11 +519,13 @@ const WEAPONS = [
             "damage": 90,
             "durable_damage": 23,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 760.0
   },
   {
     "id": "m-105-stalwart",
@@ -521,11 +541,13 @@ const WEAPONS = [
             "damage": 90,
             "durable_damage": 22,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 850.0
   },
   {
     "id": "mls-4x-commando",
@@ -541,18 +563,21 @@ const WEAPONS = [
             "damage": 1100,
             "durable_damage": 1100,
             "type": "ballistic",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 150,
             "durable_damage": 150,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 240.0
   },
   {
     "id": "eat-17-expendable-anti-tank",
@@ -568,18 +593,21 @@ const WEAPONS = [
             "damage": 2000,
             "durable_damage": 2000,
             "type": "ballistic",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 150,
             "durable_damage": 150,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "gl-21-grenade-launcher",
@@ -595,18 +623,21 @@ const WEAPONS = [
             "damage": 0,
             "durable_damage": 0,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 400,
             "durable_damage": 400,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 160.0
   },
   {
     "id": "gl-28-belt-fed-grenade-launcher",
@@ -622,18 +653,21 @@ const WEAPONS = [
             "damage": 0,
             "durable_damage": 0,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 150,
             "durable_damage": 150,
             "type": "explosion",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 320.0
   },
   {
     "id": "gl-52-de-escalator",
@@ -649,14 +683,16 @@ const WEAPONS = [
             "damage": 0,
             "durable_damage": 0,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 0,
             "durable_damage": 0,
             "type": "arc",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           }
         ]
       },
@@ -668,11 +704,13 @@ const WEAPONS = [
             "damage": 100,
             "durable_damage": 70,
             "type": "arc",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 200.0
   },
   {
     "id": "rl-77-airburst-rocket-launcher",
@@ -688,14 +726,16 @@ const WEAPONS = [
             "damage": 350,
             "durable_damage": 350,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 150,
             "durable_damage": 150,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -707,14 +747,16 @@ const WEAPONS = [
             "damage": 150,
             "durable_damage": 150,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 500,
             "durable_damage": 500,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -726,14 +768,16 @@ const WEAPONS = [
             "damage": 350,
             "durable_damage": 350,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 150,
             "durable_damage": 150,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -745,18 +789,21 @@ const WEAPONS = [
             "damage": 150,
             "durable_damage": 150,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 500,
             "durable_damage": 500,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "faf-14-spear",
@@ -772,18 +819,21 @@ const WEAPONS = [
             "damage": 4000,
             "durable_damage": 4000,
             "type": "ballistic",
-            "ap": 7
+            "ap": 7,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 200,
             "durable_damage": 200,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 240.0
   },
   {
     "id": "sta-x3-w-a-s-p-launcher",
@@ -799,14 +849,16 @@ const WEAPONS = [
             "damage": 0,
             "durable_damage": 0,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 600,
             "durable_damage": 600,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -818,18 +870,21 @@ const WEAPONS = [
             "damage": 200,
             "durable_damage": 200,
             "type": "ballistic",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 600,
             "durable_damage": 600,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 500.0
   },
   {
     "id": "ms-11-solo-silo",
@@ -845,7 +900,8 @@ const WEAPONS = [
             "damage": 2500,
             "durable_damage": 2500,
             "type": "explosion",
-            "ap": 7
+            "ap": 7,
+            "pellets": 1
           }
         ]
       },
@@ -857,7 +913,8 @@ const WEAPONS = [
             "damage": 1500,
             "durable_damage": 1500,
             "type": "explosion",
-            "ap": 0
+            "ap": 0,
+            "pellets": 1
           }
         ]
       }
@@ -877,18 +934,21 @@ const WEAPONS = [
             "damage": 1000,
             "durable_damage": 1000,
             "type": "ballistic",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 2500,
             "durable_damage": 2500,
             "type": "explosion",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "eat-700-expendable-napalm",
@@ -904,14 +964,16 @@ const WEAPONS = [
             "damage": 500,
             "durable_damage": 500,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 250,
             "durable_damage": 250,
             "type": "explosion",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           }
         ]
       },
@@ -923,18 +985,21 @@ const WEAPONS = [
             "damage": 200,
             "durable_damage": 200,
             "type": "ballistic",
-            "ap": 0
+            "ap": 0,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 50,
             "durable_damage": 50,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "s-11-speargun",
@@ -950,7 +1015,8 @@ const WEAPONS = [
             "damage": 650,
             "durable_damage": 275,
             "type": "damage",
-            "ap": 5
+            "ap": 5,
+            "pellets": 1
           }
         ]
       },
@@ -962,11 +1028,13 @@ const WEAPONS = [
             "damage": 3,
             "durable_damage": 3,
             "type": "gas",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 60.0
   },
   {
     "id": "las-98-laser-cannon",
@@ -982,11 +1050,13 @@ const WEAPONS = [
             "damage": 350,
             "durable_damage": 200,
             "type": "laser",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 60.0
   },
   {
     "id": "arc-3-arc-thrower",
@@ -1002,7 +1072,8 @@ const WEAPONS = [
             "damage": 250,
             "durable_damage": 100,
             "type": "arc",
-            "ap": 7
+            "ap": 7,
+            "pellets": 1
           }
         ]
       }
@@ -1022,7 +1093,8 @@ const WEAPONS = [
             "damage": 2,
             "durable_damage": 2,
             "type": "fire",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
@@ -1042,7 +1114,8 @@ const WEAPONS = [
             "damage": 1,
             "durable_damage": 1,
             "type": "gas",
-            "ap": 5
+            "ap": 5,
+            "pellets": 1
           }
         ]
       }
@@ -1062,7 +1135,8 @@ const WEAPONS = [
             "damage": 3,
             "durable_damage": 3,
             "type": "fire",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
@@ -1082,11 +1156,13 @@ const WEAPONS = [
             "damage": 80,
             "durable_damage": 18,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 1500.0
   },
   {
     "id": "mgx-42-bullet-storm",
@@ -1102,11 +1178,13 @@ const WEAPONS = [
             "damage": 100,
             "durable_damage": 25,
             "type": "damage",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 1300.0
   },
   {
     "id": "sg-88-break-action-shotgun",
@@ -1122,11 +1200,13 @@ const WEAPONS = [
             "damage": 65,
             "durable_damage": 13,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 9
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "plas-45-epoch",
@@ -1142,14 +1222,16 @@ const WEAPONS = [
             "damage": 400,
             "durable_damage": 200,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 500,
             "durable_damage": 500,
             "type": "explosion",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       },
@@ -1161,30 +1243,21 @@ const WEAPONS = [
             "damage": 800,
             "durable_damage": 400,
             "type": "ballistic",
-            "ap": 5
+            "ap": 5,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 800,
             "durable_damage": 800,
             "type": "explosion",
-            "ap": 5
-          }
-        ]
-      },
-      {
-        "name": "PLAS-45 EPOCH Overcharge E",
-        "components": [
-          {
-            "name": "Explosion",
-            "damage": 800,
-            "durable_damage": 800,
-            "type": "explosion",
-            "ap": 5
+            "ap": 5,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "b-md-c4-pack",
@@ -1200,7 +1273,8 @@ const WEAPONS = [
             "damage": 2000,
             "durable_damage": 2000,
             "type": "explosion",
-            "ap": 7
+            "ap": 7,
+            "pellets": 1
           }
         ]
       }
@@ -1220,7 +1294,8 @@ const WEAPONS = [
             "damage": 450,
             "durable_damage": 225,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
@@ -1240,7 +1315,8 @@ const WEAPONS = [
             "damage": 300,
             "durable_damage": 150,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -1252,7 +1328,8 @@ const WEAPONS = [
             "damage": 2200,
             "durable_damage": 2200,
             "type": "explosion",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           }
         ]
       }
@@ -1272,11 +1349,13 @@ const WEAPONS = [
             "damage": 165,
             "durable_damage": 55,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 150.0
   },
   {
     "id": "cqc-1-one-true-flag",
@@ -1292,11 +1371,13 @@ const WEAPONS = [
             "damage": 200,
             "durable_damage": 100,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 117.0
   },
   {
     "id": "ar-23-liberator",
@@ -1312,11 +1393,13 @@ const WEAPONS = [
             "damage": 90,
             "durable_damage": 22,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 640.0
   },
   {
     "id": "ar-23c-liberator-concussive",
@@ -1332,11 +1415,13 @@ const WEAPONS = [
             "damage": 75,
             "durable_damage": 35,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 400.0
   },
   {
     "id": "ar-23a-liberator-carbine",
@@ -1352,11 +1437,13 @@ const WEAPONS = [
             "damage": 90,
             "durable_damage": 22,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 920.0
   },
   {
     "id": "ar-23p-liberator-penetrator",
@@ -1372,11 +1459,13 @@ const WEAPONS = [
             "damage": 65,
             "durable_damage": 15,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 640.0
   },
   {
     "id": "ar-32-pacifier",
@@ -1392,11 +1481,13 @@ const WEAPONS = [
             "damage": 55,
             "durable_damage": 10,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 700.0
   },
   {
     "id": "ar-2-coyote",
@@ -1412,11 +1503,13 @@ const WEAPONS = [
             "damage": 75,
             "durable_damage": 10,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "ar-61-tenderizer",
@@ -1432,11 +1525,13 @@ const WEAPONS = [
             "damage": 105,
             "durable_damage": 30,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 600.0
   },
   {
     "id": "ar-59-suppressor",
@@ -1452,11 +1547,13 @@ const WEAPONS = [
             "damage": 80,
             "durable_damage": 20,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 850.0
   },
   {
     "id": "ar-gl-21-one-two",
@@ -1472,7 +1569,8 @@ const WEAPONS = [
             "damage": 95,
             "durable_damage": 24,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       },
@@ -1484,18 +1582,21 @@ const WEAPONS = [
             "damage": 250,
             "durable_damage": 250,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 400,
             "durable_damage": 400,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 650.0
   },
   {
     "id": "ma5c-assault-rifle",
@@ -1511,11 +1612,13 @@ const WEAPONS = [
             "damage": 90,
             "durable_damage": 16,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 640.0
   },
   {
     "id": "sta-52-assault-rifle",
@@ -1531,11 +1634,13 @@ const WEAPONS = [
             "damage": 90,
             "durable_damage": 22,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 790.0
   },
   {
     "id": "br-14-adjudicator",
@@ -1551,11 +1656,13 @@ const WEAPONS = [
             "damage": 95,
             "durable_damage": 23,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 550.0
   },
   {
     "id": "jar-5-dominator",
@@ -1571,11 +1678,13 @@ const WEAPONS = [
             "damage": 275,
             "durable_damage": 90,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 250.0
   },
   {
     "id": "r-2-amendment",
@@ -1591,7 +1700,8 @@ const WEAPONS = [
             "damage": 200,
             "durable_damage": 50,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       },
@@ -1603,11 +1713,13 @@ const WEAPONS = [
             "damage": 165,
             "durable_damage": 83,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 480.0
   },
   {
     "id": "r-2124-constitution",
@@ -1623,7 +1735,8 @@ const WEAPONS = [
             "damage": 180,
             "durable_damage": 50,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -1635,11 +1748,13 @@ const WEAPONS = [
             "damage": 165,
             "durable_damage": 83,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 60.0
   },
   {
     "id": "r-6-deadeye",
@@ -1655,11 +1770,13 @@ const WEAPONS = [
             "damage": 300,
             "durable_damage": 100,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 100.0
   },
   {
     "id": "r-63-diligence",
@@ -1675,11 +1792,13 @@ const WEAPONS = [
             "damage": 165,
             "durable_damage": 45,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 350.0
   },
   {
     "id": "r-63cs-diligence-counter-sniper",
@@ -1695,11 +1814,13 @@ const WEAPONS = [
             "damage": 200,
             "durable_damage": 50,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 350.0
   },
   {
     "id": "r-36-eruptor",
@@ -1715,14 +1836,16 @@ const WEAPONS = [
             "damage": 230,
             "durable_damage": 115,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 225,
             "durable_damage": 225,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -1734,11 +1857,13 @@ const WEAPONS = [
             "damage": 110,
             "durable_damage": 35,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 32.0
   },
   {
     "id": "r-72-censor",
@@ -1754,11 +1879,13 @@ const WEAPONS = [
             "damage": 165,
             "durable_damage": 45,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 400.0
   },
   {
     "id": "r-4-hyena",
@@ -1774,11 +1901,13 @@ const WEAPONS = [
             "damage": 220,
             "durable_damage": 45,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 190.0
   },
   {
     "id": "mp-98-knight",
@@ -1794,11 +1923,13 @@ const WEAPONS = [
             "damage": 90,
             "durable_damage": 18,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 1380.0
   },
   {
     "id": "sta-11-smg",
@@ -1814,11 +1945,13 @@ const WEAPONS = [
             "damage": 90,
             "durable_damage": 18,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 1050.0
   },
   {
     "id": "m7s-smg",
@@ -1834,11 +1967,13 @@ const WEAPONS = [
             "damage": 90,
             "durable_damage": 18,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 872.0
   },
   {
     "id": "smg-32-reprimand",
@@ -1854,11 +1989,13 @@ const WEAPONS = [
             "damage": 140,
             "durable_damage": 32,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 490.0
   },
   {
     "id": "smg-37-defender",
@@ -1874,11 +2011,13 @@ const WEAPONS = [
             "damage": 110,
             "durable_damage": 22,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 520.0
   },
   {
     "id": "smg-72-pummeler",
@@ -1894,11 +2033,13 @@ const WEAPONS = [
             "damage": 85,
             "durable_damage": 17,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 475.0
   },
   {
     "id": "smg-flam-34-stoker",
@@ -1914,7 +2055,8 @@ const WEAPONS = [
             "damage": 130,
             "durable_damage": 30,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       },
@@ -1926,11 +2068,13 @@ const WEAPONS = [
             "damage": 2,
             "durable_damage": 2,
             "type": "fire",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 420.0
   },
   {
     "id": "smg-203-gallant",
@@ -1946,11 +2090,13 @@ const WEAPONS = [
             "damage": 65,
             "durable_damage": 13,
             "type": "damage",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 1380.0
   },
   {
     "id": "sg-8-punisher",
@@ -1966,11 +2112,13 @@ const WEAPONS = [
             "damage": 45,
             "durable_damage": 12,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 9
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 80.0
   },
   {
     "id": "sg-8p-punisher-plasma",
@@ -1986,18 +2134,21 @@ const WEAPONS = [
             "damage": 0,
             "durable_damage": 0,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 225,
             "durable_damage": 225,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 80.0
   },
   {
     "id": "sg-8s-slugger",
@@ -2013,11 +2164,13 @@ const WEAPONS = [
             "damage": 330,
             "durable_damage": 90,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 80.0
   },
   {
     "id": "sg-20-halt",
@@ -2033,7 +2186,8 @@ const WEAPONS = [
             "damage": 35,
             "durable_damage": 10,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 11
           }
         ]
       },
@@ -2045,11 +2199,13 @@ const WEAPONS = [
             "damage": 6,
             "durable_damage": 2,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 20
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 80.0
   },
   {
     "id": "sg-97-sweeper",
@@ -2065,7 +2221,8 @@ const WEAPONS = [
             "damage": 42,
             "durable_damage": 11,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 12
           }
         ]
       },
@@ -2077,11 +2234,13 @@ const WEAPONS = [
             "damage": 165,
             "durable_damage": 83,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 150.0
   },
   {
     "id": "sg-225-breaker",
@@ -2097,11 +2256,13 @@ const WEAPONS = [
             "damage": 30,
             "durable_damage": 6,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 11
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 300.0
   },
   {
     "id": "sg-225sp-breaker-spray-pray",
@@ -2117,11 +2278,13 @@ const WEAPONS = [
             "damage": 15,
             "durable_damage": 4,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 16
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 330.0
   },
   {
     "id": "sg-225ie-breaker-incendiary",
@@ -2137,11 +2300,13 @@ const WEAPONS = [
             "damage": 20,
             "durable_damage": 10,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 12
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 300.0
   },
   {
     "id": "sg-451-cookout",
@@ -2157,11 +2322,13 @@ const WEAPONS = [
             "damage": 16,
             "durable_damage": 3,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 20
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 80.0
   },
   {
     "id": "dbs-2-double-freedom",
@@ -2177,11 +2344,13 @@ const WEAPONS = [
             "damage": 70,
             "durable_damage": 35,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 12
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 650.0
   },
   {
     "id": "m90a-shotgun",
@@ -2197,11 +2366,13 @@ const WEAPONS = [
             "damage": 55,
             "durable_damage": 20,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 11
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 80.0
   },
   {
     "id": "cb-9-exploding-crossbow",
@@ -2217,18 +2388,21 @@ const WEAPONS = [
             "damage": 270,
             "durable_damage": 50,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 350,
             "durable_damage": 350,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 50.0
   },
   {
     "id": "plas-1-scorcher",
@@ -2244,18 +2418,21 @@ const WEAPONS = [
             "damage": 100,
             "durable_damage": 50,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 100,
             "durable_damage": 100,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 350.0
   },
   {
     "id": "plas-39-accelerator-rifle",
@@ -2271,18 +2448,27 @@ const WEAPONS = [
             "damage": 250,
             "durable_damage": 125,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 100,
             "durable_damage": 100,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
-        ]
+        ],
+        "charge": {
+          "min_s": 0.45,
+          "max_s": 0.9,
+          "min_mult": 1.0,
+          "max_mult": 2.5
+        }
       }
-    ]
+    ],
+    "fire_rate_rpm": 550.0
   },
   {
     "id": "plas-101-purifier",
@@ -2298,14 +2484,16 @@ const WEAPONS = [
             "damage": 200,
             "durable_damage": 100,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 300,
             "durable_damage": 300,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -2317,18 +2505,21 @@ const WEAPONS = [
             "damage": 200,
             "durable_damage": 100,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 75,
             "durable_damage": 75,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 1000.0
   },
   {
     "id": "arc-12-blitzer",
@@ -2344,7 +2535,8 @@ const WEAPONS = [
             "damage": 50,
             "durable_damage": 35,
             "type": "arc",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
@@ -2364,11 +2556,13 @@ const WEAPONS = [
             "damage": 350,
             "durable_damage": 70,
             "type": "laser",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 60.0
   },
   {
     "id": "las-13-trident",
@@ -2384,11 +2578,13 @@ const WEAPONS = [
             "damage": 60,
             "durable_damage": 6,
             "type": "laser",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 300.0
   },
   {
     "id": "las-16-sickle",
@@ -2404,11 +2600,13 @@ const WEAPONS = [
             "damage": 60,
             "durable_damage": 6,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 750.0
   },
   {
     "id": "las-17-double-edge-sickle",
@@ -2424,7 +2622,8 @@ const WEAPONS = [
             "damage": 60,
             "durable_damage": 6,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       },
@@ -2436,7 +2635,8 @@ const WEAPONS = [
             "damage": 55,
             "durable_damage": 5,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -2448,7 +2648,8 @@ const WEAPONS = [
             "damage": 70,
             "durable_damage": 7,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -2460,11 +2661,13 @@ const WEAPONS = [
             "damage": 70,
             "durable_damage": 7,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 700.0
   },
   {
     "id": "flam-66-torcher",
@@ -2480,7 +2683,8 @@ const WEAPONS = [
             "damage": 2,
             "durable_damage": 2,
             "type": "fire",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
@@ -2500,11 +2704,13 @@ const WEAPONS = [
             "damage": 85,
             "durable_damage": 23,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 550.0
   },
   {
     "id": "p-2-peacemaker",
@@ -2520,11 +2726,13 @@ const WEAPONS = [
             "damage": 100,
             "durable_damage": 32,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 900.0
   },
   {
     "id": "p-4-senator",
@@ -2540,11 +2748,13 @@ const WEAPONS = [
             "damage": 225,
             "durable_damage": 75,
             "type": "ballistic",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 200.0
   },
   {
     "id": "p-19-redeemer",
@@ -2560,11 +2770,13 @@ const WEAPONS = [
             "damage": 70,
             "durable_damage": 12,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 1100.0
   },
   {
     "id": "p-33-missile-pistol",
@@ -2580,14 +2792,16 @@ const WEAPONS = [
             "damage": 1000,
             "durable_damage": 1000,
             "type": "damage",
-            "ap": 5
+            "ap": 5,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 300,
             "durable_damage": 300,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -2599,18 +2813,21 @@ const WEAPONS = [
             "damage": 1000,
             "durable_damage": 1000,
             "type": "damage",
-            "ap": 5
+            "ap": 5,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 300,
             "durable_damage": 300,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 60.0
   },
   {
     "id": "p-35-re-educator",
@@ -2626,11 +2843,13 @@ const WEAPONS = [
             "damage": 60,
             "durable_damage": 10,
             "type": "gas",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 110.0
   },
   {
     "id": "p-69-veto",
@@ -2646,11 +2865,13 @@ const WEAPONS = [
             "damage": 105,
             "durable_damage": 35,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 750.0
   },
   {
     "id": "p-72-crisper",
@@ -2666,7 +2887,8 @@ const WEAPONS = [
             "damage": 2,
             "durable_damage": 2,
             "type": "fire",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
@@ -2686,7 +2908,8 @@ const WEAPONS = [
             "damage": 80,
             "durable_damage": 20,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -2698,11 +2921,13 @@ const WEAPONS = [
             "damage": 80,
             "durable_damage": 20,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 450.0
   },
   {
     "id": "p-113-verdict",
@@ -2718,11 +2943,13 @@ const WEAPONS = [
             "damage": 140,
             "durable_damage": 32,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 450.0
   },
   {
     "id": "m6c-socom-pistol",
@@ -2738,11 +2965,13 @@ const WEAPONS = [
             "damage": 125,
             "durable_damage": 28,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 900.0
   },
   {
     "id": "sg-22-bushwhacker",
@@ -2758,11 +2987,13 @@ const WEAPONS = [
             "damage": 45,
             "durable_damage": 12,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 9
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 650.0
   },
   {
     "id": "las-7-dagger",
@@ -2778,11 +3009,13 @@ const WEAPONS = [
             "damage": 250,
             "durable_damage": 50,
             "type": "laser",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 60.0
   },
   {
     "id": "las-58-talon",
@@ -2798,11 +3031,13 @@ const WEAPONS = [
             "damage": 200,
             "durable_damage": 20,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 750.0
   },
   {
     "id": "plas-15-loyalist",
@@ -2818,14 +3053,16 @@ const WEAPONS = [
             "damage": 100,
             "durable_damage": 50,
             "type": "ballistic",
-            "ap": 1
+            "ap": 1,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 25,
             "durable_damage": 25,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -2837,14 +3074,16 @@ const WEAPONS = [
             "damage": 150,
             "durable_damage": 75,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 75,
             "durable_damage": 75,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -2856,18 +3095,21 @@ const WEAPONS = [
             "damage": 150,
             "durable_damage": 75,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 225,
             "durable_damage": 225,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 1000.0
   },
   {
     "id": "gp-20-ultimatum",
@@ -2883,18 +3125,21 @@ const WEAPONS = [
             "damage": 1000,
             "durable_damage": 1000,
             "type": "ballistic",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 2000,
             "durable_damage": 2000,
             "type": "explosion",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 900.0
   },
   {
     "id": "gp-31-grenade-pistol",
@@ -2910,18 +3155,21 @@ const WEAPONS = [
             "damage": 250,
             "durable_damage": 250,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 400,
             "durable_damage": 400,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 900.0
   },
   {
     "id": "cqc-2-saber",
@@ -2937,11 +3185,13 @@ const WEAPONS = [
             "damage": 188,
             "durable_damage": 98,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 150.0
   },
   {
     "id": "cqc-5-combat-hatchet",
@@ -2957,11 +3207,13 @@ const WEAPONS = [
             "damage": 240,
             "durable_damage": 120,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 100.0
   },
   {
     "id": "cqc-19-stun-lance",
@@ -2977,11 +3229,13 @@ const WEAPONS = [
             "damage": 165,
             "durable_damage": 83,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 117.0
   },
   {
     "id": "cqc-30-stun-baton",
@@ -2997,11 +3251,13 @@ const WEAPONS = [
             "damage": 75,
             "durable_damage": 38,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 150.0
   },
   {
     "id": "cqc-42-machete",
@@ -3017,11 +3273,13 @@ const WEAPONS = [
             "damage": 300,
             "durable_damage": 150,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 72.0
   },
   {
     "id": "cqc-73-entrenchment-tool",
@@ -3037,11 +3295,13 @@ const WEAPONS = [
             "damage": 165,
             "durable_damage": 55,
             "type": "melee",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
-    ]
+    ],
+    "fire_rate_rpm": 150.0
   },
   {
     "id": "g-6-frag",
@@ -3057,7 +3317,8 @@ const WEAPONS = [
             "damage": 110,
             "durable_damage": 35,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -3069,7 +3330,8 @@ const WEAPONS = [
             "damage": 500,
             "durable_damage": 500,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
@@ -3089,14 +3351,16 @@ const WEAPONS = [
             "damage": 300,
             "durable_damage": 300,
             "type": "ballistic",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           },
           {
             "name": "Explosion",
             "damage": 100,
             "durable_damage": 100,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       },
@@ -3108,7 +3372,8 @@ const WEAPONS = [
             "damage": 300,
             "durable_damage": 300,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
@@ -3128,7 +3393,8 @@ const WEAPONS = [
             "damage": 300,
             "durable_damage": 300,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
@@ -3148,7 +3414,8 @@ const WEAPONS = [
             "damage": 800,
             "durable_damage": 800,
             "type": "explosion",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
@@ -3168,7 +3435,8 @@ const WEAPONS = [
             "damage": 150,
             "durable_damage": 150,
             "type": "explosion",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
@@ -3188,7 +3456,8 @@ const WEAPONS = [
             "damage": 400,
             "durable_damage": 400,
             "type": "explosion",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
@@ -3208,7 +3477,8 @@ const WEAPONS = [
             "damage": 100,
             "durable_damage": 70,
             "type": "arc",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       },
@@ -3220,7 +3490,8 @@ const WEAPONS = [
             "damage": 0,
             "durable_damage": 0,
             "type": "arc",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           }
         ]
       }
@@ -3240,7 +3511,8 @@ const WEAPONS = [
             "damage": 2000,
             "durable_damage": 2000,
             "type": "explosion",
-            "ap": 5
+            "ap": 5,
+            "pellets": 1
           }
         ]
       }
@@ -3260,7 +3532,8 @@ const WEAPONS = [
             "damage": 500,
             "durable_damage": 500,
             "type": "explosion",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
@@ -3280,7 +3553,8 @@ const WEAPONS = [
             "damage": 0,
             "durable_damage": 0,
             "type": "explosion",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           }
         ]
       }
@@ -3300,7 +3574,8 @@ const WEAPONS = [
             "damage": 2000,
             "durable_damage": 2000,
             "type": "explosion",
-            "ap": 7
+            "ap": 7,
+            "pellets": 1
           }
         ]
       }
@@ -3320,7 +3595,8 @@ const WEAPONS = [
             "damage": 0,
             "durable_damage": 0,
             "type": "fire",
-            "ap": 7
+            "ap": 7,
+            "pellets": 1
           }
         ]
       },
@@ -3332,7 +3608,8 @@ const WEAPONS = [
             "damage": 50,
             "durable_damage": 50,
             "type": "fire",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
@@ -3352,7 +3629,8 @@ const WEAPONS = [
             "damage": 3,
             "durable_damage": 3,
             "type": "gas",
-            "ap": 6
+            "ap": 6,
+            "pellets": 1
           }
         ]
       }
@@ -3372,7 +3650,8 @@ const WEAPONS = [
             "damage": 1000,
             "durable_damage": 1000,
             "type": "explosion",
-            "ap": 4
+            "ap": 4,
+            "pellets": 1
           }
         ]
       }
@@ -3392,7 +3671,8 @@ const WEAPONS = [
             "damage": 300,
             "durable_damage": 150,
             "type": "damage",
-            "ap": 3
+            "ap": 3,
+            "pellets": 1
           }
         ]
       }
@@ -10674,9 +10954,10 @@ const ENEMIES = [
 const AP_NAMES = ['None','Light I','Light II','Medium','Heavy','Anti-Tank I','Anti-Tank II','Anti-Tank III'];
 
 // ── State ─────────────────────────────────────────────────────────────────────
-let slots        = [];   // [{id, weaponId, modeIdx}]
+let slots        = [];   // [{id, weaponId, modeIdx, chargeFrac}]
 let sortMode     = 'fatal';
 let showDetail   = false;
+let showSeconds  = false;  // display sustained-fire seconds instead of hit count, where fire rate is known
 let nextSlotId   = 0;
 let enemySS      = null;  // SearchSelect instance for the enemy picker
 let pinnedParts  = {};    // { [enemyId]: Set<partName> }
@@ -10718,7 +10999,8 @@ const FORCED_PARTS = {
   'harvester': new Set(['Shield']),
   'warp-ship': new Set(['Shield']),
   'grounded-warp-ship': new Set(['Shield']),
-  'vox-engine': new Set(['Main', 'Cannons (2)', 'Hatches (2)'])
+  'vox-engine': new Set(['Main', 'Cannons (2)', 'Hatches (2)']),
+  'factory-strider': new Set(['Fusion Gatling Guns (2)', 'Cannon Turret']),
 };
 
 // ── View / faction controls ───────────────────────────────────────────────────
@@ -10947,7 +11229,7 @@ function getWeaponTags(weapon) {
 
 // ── Damage engine ─────────────────────────────────────────────────────────────
 
-function calcComponent(comp, part) {
+function calcComponent(comp, part, chargeMult = 1) {
   const ap = comp.ap, av = part.av;
   let penMult;
   if      (ap > av) penMult = 1.0;
@@ -10961,24 +11243,28 @@ function calcComponent(comp, part) {
     if (exdrMult <= 0) return { damage: 0, pen: 'exdr', penMult };
   }
 
-  const dur   = (part.durable_pct || 0) / 100;
-  const stdD  = comp.damage || 0;
-  const durD  = comp.durable_damage != null ? comp.durable_damage : Math.floor(stdD / 2);
-  const effD  = stdD * (1 - dur) + durD * dur;
+  const dur     = (part.durable_pct || 0) / 100;
+  const stdD    = comp.damage || 0;
+  const durD    = comp.durable_damage != null ? comp.durable_damage : Math.floor(stdD / 2);
+  const pellets = comp.pellets || 1;
+  // Pellets: assumes every pellet connects (close-range/point-blank best case),
+  // same "best-case" convention used elsewhere (100% hits, no misses).
+  const effD    = (stdD * (1 - dur) + durD * dur) * pellets;
 
   return {
-    damage:   effD * penMult * exdrMult,
+    damage:   effD * penMult * exdrMult * chargeMult,
     pen:      penMult === 1.0 ? 'full' : 'partial',
     penMult,
     exdrMult,
+    chargeMult,
     rawEff:   effD,
   };
 }
 
-function calcHit(weapon, modeIdx, part) {
+function calcHit(weapon, modeIdx, part, chargeMult = 1) {
   const mode = weapon.modes[modeIdx];
   if (!mode) return { total: 0, results: [] };
-  const results = mode.components.map(c => ({ comp: c, ...calcComponent(c, part) }));
+  const results = mode.components.map(c => ({ comp: c, ...calcComponent(c, part, chargeMult) }));
   const total = results.reduce((s, r) => s + r.damage, 0);
   return { total, results };
 }
@@ -11022,7 +11308,12 @@ function hitWhy(hit, part) {
     const durTxt = (durPct > 0 && r.rawEff != null)
       ? ` · ${r.comp.damage} std / ${r.comp.durable_damage} durable @ ${durPct}% durable = ${r.rawEff.toFixed(1)} eff`
       : '';
-    return `${r.comp.name}: ${penTxt}${durTxt} → ${r.damage.toFixed(1)} dmg`;
+    const pellets    = r.comp.pellets || 1;
+    const pelletsTxt = pellets > 1 ? ` · ×${pellets} pellets (assumes all connect)` : '';
+    const chargeTxt  = (r.chargeMult != null && Math.abs(r.chargeMult - 1) > 0.001)
+      ? ` · ×${r.chargeMult.toFixed(2)} charge`
+      : '';
+    return `${r.comp.name}: ${penTxt}${durTxt}${pelletsTxt}${chargeTxt} → ${r.damage.toFixed(1)} dmg`;
   });
 
   const partial  = hit.results.some(r => r.pen === 'partial');
@@ -11084,12 +11375,14 @@ function buildModeOptions(modeSel, weapon, modeIdx) {
 
 function addSlot(weaponId, modeIdx) {
   const id = nextSlotId++;
-  slots.push({ id, weaponId: weaponId || '', modeIdx: modeIdx || 0 });
+  slots.push({ id, weaponId: weaponId || '', modeIdx: modeIdx || 0, chargeFrac: 1 });
 
   const wrap = document.getElementById('slotsWrap');
   const div = document.createElement('div');
   div.className = 'weapon-slot';
   div.dataset.slotId = id;
+
+  const chargeCtrl = buildChargeCtrl(id);
 
   const cats   = [...new Set(WEAPONS.map(w => w.category))];
   const groups = cats.map(cat => ({
@@ -11100,7 +11393,7 @@ function addSlot(weaponId, modeIdx) {
   }));
   const wSS = new SearchSelect({
     placeholder: '— select —', groups,
-    onChange: wid => onWeaponChange(id, wid, mSel),
+    onChange: wid => onWeaponChange(id, wid, mSel, chargeCtrl),
     minWidth: '210px',
   });
   if (weaponId) wSS.setValue(weaponId);
@@ -11108,35 +11401,86 @@ function addSlot(weaponId, modeIdx) {
   const mSel = document.createElement('select');
   mSel.className = 'mode-sel';
   mSel.style.display = 'none';
-  mSel.onchange = () => { updateSlotMode(id, parseInt(mSel.value)); render(); };
+  mSel.onchange = () => { updateSlotMode(id, parseInt(mSel.value)); updateChargeCtrl(id, chargeCtrl); render(); };
 
   const btn = document.createElement('button');
   btn.className = 'btn-remove';
   btn.textContent = '✕';
   btn.onclick = () => removeSlot(id);
 
-  div.append(wSS.el, mSel, btn);
+  div.append(wSS.el, mSel, chargeCtrl.el, btn);
   wrap.appendChild(div);
 
   if (weaponId) {
     const w = WEAPONS.find(x => x.id === weaponId);
     buildModeOptions(mSel, w, modeIdx || 0);
+    updateChargeCtrl(id, chargeCtrl);
   }
 
   render();
 }
 
-function onWeaponChange(id, weaponId, mSel) {
+// Inline charge-level slider — hidden unless the slot's current weapon+mode
+// has a `charge` curve (e.g. RS-422 Railgun, PLAS-39 Accelerator Rifle).
+function buildChargeCtrl(id) {
+  const el = document.createElement('div');
+  el.className = 'charge-ctrl';
+  const label = document.createElement('span');
+  label.className = 'charge-label';
+  const input = document.createElement('input');
+  input.type = 'range';
+  input.min = '0';
+  input.max = '1';
+  input.step = '0.01';
+  input.value = '1';
+  input.oninput = () => {
+    const slot = slots.find(s => s.id === id);
+    if (slot) slot.chargeFrac = parseFloat(input.value);
+    updateChargeLabel(id, label);
+    render();
+  };
+  el.append(label, input);
+  return { el, label, input };
+}
+
+function updateChargeCtrl(id, chargeCtrl) {
+  const slot   = slots.find(s => s.id === id);
+  const w      = slot ? WEAPONS.find(x => x.id === slot.weaponId) : null;
+  const m      = w ? w.modes[slot.modeIdx] : null;
+  const charge = m ? m.charge : null;
+  if (!charge) {
+    chargeCtrl.el.style.display = 'none';
+    return;
+  }
+  chargeCtrl.el.style.display = 'flex';
+  chargeCtrl.input.value = slot.chargeFrac != null ? slot.chargeFrac : 1;
+  updateChargeLabel(id, chargeCtrl.label);
+}
+
+function updateChargeLabel(id, label) {
+  const slot   = slots.find(s => s.id === id);
+  const w      = slot ? WEAPONS.find(x => x.id === slot.weaponId) : null;
+  const m      = w ? w.modes[slot.modeIdx] : null;
+  const charge = m ? m.charge : null;
+  if (!charge) return;
+  const frac = slot.chargeFrac != null ? slot.chargeFrac : 1;
+  const t    = charge.min_s    + (charge.max_s    - charge.min_s)    * frac;
+  const mult = charge.min_mult + (charge.max_mult - charge.min_mult) * frac;
+  label.textContent = `Charge ${t.toFixed(2)}s → ×${mult.toFixed(2)}`;
+}
+
+function onWeaponChange(id, weaponId, mSel, chargeCtrl) {
   const slot = slots.find(s => s.id === id);
-  if (slot) { slot.weaponId = weaponId; slot.modeIdx = 0; }
+  if (slot) { slot.weaponId = weaponId; slot.modeIdx = 0; slot.chargeFrac = 1; }
   const w = WEAPONS.find(x => x.id === weaponId);
   buildModeOptions(mSel, w, 0);
+  updateChargeCtrl(id, chargeCtrl);
   render();
 }
 
 function updateSlotMode(id, modeIdx) {
   const slot = slots.find(s => s.id === id);
-  if (slot) slot.modeIdx = modeIdx;
+  if (slot) { slot.modeIdx = modeIdx; slot.chargeFrac = 1; }
 }
 
 function removeSlot(id) {
@@ -11173,6 +11517,12 @@ function sortParts(parts) {
 function toggleDetail() {
   showDetail = !showDetail;
   document.querySelector('.toggle-detail').textContent = showDetail ? 'Fatal only ▴' : 'All parts ▾';
+  render();
+}
+
+function toggleUnit() {
+  showSeconds = !showSeconds;
+  document.getElementById('unit-toggle').classList.toggle('active', showSeconds);
   render();
 }
 
@@ -11267,8 +11617,8 @@ function buildEnemyTable(enemy, cols, topN = null, compact = false) {
       fatal.sort((a, b) => {
         const hpA = a.health_is_main ? mainHP : a.health;
         const hpB = b.health_is_main ? mainHP : b.health;
-        const bestA = Math.min(...cols.map(c => stk(calcHit(c.weapon, c.slot.modeIdx, a).total, hpA)));
-        const bestB = Math.min(...cols.map(c => stk(calcHit(c.weapon, c.slot.modeIdx, b).total, hpB)));
+        const bestA = Math.min(...cols.map(c => stk(calcHit(c.weapon, c.slot.modeIdx, a, c.chargeMult).total, hpA)));
+        const bestB = Math.min(...cols.map(c => stk(calcHit(c.weapon, c.slot.modeIdx, b, c.chargeMult).total, hpB)));
         return bestA - bestB;
       });
     }
@@ -11302,7 +11652,10 @@ function buildEnemyTable(enemy, cols, topN = null, compact = false) {
           const apBadges = c.apList.map(ap =>
             `<span class="tag tag-av${ap} ap-badge" title="Armor Penetration: ${AP_NAMES[ap] || 'AP' + ap}">AP${ap}</span>`
           ).join('');
-          return `<th class="th-weapon"><span title="${c.label}">${c.label.replace('\n', '<br>')}</span><div class="ap-badge-row">${apBadges}</div></th>`;
+          const pelletBadge = c.pellets > 1
+            ? `<span class="tag ap-badge" style="background:var(--surface2);color:var(--dim)" title="${c.pellets} pellets per shot — damage shown assumes all connect (close range)">×${c.pellets}</span>`
+            : '';
+          return `<th class="th-weapon"><span title="${c.label}">${c.label.replace('\n', '<br>')}</span><div class="ap-badge-row">${apBadges}${pelletBadge}</div></th>`;
         }).join('')}
       </tr></thead>
       <tbody>
@@ -11322,16 +11675,32 @@ function buildEnemyTable(enemy, cols, topN = null, compact = false) {
       <td><span class="tag tag-av${part.av}">${AP_NAMES[part.av] || 'AV'+part.av}</span></td>
       ${compact ? '' : `<td class="cell-num">${part.durable_pct}%</td><td class="cell-num">${part.exdr}%</td>`}`;
 
-    const hitData = cols.map(c => calcHit(c.weapon, c.slot.modeIdx, part));
+    const hitData = cols.map(c => calcHit(c.weapon, c.slot.modeIdx, part, c.chargeMult));
 
     hitData.forEach((hit, ci) => {
       const n   = stk(hit.total, hp);
-      const { txt, cls } = stkLabel(n);
+      const { txt: hitsTxt, cls } = stkLabel(n);
       const why = hitWhy(hit, part);
       const dmgFmt = hit.total > 0 ? (Math.round(hit.total * 10) / 10).toLocaleString() : '—';
       const ovfl = overflow(hit.total, part);
       const stkM = ovfl > 0 ? stk(ovfl, mainHP) : null;
-      const titleAttr = why.title.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+
+      // Sustained-fire seconds instead of raw hit count, where the weapon's
+      // fire rate is known (beams/continuous weapons especially — "17 hits"
+      // is meaningless, "1.2s" isn't). Falls back to hit count + a tooltip
+      // note when the wiki doesn't expose a rate (e.g. Cremator, Flamethrower).
+      let txt = hitsTxt, extraTitle = '';
+      const fireRate = cols[ci].fireRateRpm;
+      if (showSeconds && isFinite(n)) {
+        if (fireRate) {
+          const secs = n / (fireRate / 60);
+          txt = (secs < 10 ? secs.toFixed(1) : Math.round(secs)) + 's';
+        } else {
+          extraTitle = '\n(fire rate unknown for this weapon — showing hit count instead of seconds)';
+        }
+      }
+
+      const titleAttr = (why.title + extraTitle).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
       const dmgLine = hit.total > 0
         ? `<span class="stk-dmg${why.durHeavy ? ' dur-heavy' : ''}">${dmgFmt}/hit${why.partial ? '<span class="pen-partial">65%</span>' : ''}</span>`
         : `<span class="stk-dmg stk-blocked">no pen</span>`;
@@ -11353,8 +11722,13 @@ function resolveCols(activeSlots) {
   return activeSlots.map(s => {
     const w = WEAPONS.find(x => x.id === s.weaponId);
     const m = w ? w.modes[s.modeIdx] : null;
-    const apList = m ? [...new Set(m.components.map(c => c.ap))] : [];
-    return { slot: s, weapon: w, mode: m, apList,
+    const apList      = m ? [...new Set(m.components.map(c => c.ap))] : [];
+    const pellets     = m ? Math.max(1, ...m.components.map(c => c.pellets || 1)) : 1;
+    const charge      = m ? m.charge : null;
+    const chargeFrac  = s.chargeFrac != null ? s.chargeFrac : 1;
+    const chargeMult  = charge ? charge.min_mult + (charge.max_mult - charge.min_mult) * chargeFrac : 1;
+    return { slot: s, weapon: w, mode: m, apList, pellets, charge, chargeFrac, chargeMult,
+             fireRateRpm: w ? w.fire_rate_rpm : null,
              label: w ? (w.modes.length > 1 ? `${w.name}\n${m?.name}` : w.name) : '?' };
   });
 }

@@ -483,18 +483,91 @@ def parse_weapon(html, name, category, wiki_path):
     soup = BeautifulSoup(html, 'html.parser')
     modes = _parse_attack_tables(soup)
     if modes:
+        fire_rate_rpm, charge = _parse_weapon_stats(soup)
+        if charge:
+            for m in modes:
+                m['charge'] = charge
         if VERBOSE:
             print(f"    ✓ {len(modes)} mode(s), "
-                  f"{sum(len(m['components']) for m in modes)} component(s)")
-        return {
+                  f"{sum(len(m['components']) for m in modes)} component(s)"
+                  f"{f', fire_rate={fire_rate_rpm}rpm' if fire_rate_rpm else ''}"
+                  f"{', has charge curve' if charge else ''}")
+        result = {
             "id":       make_id(name),
             "name":     name,
             "category": category,
             "wiki_url": BASE + wiki_path,
             "modes":    modes,
         }
+        if fire_rate_rpm is not None:
+            result["fire_rate_rpm"] = fire_rate_rpm
+        return result
     print(f"    ⚠ could not parse weapon stats")
     return None
+
+def _parse_weapon_stats(soup):
+    """
+    Extract from the attack-data-table-weapon table (per-weapon, not per-component):
+      - fire_rate_rpm: 'Fire Rate' / 'Beam Fire Rate' → rounds/beam-ticks per minute
+      - charge: {min_s, max_s, min_mult, max_mult} from the 'Charge' section, when
+        present AND it's a clean single-projectile scaling curve (e.g. RS-422 Railgun:
+        one shot, damage scales 1.0x-2.5x with hold time).
+
+    Deliberately NOT modeled: charge sections whose "at (X)s" rows name a specific
+    projectile rather than "DEFAULT" (e.g. PLAS-101 Purifier, PLAS-45 Epoch) — those
+    are charge-*threshold* mechanics that swap between distinct named projectiles,
+    not a single shot scaling continuously. Also excluded: curves where the damage
+    multiplier never actually changes (e.g. ARC-3 Arc Thrower's charge is a pure
+    windup timer, min_mult == max_mult == 1.0) — nothing to show a slider for.
+    """
+    fire_rate = None
+    charge    = None
+
+    for t in soup.find_all('table'):
+        if 'attack-data-table-weapon' not in t.get('class', []):
+            continue
+
+        current_section = 'general'
+        charge_times = []   # None once poisoned by a non-DEFAULT row
+        mult_range   = None
+
+        for row in t.find_all('tr')[1:]:
+            cells = row.find_all(['th', 'td'])
+            if len(cells) == 1:
+                current_section = cells[0].get_text(strip=True).lower()
+                continue
+            if len(cells) < 2:
+                continue
+            key = cells[0].get_text(strip=True)
+            val = cells[1].get_text(' ', strip=True)
+
+            if key in ('Fire Rate', 'Beam Fire Rate') and fire_rate is None:
+                m = re.search(r'([\d.]+)', val)
+                if m:
+                    fire_rate = float(m.group(1))
+
+            if current_section == 'charge' and charge_times is not None:
+                m_time = re.match(r'at\s*\(([\d.]+)\)\s*s', key, re.I)
+                if m_time:
+                    if re.match(r'default\b', val, re.I):
+                        charge_times.append(float(m_time.group(1)))
+                    else:
+                        charge_times = None  # multi-projectile threshold mechanic — bail
+                if charge_times is not None and key == 'Damage Mult Range':
+                    mm = re.findall(r'\(([\d.]+)\)', val)
+                    if len(mm) >= 2:
+                        mult_range = (float(mm[0]), float(mm[1]))
+
+        if charge_times and mult_range and mult_range[1] > mult_range[0]:
+            charge = {
+                "min_s":    min(charge_times),
+                "max_s":    max(charge_times),
+                "min_mult": mult_range[0],
+                "max_mult": mult_range[1],
+            }
+        break  # only one weapon-stats table per page
+
+    return fire_rate, charge
 
 def _parse_attack_tables(soup):
     """
@@ -587,6 +660,8 @@ def _parse_attack_tables(soup):
         for e in primary_tables.values()
     }
     for expl_name, expl_secs in expl_tables.items():
+        if 'overcharge' in expl_name.lower():
+            continue  # self-damage explosion from over-charging — not an attack on the enemy
         if expl_name not in linked_expl_names and expl_name.replace('_', ' ') not in linked_expl_names:
             expl_comp = _extract_component(expl_secs, is_explosion=True)
             if expl_comp:
@@ -658,12 +733,22 @@ def _extract_component(sections, is_explosion):
             ap = av
             break
 
+    # ── Pellets (shotgun-style multi-projectile shots, e.g. "Pellets: x 11") ───
+    pellets = 1
+    for sec in sections.values():
+        if 'Pellets' in sec:
+            m = re.search(r'(\d+)', sec['Pellets'])
+            if m:
+                pellets = int(m.group(1))
+            break
+
     return {
         "name":           "Explosion" if is_explosion else "Projectile",
         "damage":         std_damage,
         "durable_damage": durable,
         "type":           std_type,
         "ap":             ap,
+        "pellets":        pellets,
     }
 
 # ── Stratagem parser ─────────────────────────────────────────────────────────
