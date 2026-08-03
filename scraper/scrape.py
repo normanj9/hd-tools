@@ -190,6 +190,8 @@ WEAPON_PAGES = [
     ("B/MD C4 Pack",                     "Support", "/wiki/B/MD_C4_Pack"),
     ("CQC-9 Defoliation Tool",           "Support", "/wiki/CQC-9_Defoliation_Tool"),
     ("CQC-20 Breaching Hammer",          "Support", "/wiki/CQC-20_Breaching_Hammer"),
+    ("CQC-72 Entrenchment Tool",         "Support", "/wiki/CQC-72_Entrenchment_Tool"),
+    ("CQC-1 One True Flag",              "Support", "/wiki/CQC-1_One_True_Flag"),
 
 
     # ── Primary Weapons ───────────────────────────────────────────────────────
@@ -216,6 +218,7 @@ WEAPON_PAGES = [
     ("R-63CS Diligence Counter Sniper",  "Primary", "/wiki/R-63CS_Diligence_Counter_Sniper"),
     ("R-36 Eruptor",                     "Primary", "/wiki/R-36_Eruptor"),
     ("R-72 Censor",                      "Primary", "/wiki/R-72_Censor"),
+    ("R-4 Hyena",                        "Primary", "/wiki/R-4_Hyena"),
     # SMGs
     ("MP-98 Knight",                     "Primary", "/wiki/MP-98_Knight"),
     ("StA-11 SMG",                       "Primary", "/wiki/StA-11_SMG"),
@@ -283,6 +286,7 @@ WEAPON_PAGES = [
     ("CQC-19 Stun Lance",                "Secondary", "/wiki/CQC-19_Stun_Lance"),
     ("CQC-30 Stun Baton",                "Secondary", "/wiki/CQC-30_Stun_Baton"),
     ("CQC-42 Machete",                   "Secondary", "/wiki/CQC-42_Machete"),
+    ("CQC-73 Entrenchment Tool",         "Secondary", "/wiki/CQC-73_Entrenchment_Tool"),
     # ── Throwables ────────────────────────────────────────────────────────────
     ("G-6 Frag",                         "Throwable", "/wiki/G-6_Frag"),
     ("G-7 Pineapple",                    "Throwable", "/wiki/G-7_Pineapple"),
@@ -298,6 +302,7 @@ WEAPON_PAGES = [
     ("G-142 Pyrotech",                   "Throwable", "/wiki/G-142_Pyrotech"),
     ("G-4 Gas",                          "Throwable", "/wiki/G-4_Gas"),
     ("TED-63 Dynamite",                  "Throwable", "/wiki/TED-63_Dynamite"),
+    ("K-2 Throwing Knife",               "Throwable", "/wiki/K-2_Throwing_Knife"),
 ]
 
 # ── HTTP utilities ────────────────────────────────────────────────────────────
@@ -306,20 +311,29 @@ _session   = requests.Session()
 _session.headers["User-Agent"] = "HD2-damage-calc/1.0 (personal project; contact via github)"
 _last_req  = 0.0
 
-def fetch(path):
+RETRY_BASE = 2.0   # seconds — exponential backoff base for transient fetch failures
+
+def fetch(path, retries=4):
     global _last_req
-    elapsed = time.time() - _last_req
-    if elapsed < DELAY:
-        time.sleep(DELAY - elapsed)
     url = path if path.startswith("http") else BASE + path
-    try:
-        r = _session.get(url, timeout=20)
-        r.raise_for_status()
-        _last_req = time.time()
-        return r.text
-    except Exception as e:
-        print(f"    ✗ fetch failed ({url}): {e}")
-        return None
+    for attempt in range(retries):
+        elapsed = time.time() - _last_req
+        if elapsed < DELAY:
+            time.sleep(DELAY - elapsed)
+        try:
+            r = _session.get(url, timeout=20)
+            r.raise_for_status()
+            _last_req = time.time()
+            return r.text
+        except Exception as e:
+            _last_req = time.time()
+            if attempt < retries - 1:
+                backoff = RETRY_BASE * (2 ** attempt)  # 2s, 4s, 8s …
+                print(f"    ⟳ fetch retry {attempt + 1}/{retries - 1} ({url}): {e} — waiting {backoff:.1f}s")
+                time.sleep(backoff)
+            else:
+                print(f"    ✗ fetch failed after {retries} attempts ({url}): {e}")
+    return None
 
 # ── Normalization helpers ─────────────────────────────────────────────────────
 

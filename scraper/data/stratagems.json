@@ -1,530 +1,8 @@
 [
   {
-    "id": "mg-43-machine-gun",
-    "name": "MG-43 Machine Gun",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "down",
-      "up",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MG-43_Machine_Gun"
-  },
-  {
-    "id": "eat-17-expendable-anti-tank",
-    "name": "EAT-17 Expendable Anti-Tank",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 70,
-    "call_in": [
-      "down",
-      "down",
-      "left",
-      "up",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/EAT-17_Expendable_Anti-Tank"
-  },
-  {
-    "id": "m-105-stalwart",
-    "name": "M-105 Stalwart",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "down",
-      "up",
-      "up",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/M-105_Stalwart"
-  },
-  {
-    "id": "las-98-laser-cannon",
-    "name": "LAS-98 Laser Cannon",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Engineering Bay",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "down",
-      "up",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/LAS-98_Laser_Cannon"
-  },
-  {
-    "id": "apw-1-anti-materiel-rifle",
-    "name": "APW-1 Anti-Materiel Rifle",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "right",
-      "up",
-      "down"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/APW-1_Anti-Materiel_Rifle"
-  },
-  {
-    "id": "gl-21-grenade-launcher",
-    "name": "GL-21 Grenade Launcher",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Engineering Bay",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "left",
-      "down"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/GL-21_Grenade_Launcher"
-  },
-  {
-    "id": "gr-8-recoilless-rifle",
-    "name": "GR-8 Recoilless Rifle",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "right",
-      "right",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/GR-8_Recoilless_Rifle"
-  },
-  {
-    "id": "flam-40-flamethrower",
-    "name": "FLAM-40 Flamethrower",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "down",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/FLAM-40_Flamethrower"
-  },
-  {
-    "id": "mg-206-heavy-machine-gun",
-    "name": "MG-206 Heavy Machine Gun",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "down",
-      "down"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MG-206_Heavy_Machine_Gun"
-  },
-  {
-    "id": "ac-8-autocannon",
-    "name": "AC-8 Autocannon",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "down",
-      "up",
-      "up",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/AC-8_Autocannon"
-  },
-  {
-    "id": "arc-3-arc-thrower",
-    "name": "ARC-3 Arc Thrower",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Engineering Bay",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "right",
-      "down",
-      "up",
-      "left",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/ARC-3_Arc_Thrower"
-  },
-  {
-    "id": "las-99-quasar-cannon",
-    "name": "LAS-99 Quasar Cannon",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Engineering Bay",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "down",
-      "up",
-      "left",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/LAS-99_Quasar_Cannon"
-  },
-  {
-    "id": "rl-77-airburst-rocket-launcher",
-    "name": "RL-77 Airburst Rocket Launcher",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "up",
-      "up",
-      "left",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/RL-77_Airburst_Rocket_Launcher"
-  },
-  {
-    "id": "mls-4x-commando",
-    "name": "MLS-4X Commando",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 120,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "down",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MLS-4X_Commando"
-  },
-  {
-    "id": "faf-14-spear",
-    "name": "FAF-14 Spear",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "down",
-      "up",
-      "down",
-      "down"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/FAF-14_Spear"
-  },
-  {
-    "id": "rs-422-railgun",
-    "name": "RS-422 Railgun",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "right",
-      "down",
-      "up",
-      "left",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/RS-422_Railgun"
-  },
-  {
-    "id": "sta-x3-w-a-s-p-launcher",
-    "name": "StA-X3 W.A.S.P. Launcher",
-    "category": "Support Weapons",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "down",
-      "up",
-      "down",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/StA-X3_W.A.S.P._Launcher"
-  },
-  {
-    "id": "cqc-20-breaching-hammer",
-    "name": "CQC-20 Breaching Hammer",
-    "category": "Support Weapons",
-    "warbond": "Siege Breakers",
-    "source": "Siege Breakers",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "right",
-      "left",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-20_Breaching_Hammer"
-  },
-  {
-    "id": "plas-45-epoch",
-    "name": "PLAS-45 Epoch",
-    "category": "Support Weapons",
-    "warbond": "Control Group",
-    "source": "Control Group",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "left",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/PLAS-45_Epoch"
-  },
-  {
-    "id": "mgx-42-bullet-storm",
-    "name": "MGX-42 Bullet Storm",
-    "category": "Support Weapons",
-    "warbond": "Exo Experts",
-    "source": "Exo Experts",
-    "cooldown_s": 70,
-    "call_in": [
-      "down",
-      "left",
-      "down",
-      "right",
-      "up",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MGX-42_Bullet_Storm"
-  },
-  {
-    "id": "s-11-speargun",
-    "name": "S-11 Speargun",
-    "category": "Support Weapons",
-    "warbond": "Dust Devils",
-    "source": "Dust Devils",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "right",
-      "down",
-      "left",
-      "up",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/S-11_Speargun"
-  },
-  {
-    "id": "cqc-9-defoliation-tool",
-    "name": "CQC-9 Defoliation Tool",
-    "category": "Support Weapons",
-    "warbond": "Python Commandos",
-    "source": "Python Commandos",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "right",
-      "right",
-      "down"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-9_Defoliation_Tool"
-  },
-  {
-    "id": "tx-41-sterilizer",
-    "name": "TX-41 Sterilizer",
-    "category": "Support Weapons",
-    "warbond": "Chemical Agents",
-    "source": "Chemical Agents",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "down",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/TX-41_Sterilizer"
-  },
-  {
-    "id": "eat-700-expendable-napalm",
-    "name": "EAT-700 Expendable Napalm",
-    "category": "Support Weapons",
-    "warbond": "Dust Devils",
-    "source": "Dust Devils",
-    "cooldown_s": 140,
-    "call_in": [
-      "down",
-      "down",
-      "left",
-      "up",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/EAT-700_Expendable_Napalm"
-  },
-  {
-    "id": "eat-411-leveller",
-    "name": "EAT-411 Leveller",
-    "category": "Support Weapons",
-    "warbond": "Siege Breakers",
-    "source": "Siege Breakers",
-    "cooldown_s": 140,
-    "call_in": [
-      "down",
-      "down",
-      "left",
-      "up",
-      "down"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/EAT-411_Leveller"
-  },
-  {
-    "id": "gl-52-de-escalator",
-    "name": "GL-52 De-Escalator",
-    "category": "Support Weapons",
-    "warbond": "Force of Law",
-    "source": "Force of Law",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "right",
-      "up",
-      "left",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/GL-52_De-Escalator"
-  },
-  {
-    "id": "gl-28-belt-fed-grenade-launcher",
-    "name": "GL-28 Belt-Fed Grenade Launcher",
-    "category": "Support Weapons",
-    "warbond": "Siege Breakers",
-    "source": "Siege Breakers",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "left",
-      "up",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/GL-28_Belt-Fed_Grenade_Launcher"
-  },
-  {
-    "id": "b-md-c4-pack",
-    "name": "B/MD C4 Pack",
-    "category": "Support Weapons",
-    "warbond": "Redacted Regiment",
-    "source": "Redacted Regiment",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "right",
-      "up",
-      "up",
-      "right",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/B/MD_C4_Pack"
-  },
-  {
-    "id": "ms-11-solo-silo",
-    "name": "MS-11 Solo Silo",
-    "category": "Support Weapons",
-    "warbond": "Dust Devils",
-    "source": "Dust Devils",
-    "cooldown_s": 180,
-    "call_in": [
-      "down",
-      "up",
-      "right",
-      "down",
-      "down"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MS-11_Solo_Silo"
-  },
-  {
-    "id": "b-flam-80-cremator",
-    "name": "B/FLAM-80 Cremator",
-    "category": "Support Weapons",
-    "warbond": "Entrenched Division",
-    "source": "Entrenched Division",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "down",
-      "right",
-      "down",
-      "up",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/B/FLAM-80_Cremator"
-  },
-  {
-    "id": "m-1000-maxigun",
-    "name": "M-1000 Maxigun",
-    "category": "Support Weapons",
-    "warbond": "Python Commandos",
-    "source": "Python Commandos",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "right",
-      "down",
-      "up",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/M-1000_Maxigun"
-  },
-  {
-    "id": "cqc-1-one-true-flag",
-    "name": "CQC-1 One True Flag",
-    "category": "Support Weapons",
-    "warbond": "Masters of Ceremony",
-    "source": "Masters of Ceremony",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "right",
-      "right",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-1_One_True_Flag"
-  },
-  {
     "id": "orbital-precision-strike",
     "name": "Orbital Precision Strike",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Bridge",
     "cooldown_s": 90,
@@ -538,7 +16,7 @@
   {
     "id": "orbital-gatling-barrage",
     "name": "Orbital Gatling Barrage",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Orbital Cannons",
     "cooldown_s": 70,
@@ -554,7 +32,7 @@
   {
     "id": "orbital-gas-strike",
     "name": "Orbital Gas Strike",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Bridge",
     "cooldown_s": 75,
@@ -569,7 +47,7 @@
   {
     "id": "orbital-120mm-he-barrage",
     "name": "Orbital 120mm HE Barrage",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Orbital Cannons",
     "cooldown_s": 180,
@@ -586,7 +64,7 @@
   {
     "id": "orbital-airburst-strike",
     "name": "Orbital Airburst Strike",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Orbital Cannons",
     "cooldown_s": 100,
@@ -600,7 +78,7 @@
   {
     "id": "orbital-smoke-strike",
     "name": "Orbital Smoke Strike",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Bridge",
     "cooldown_s": 75,
@@ -615,7 +93,7 @@
   {
     "id": "orbital-ems-strike",
     "name": "Orbital EMS Strike",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Bridge",
     "cooldown_s": 75,
@@ -630,7 +108,7 @@
   {
     "id": "orbital-380mm-he-barrage",
     "name": "Orbital 380mm HE Barrage",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Orbital Cannons",
     "cooldown_s": 240,
@@ -648,7 +126,7 @@
   {
     "id": "orbital-walking-barrage",
     "name": "Orbital Walking Barrage",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Orbital Cannons",
     "cooldown_s": 240,
@@ -665,7 +143,7 @@
   {
     "id": "orbital-laser",
     "name": "Orbital Laser",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Orbital Cannons",
     "cooldown_s": 300,
@@ -681,7 +159,7 @@
   {
     "id": "orbital-napalm-barrage",
     "name": "Orbital Napalm Barrage",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Orbital Cannons",
     "cooldown_s": 240,
@@ -698,7 +176,7 @@
   {
     "id": "orbital-railcannon-strike",
     "name": "Orbital Railcannon Strike",
-    "category": "Orbital Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Orbital Cannons",
     "cooldown_s": 180,
@@ -714,7 +192,7 @@
   {
     "id": "eagle-strafing-run",
     "name": "Eagle Strafing Run",
-    "category": "Eagle Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 15,
@@ -728,7 +206,7 @@
   {
     "id": "eagle-airstrike",
     "name": "Eagle Airstrike",
-    "category": "Eagle Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 15,
@@ -743,7 +221,7 @@
   {
     "id": "eagle-cluster-bomb",
     "name": "Eagle Cluster Bomb",
-    "category": "Eagle Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 15,
@@ -759,7 +237,7 @@
   {
     "id": "eagle-smoke-strike",
     "name": "Eagle Smoke Strike",
-    "category": "Eagle Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 15,
@@ -774,7 +252,7 @@
   {
     "id": "eagle-napalm-airstrike",
     "name": "Eagle Napalm Airstrike",
-    "category": "Eagle Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 15,
@@ -789,7 +267,7 @@
   {
     "id": "eagle-110mm-rocket-pods",
     "name": "Eagle 110mm Rocket Pods",
-    "category": "Eagle Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 15,
@@ -804,7 +282,7 @@
   {
     "id": "eagle-500kg-bomb",
     "name": "Eagle 500kg Bomb",
-    "category": "Eagle Strikes",
+    "category": "Offensive Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 15,
@@ -818,299 +296,541 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/Eagle_500kg_Bomb"
   },
   {
-    "id": "md-6-anti-personnel-minefield",
-    "name": "MD-6 Anti-Personnel Minefield",
-    "category": "Emplacements",
+    "id": "40-k-meltagun",
+    "name": "40-K Meltagun",
+    "category": "Supply Permit",
+    "warbond": "Castellan’s Creed Legendary Warbond",
+    "source": "Castellan’s Creed Legendary Warbond",
+    "cooldown_s": 0,
+    "call_in": [],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/40-K_Meltagun"
+  },
+  {
+    "id": "mg-43-machine-gun",
+    "name": "MG-43 Machine Gun",
+    "category": "Supply Permit",
     "warbond": null,
-    "source": "Engineering Bay",
-    "cooldown_s": 120,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
     "call_in": [
+      "down",
+      "left",
+      "down",
+      "up",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MG-43_Machine_Gun"
+  },
+  {
+    "id": "eat-17-expendable-anti-tank",
+    "name": "EAT-17 Expendable Anti-Tank",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 70,
+    "call_in": [
+      "down",
       "down",
       "left",
       "up",
       "right"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MD-6_Anti-Personnel_Minefield"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/EAT-17_Expendable_Anti-Tank"
   },
   {
-    "id": "md-i4-incendiary-mines",
-    "name": "MD-I4 Incendiary Mines",
-    "category": "Emplacements",
+    "id": "m-105-stalwart",
+    "name": "M-105 Stalwart",
+    "category": "Supply Permit",
     "warbond": null,
-    "source": "Engineering Bay",
-    "cooldown_s": 120,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
     "call_in": [
       "down",
       "left",
+      "down",
+      "up",
+      "up",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/M-105_Stalwart"
+  },
+  {
+    "id": "las-98-laser-cannon",
+    "name": "LAS-98 Laser Cannon",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Engineering Bay",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "down",
+      "up",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/LAS-98_Laser_Cannon"
+  },
+  {
+    "id": "apw-1-anti-materiel-rifle",
+    "name": "APW-1 Anti-Materiel Rifle",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "right",
+      "up",
+      "down"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/APW-1_Anti-Materiel_Rifle"
+  },
+  {
+    "id": "gl-21-grenade-launcher",
+    "name": "GL-21 Grenade Launcher",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Engineering Bay",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "up",
       "left",
       "down"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MD-I4_Incendiary_Mines"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/GL-21_Grenade_Launcher"
   },
   {
-    "id": "md-17-anti-tank-mines",
-    "name": "MD-17 Anti-Tank Mines",
-    "category": "Emplacements",
+    "id": "gr-8-recoilless-rifle",
+    "name": "GR-8 Recoilless Rifle",
+    "category": "Supply Permit",
     "warbond": null,
-    "source": "Engineering Bay",
-    "cooldown_s": 120,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
     "call_in": [
       "down",
-      "left",
-      "up",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MD-17_Anti-Tank_Mines"
-  },
-  {
-    "id": "fx-12-shield-generator-relay",
-    "name": "FX-12 Shield Generator Relay",
-    "category": "Emplacements",
-    "warbond": null,
-    "source": "Bridge",
-    "cooldown_s": 90,
-    "call_in": [
-      "down",
-      "down",
-      "left",
-      "right",
-      "left",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/FX-12_Shield_Generator_Relay"
-  },
-  {
-    "id": "e-mg-101-hmg-emplacement",
-    "name": "E/MG-101 HMG Emplacement",
-    "category": "Emplacements",
-    "warbond": null,
-    "source": "Bridge",
-    "cooldown_s": 180,
-    "call_in": [
-      "down",
-      "up",
       "left",
       "right",
       "right",
       "left"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/E/MG-101_HMG_Emplacement"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/GR-8_Recoilless_Rifle"
   },
   {
-    "id": "e-gl-21-grenadier-battlement",
-    "name": "E/GL-21 Grenadier Battlement",
-    "category": "Emplacements",
+    "id": "flam-40-flamethrower",
+    "name": "FLAM-40 Flamethrower",
+    "category": "Supply Permit",
     "warbond": null,
-    "source": "Bridge",
-    "cooldown_s": 120,
-    "call_in": [
-      "down",
-      "right",
-      "down",
-      "left",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/E/GL-21_Grenadier_Battlement"
-  },
-  {
-    "id": "md-8-gas-mines",
-    "name": "MD-8 Gas Mines",
-    "category": "Emplacements",
-    "warbond": null,
-    "source": "Engineering Bay",
-    "cooldown_s": 120,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
     "call_in": [
       "down",
       "left",
-      "left",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MD-8_Gas_Mines"
-  },
-  {
-    "id": "e-at-12-anti-tank-emplacement",
-    "name": "E/AT-12 Anti-Tank Emplacement",
-    "category": "Emplacements",
-    "warbond": "Urban Legends",
-    "source": "Urban Legends",
-    "cooldown_s": 180,
-    "call_in": [
-      "down",
       "up",
-      "left",
-      "right",
-      "right",
-      "right"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/E/AT-12_Anti-Tank_Emplacement"
-  },
-  {
-    "id": "a-mg-43-machine-gun-sentry",
-    "name": "A/MG-43 Machine Gun Sentry",
-    "category": "Sentries",
-    "warbond": null,
-    "source": "Robotics Workshop",
-    "cooldown_s": 90,
-    "call_in": [
       "down",
-      "up",
-      "right",
-      "right",
       "up"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/MG-43_Machine_Gun_Sentry"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/FLAM-40_Flamethrower"
   },
   {
-    "id": "a-g-16-gatling-sentry",
-    "name": "A/G-16 Gatling Sentry",
-    "category": "Sentries",
+    "id": "mg-206-heavy-machine-gun",
+    "name": "MG-206 Heavy Machine Gun",
+    "category": "Supply Permit",
     "warbond": null,
-    "source": "Robotics Workshop",
-    "cooldown_s": 150,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
     "call_in": [
       "down",
-      "up",
-      "right",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/G-16_Gatling_Sentry"
-  },
-  {
-    "id": "a-ac-8-autocannon-sentry",
-    "name": "A/AC-8 Autocannon Sentry",
-    "category": "Sentries",
-    "warbond": null,
-    "source": "Robotics Workshop",
-    "cooldown_s": 150,
-    "call_in": [
-      "down",
-      "up",
-      "right",
-      "up",
       "left",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/AC-8_Autocannon_Sentry"
-  },
-  {
-    "id": "a-m-12-mortar-sentry",
-    "name": "A/M-12 Mortar Sentry",
-    "category": "Sentries",
-    "warbond": null,
-    "source": "Robotics Workshop",
-    "cooldown_s": 180,
-    "call_in": [
-      "down",
       "up",
-      "right",
-      "right",
+      "down",
       "down"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/M-12_Mortar_Sentry"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MG-206_Heavy_Machine_Gun"
   },
   {
-    "id": "a-mls-4x-rocket-sentry",
-    "name": "A/MLS-4X Rocket Sentry",
-    "category": "Sentries",
+    "id": "ac-8-autocannon",
+    "name": "AC-8 Autocannon",
+    "category": "Supply Permit",
     "warbond": null,
-    "source": "Robotics Workshop",
-    "cooldown_s": 150,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
     "call_in": [
       "down",
+      "left",
+      "down",
       "up",
+      "up",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/AC-8_Autocannon"
+  },
+  {
+    "id": "arc-3-arc-thrower",
+    "name": "ARC-3 Arc Thrower",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Engineering Bay",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
       "right",
-      "right",
+      "down",
+      "up",
+      "left",
       "left"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/MLS-4X_Rocket_Sentry"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/ARC-3_Arc_Thrower"
   },
   {
-    "id": "a-arc-3-tesla-tower",
-    "name": "A/ARC-3 Tesla Tower",
-    "category": "Sentries",
+    "id": "las-99-quasar-cannon",
+    "name": "LAS-99 Quasar Cannon",
+    "category": "Supply Permit",
     "warbond": null,
-    "source": "Bridge",
-    "cooldown_s": 120,
+    "source": "Engineering Bay",
+    "cooldown_s": 480,
     "call_in": [
       "down",
-      "up",
-      "right",
+      "down",
       "up",
       "left",
       "right"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/ARC-3_Tesla_Tower"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/LAS-99_Quasar_Cannon"
   },
   {
-    "id": "a-m-23-ems-mortar-sentry",
-    "name": "A/M-23 EMS Mortar Sentry",
-    "category": "Sentries",
+    "id": "rl-77-airburst-rocket-launcher",
+    "name": "RL-77 Airburst Rocket Launcher",
+    "category": "Supply Permit",
     "warbond": null,
-    "source": "Robotics Workshop",
-    "cooldown_s": 180,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
     "call_in": [
       "down",
       "up",
-      "right",
+      "up",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/RL-77_Airburst_Rocket_Launcher"
+  },
+  {
+    "id": "mls-4x-commando",
+    "name": "MLS-4X Commando",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 120,
+    "call_in": [
+      "down",
+      "left",
+      "up",
       "down",
       "right"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/M-23_EMS_Mortar_Sentry"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MLS-4X_Commando"
   },
   {
-    "id": "a-las-98-laser-sentry",
-    "name": "A/LAS-98 Laser Sentry",
-    "category": "Sentries",
+    "id": "faf-14-spear",
+    "name": "FAF-14 Spear",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "down",
+      "up",
+      "down",
+      "down"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/FAF-14_Spear"
+  },
+  {
+    "id": "rs-422-railgun",
+    "name": "RS-422 Railgun",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "right",
+      "down",
+      "up",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/RS-422_Railgun"
+  },
+  {
+    "id": "sta-x3-w-a-s-p-launcher",
+    "name": "StA-X3 W.A.S.P. Launcher",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "down",
+      "up",
+      "down",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/StA-X3_W.A.S.P._Launcher"
+  },
+  {
+    "id": "cqc-20-breaching-hammer",
+    "name": "CQC-20 Breaching Hammer",
+    "category": "Supply Permit",
+    "warbond": "Siege Breakers",
+    "source": "Siege Breakers",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "right",
+      "left",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-20_Breaching_Hammer"
+  },
+  {
+    "id": "plas-45-epoch",
+    "name": "PLAS-45 Epoch",
+    "category": "Supply Permit",
     "warbond": "Control Group",
     "source": "Control Group",
-    "cooldown_s": 150,
+    "cooldown_s": 480,
     "call_in": [
       "down",
+      "left",
       "up",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/PLAS-45_Epoch"
+  },
+  {
+    "id": "mgx-42-bullet-storm",
+    "name": "MGX-42 Bullet Storm",
+    "category": "Supply Permit",
+    "warbond": "Exo Experts",
+    "source": "Exo Experts",
+    "cooldown_s": 70,
+    "call_in": [
+      "down",
+      "left",
+      "down",
+      "right",
+      "up",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MGX-42_Bullet_Storm"
+  },
+  {
+    "id": "eat-700-expendable-napalm",
+    "name": "EAT-700 Expendable Napalm",
+    "category": "Supply Permit",
+    "warbond": "Dust Devils",
+    "source": "Dust Devils",
+    "cooldown_s": 140,
+    "call_in": [
+      "down",
+      "down",
+      "left",
+      "up",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/EAT-700_Expendable_Napalm"
+  },
+  {
+    "id": "gl-52-de-escalator",
+    "name": "GL-52 De-Escalator",
+    "category": "Supply Permit",
+    "warbond": "Force of Law",
+    "source": "Force of Law",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "right",
+      "up",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/GL-52_De-Escalator"
+  },
+  {
+    "id": "s-11-speargun",
+    "name": "S-11 Speargun",
+    "category": "Supply Permit",
+    "warbond": "Dust Devils",
+    "source": "Dust Devils",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
       "right",
       "down",
+      "left",
       "up",
       "right"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/LAS-98_Laser_Sentry"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/S-11_Speargun"
   },
   {
-    "id": "a-flam-40-flame-sentry",
-    "name": "A/FLAM-40 Flame Sentry",
-    "category": "Sentries",
-    "warbond": "Urban Legends",
-    "source": "Urban Legends",
-    "cooldown_s": 100,
+    "id": "cqc-9-defoliation-tool",
+    "name": "CQC-9 Defoliation Tool",
+    "category": "Supply Permit",
+    "warbond": "Python Commandos",
+    "source": "Python Commandos",
+    "cooldown_s": 480,
     "call_in": [
       "down",
-      "up",
+      "left",
       "right",
+      "right",
+      "down"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-9_Defoliation_Tool"
+  },
+  {
+    "id": "tx-41-sterilizer",
+    "name": "TX-41 Sterilizer",
+    "category": "Supply Permit",
+    "warbond": "Chemical Agents",
+    "source": "Chemical Agents",
+    "cooldown_s": 480,
+    "call_in": [
       "down",
+      "left",
+      "up",
+      "down",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/TX-41_Sterilizer"
+  },
+  {
+    "id": "eat-411-leveller",
+    "name": "EAT-411 Leveller",
+    "category": "Supply Permit",
+    "warbond": "Siege Breakers",
+    "source": "Siege Breakers",
+    "cooldown_s": 140,
+    "call_in": [
+      "down",
+      "down",
+      "left",
+      "up",
+      "down"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/EAT-411_Leveller"
+  },
+  {
+    "id": "gl-28-belt-fed-grenade-launcher",
+    "name": "GL-28 Belt-Fed Grenade Launcher",
+    "category": "Supply Permit",
+    "warbond": "Siege Breakers",
+    "source": "Siege Breakers",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "up",
+      "left",
       "up",
       "up"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/FLAM-40_Flame_Sentry"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/GL-28_Belt-Fed_Grenade_Launcher"
   },
   {
-    "id": "a-gm-17-gas-mortar-sentry",
-    "name": "A/GM-17 Gas Mortar Sentry",
-    "category": "Sentries",
-    "warbond": "Entrenched Division",
-    "source": "Entrenched Division",
+    "id": "ms-11-solo-silo",
+    "name": "MS-11 Solo Silo",
+    "category": "Supply Permit",
+    "warbond": "Dust Devils",
+    "source": "Dust Devils",
     "cooldown_s": 180,
     "call_in": [
       "down",
       "up",
       "right",
       "down",
-      "left"
+      "down"
     ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/A/GM-17_Gas_Mortar_Sentry"
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MS-11_Solo_Silo"
+  },
+  {
+    "id": "b-flam-80-cremator",
+    "name": "B/FLAM-80 Cremator",
+    "category": "Supply Permit",
+    "warbond": "Entrenched Division",
+    "source": "Entrenched Division",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "down",
+      "right",
+      "down",
+      "up",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/B/FLAM-80_Cremator"
+  },
+  {
+    "id": "b-md-c4-pack",
+    "name": "B/MD C4 Pack",
+    "category": "Supply Permit",
+    "warbond": "Redacted Regiment",
+    "source": "Redacted Regiment",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "right",
+      "up",
+      "up",
+      "right",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/B/MD_C4_Pack"
+  },
+  {
+    "id": "cqc-1-one-true-flag",
+    "name": "CQC-1 One True Flag",
+    "category": "Supply Permit",
+    "warbond": "Masters of Ceremony",
+    "source": "Masters of Ceremony",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "right",
+      "right",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-1_One_True_Flag"
+  },
+  {
+    "id": "m-1000-maxigun",
+    "name": "M-1000 Maxigun",
+    "category": "Supply Permit",
+    "warbond": "Python Commandos",
+    "source": "Python Commandos",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "right",
+      "down",
+      "up",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/M-1000_Maxigun"
   },
   {
     "id": "b-1-supply-pack",
     "name": "B-1 Supply Pack",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Engineering Bay",
     "cooldown_s": 480,
@@ -1127,7 +847,7 @@
   {
     "id": "lift-850-jump-pack",
     "name": "LIFT-850 Jump Pack",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 480,
@@ -1143,7 +863,7 @@
   {
     "id": "sh-20-ballistic-shield-backpack",
     "name": "SH-20 Ballistic Shield Backpack",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Engineering Bay",
     "cooldown_s": 240,
@@ -1160,7 +880,7 @@
   {
     "id": "ax-ar-23-guard-dog",
     "name": "AX/AR-23 Guard Dog",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Engineering Bay",
     "cooldown_s": 480,
@@ -1177,7 +897,7 @@
   {
     "id": "ax-las-5-rover",
     "name": "AX/LAS-5 Rover",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Engineering Bay",
     "cooldown_s": 480,
@@ -1194,7 +914,7 @@
   {
     "id": "sh-32-shield-generator-pack",
     "name": "SH-32 Shield Generator Pack",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Engineering Bay",
     "cooldown_s": 480,
@@ -1211,7 +931,7 @@
   {
     "id": "sh-51-directional-shield",
     "name": "SH-51 Directional Shield",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": "Urban Legends",
     "source": "Urban Legends",
     "cooldown_s": 300,
@@ -1228,7 +948,7 @@
   {
     "id": "ax-flam-75-hot-dog",
     "name": "AX/FLAM-75 Hot Dog",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": "Python Commandos",
     "source": "Python Commandos",
     "cooldown_s": 480,
@@ -1245,7 +965,7 @@
   {
     "id": "b-100-portable-hellbomb",
     "name": "B-100 Portable Hellbomb",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": "Servants of Freedom",
     "source": "Servants of Freedom",
     "cooldown_s": 300,
@@ -1261,7 +981,7 @@
   {
     "id": "ax-arc-3-k-9",
     "name": "AX/ARC-3 K-9",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": "Force of Law",
     "source": "Force of Law",
     "cooldown_s": 480,
@@ -1278,7 +998,7 @@
   {
     "id": "lift-860-hover-pack",
     "name": "LIFT-860 Hover Pack",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": "Borderline Justice",
     "source": "Borderline Justice",
     "cooldown_s": 480,
@@ -1295,7 +1015,7 @@
   {
     "id": "ax-tx-13-dog-breath",
     "name": "AX/TX-13 Dog Breath",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": "Chemical Agents",
     "source": "Chemical Agents",
     "cooldown_s": 480,
@@ -1312,7 +1032,7 @@
   {
     "id": "lift-182-warp-pack",
     "name": "LIFT-182 Warp Pack",
-    "category": "Backpacks",
+    "category": "Supply Permit",
     "warbond": "Control Group",
     "source": "Control Group",
     "cooldown_s": 480,
@@ -1329,7 +1049,7 @@
   {
     "id": "m-103-supply-frv",
     "name": "M-103 Supply FRV",
-    "category": "Vehicles",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 480,
@@ -1347,7 +1067,7 @@
   {
     "id": "m-104-incinerator-frv",
     "name": "M-104 Incinerator FRV",
-    "category": "Vehicles",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 480,
@@ -1365,7 +1085,7 @@
   {
     "id": "exo-49-emancipator-exosuit",
     "name": "EXO-49 Emancipator Exosuit",
-    "category": "Vehicles",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Robotics Workshop",
     "cooldown_s": 420,
@@ -1383,7 +1103,7 @@
   {
     "id": "exo-45-patriot-exosuit",
     "name": "EXO-45 Patriot Exosuit",
-    "category": "Vehicles",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Robotics Workshop",
     "cooldown_s": 420,
@@ -1401,7 +1121,7 @@
   {
     "id": "m-102-fast-recon-vehicle",
     "name": "M-102 Fast Recon Vehicle",
-    "category": "Vehicles",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 480,
@@ -1419,7 +1139,7 @@
   {
     "id": "td-220-bastion-mk-xvi",
     "name": "TD-220 Bastion MK XVI",
-    "category": "Vehicles",
+    "category": "Supply Permit",
     "warbond": null,
     "source": "Hangar",
     "cooldown_s": 780,
@@ -1439,7 +1159,7 @@
   {
     "id": "exo-55-breakthrough-exosuit",
     "name": "EXO-55 Breakthrough Exosuit",
-    "category": "Vehicles",
+    "category": "Supply Permit",
     "warbond": "Exo Experts",
     "source": "Exo Experts",
     "cooldown_s": 420,
@@ -1457,7 +1177,7 @@
   {
     "id": "exo-51-lumberer-exosuit",
     "name": "EXO-51 Lumberer Exosuit",
-    "category": "Vehicles",
+    "category": "Supply Permit",
     "warbond": "Exo Experts",
     "source": "Exo Experts",
     "cooldown_s": 420,
@@ -1471,5 +1191,295 @@
       "up"
     ],
     "wiki_url": "https://helldivers.wiki.gg/wiki/EXO-51_Lumberer_Exosuit"
+  },
+  {
+    "id": "a-mg-43-machine-gun-sentry",
+    "name": "A/MG-43 Machine Gun Sentry",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Robotics Workshop",
+    "cooldown_s": 90,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "right",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/MG-43_Machine_Gun_Sentry"
+  },
+  {
+    "id": "a-g-16-gatling-sentry",
+    "name": "A/G-16 Gatling Sentry",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Robotics Workshop",
+    "cooldown_s": 150,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/G-16_Gatling_Sentry"
+  },
+  {
+    "id": "a-ac-8-autocannon-sentry",
+    "name": "A/AC-8 Autocannon Sentry",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Robotics Workshop",
+    "cooldown_s": 150,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "up",
+      "left",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/AC-8_Autocannon_Sentry"
+  },
+  {
+    "id": "a-m-12-mortar-sentry",
+    "name": "A/M-12 Mortar Sentry",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Robotics Workshop",
+    "cooldown_s": 180,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "right",
+      "down"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/M-12_Mortar_Sentry"
+  },
+  {
+    "id": "a-mls-4x-rocket-sentry",
+    "name": "A/MLS-4X Rocket Sentry",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Robotics Workshop",
+    "cooldown_s": 150,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "right",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/MLS-4X_Rocket_Sentry"
+  },
+  {
+    "id": "a-arc-3-tesla-tower",
+    "name": "A/ARC-3 Tesla Tower",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Bridge",
+    "cooldown_s": 120,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "up",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/ARC-3_Tesla_Tower"
+  },
+  {
+    "id": "a-m-23-ems-mortar-sentry",
+    "name": "A/M-23 EMS Mortar Sentry",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Robotics Workshop",
+    "cooldown_s": 180,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "down",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/M-23_EMS_Mortar_Sentry"
+  },
+  {
+    "id": "a-las-98-laser-sentry",
+    "name": "A/LAS-98 Laser Sentry",
+    "category": "Defensive Permit",
+    "warbond": "Control Group",
+    "source": "Control Group",
+    "cooldown_s": 150,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "down",
+      "up",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/LAS-98_Laser_Sentry"
+  },
+  {
+    "id": "a-flam-40-flame-sentry",
+    "name": "A/FLAM-40 Flame Sentry",
+    "category": "Defensive Permit",
+    "warbond": "Urban Legends",
+    "source": "Urban Legends",
+    "cooldown_s": 100,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "down",
+      "up",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/FLAM-40_Flame_Sentry"
+  },
+  {
+    "id": "a-gm-17-gas-mortar-sentry",
+    "name": "A/GM-17 Gas Mortar Sentry",
+    "category": "Defensive Permit",
+    "warbond": "Entrenched Division",
+    "source": "Entrenched Division",
+    "cooldown_s": 180,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "down",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/A/GM-17_Gas_Mortar_Sentry"
+  },
+  {
+    "id": "md-6-anti-personnel-minefield",
+    "name": "MD-6 Anti-Personnel Minefield",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Engineering Bay",
+    "cooldown_s": 120,
+    "call_in": [
+      "down",
+      "left",
+      "up",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MD-6_Anti-Personnel_Minefield"
+  },
+  {
+    "id": "md-i4-incendiary-mines",
+    "name": "MD-I4 Incendiary Mines",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Engineering Bay",
+    "cooldown_s": 120,
+    "call_in": [
+      "down",
+      "left",
+      "left",
+      "down"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MD-I4_Incendiary_Mines"
+  },
+  {
+    "id": "md-17-anti-tank-mines",
+    "name": "MD-17 Anti-Tank Mines",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Engineering Bay",
+    "cooldown_s": 120,
+    "call_in": [
+      "down",
+      "left",
+      "up",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MD-17_Anti-Tank_Mines"
+  },
+  {
+    "id": "fx-12-shield-generator-relay",
+    "name": "FX-12 Shield Generator Relay",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Bridge",
+    "cooldown_s": 90,
+    "call_in": [
+      "down",
+      "down",
+      "left",
+      "right",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/FX-12_Shield_Generator_Relay"
+  },
+  {
+    "id": "e-mg-101-hmg-emplacement",
+    "name": "E/MG-101 HMG Emplacement",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Bridge",
+    "cooldown_s": 180,
+    "call_in": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "right",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/E/MG-101_HMG_Emplacement"
+  },
+  {
+    "id": "e-gl-21-grenadier-battlement",
+    "name": "E/GL-21 Grenadier Battlement",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Bridge",
+    "cooldown_s": 120,
+    "call_in": [
+      "down",
+      "right",
+      "down",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/E/GL-21_Grenadier_Battlement"
+  },
+  {
+    "id": "md-8-gas-mines",
+    "name": "MD-8 Gas Mines",
+    "category": "Defensive Permit",
+    "warbond": null,
+    "source": "Engineering Bay",
+    "cooldown_s": 120,
+    "call_in": [
+      "down",
+      "left",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MD-8_Gas_Mines"
+  },
+  {
+    "id": "e-at-12-anti-tank-emplacement",
+    "name": "E/AT-12 Anti-Tank Emplacement",
+    "category": "Defensive Permit",
+    "warbond": "Urban Legends",
+    "source": "Urban Legends",
+    "cooldown_s": 180,
+    "call_in": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "right",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/E/AT-12_Anti-Tank_Emplacement"
   }
 ]

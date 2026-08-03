@@ -1133,7 +1133,7 @@
         "health_is_main": false,
         "av": 3,
         "fatal": true,
-        "overflow_pct": 200,
+        "overflow_pct": 150,
         "overflow_cap": true,
         "durable_pct": 100,
         "exdr": 0
@@ -6930,7 +6930,7 @@
         "exdr": 100
       },
       {
-        "name": "Forearms (2)",
+        "name": "Lower Arms (2)",
         "health": 800,
         "health_is_main": false,
         "av": 3,
