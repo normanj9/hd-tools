@@ -96,12 +96,21 @@ table.compact .tag { white-space: normal; text-align: center; line-height: 1.15;
 .tag-av4 { background: #2a1a12; color: #ff8a65; }
 .tag-av5 { background: #2a1212; color: #ef5350; }
 .tag-av6 { background: #200a0a; color: #b71c1c; }
+.tag-av7 { background: #200a0a; color: #b71c1c; }
 .cell-num { color: var(--dim); text-align: right; }
 
+/* AP badges — shown under each weapon column header, same tier scale as AV tags */
+.ap-badge-row { margin-top: 3px; }
+.ap-badge { font-size: 8px; padding: 1px 4px; margin: 0 1px; }
+
 /* STK cells */
-.stk-cell { text-align: center; min-width: 70px; position: relative; cursor: default; line-height: 1.25; }
+.stk-cell { text-align: center; min-width: 70px; position: relative; cursor: help; line-height: 1.25; }
 .stk-val { font-weight: 700; font-size: 13px; }
 .stk-dmg { font-size: 9px; color: var(--dim); display: block; }
+.stk-dmg.dur-heavy { color: #ff8a65; }
+.stk-overflow { font-size: 9px; color: var(--dim); display: block; }
+.stk-blocked { color: #ef5350; }
+.pen-partial { color: #ffca28; font-weight: 700; margin-left: 4px; }
 .stk-inf { color: var(--bots); }
 /* Color scale */
 .stk-1  { color: #00e676; }
@@ -10678,9 +10687,9 @@ let factionSel = 'bugs';
 
 // ── Faction heavies ───────────────────────────────────────────────────────────
 const FACTION_HEAVIES = {
-  bugs:   ['bile-titan', 'charger', 'charger-behemoth', 'impaler'],
+  bugs:   ['bile-titan', 'charger', 'charger-behemoth', 'impaler', 'dragonroach'],
   bots:   ['factory-strider', 'war-strider', 'hulk-bruiser', 'annihilator-tank', 'gunship', 'vox-engine'],
-  squids: ['harvester', 'fleshmob', 'overseer', 'grounded-warp-ship'],
+  squids: ['harvester', 'fleshmob', 'grounded-warp-ship', 'gatekeeper', 'veracitor'],
 };
 
 // ── Faction lights ──────────────────────────────────────────────────────────
@@ -10699,8 +10708,7 @@ const FACTION_LIGHTS = {
     'reinforced-scout-strider', 'berserker', 'radical',
   ],
   squids: [
-    'voteless', 'watcher', 'elevated-overseer', 'stingray', 'obtruder',
-    'gatekeeper', 'veracitor',
+    'voteless', 'watcher', 'overseer', 'elevated-overseer', 'stingray', 'obtruder',
   ],
 };
 
@@ -10995,6 +11003,36 @@ function overflow(dmgPerHit, part) {
   return capped * (part.overflow_pct / 100);
 }
 
+// Explains *why* a hit does what it does: AP vs AV, ExDR, and the durable-armor
+// blend — surfaced as a hover tooltip plus a couple of compact inline flags.
+function hitWhy(hit, part) {
+  if (!hit.results.length) return { title: '', partial: false, durHeavy: false };
+
+  const lines = hit.results.map(r => {
+    const ap = r.comp.ap;
+    let penTxt;
+    if      (r.pen === 'none')    penTxt = `AP${ap} < AV${part.av} — ricochet, no penetration`;
+    else if (r.pen === 'partial') penTxt = `AP${ap} = AV${part.av} — partial penetration (65%)`;
+    else if (r.pen === 'exdr')    penTxt = `AP${ap} > AV${part.av} — penetrates, but fully blocked by ExDR`;
+    else                          penTxt = `AP${ap} > AV${part.av} — full penetration`;
+    if (r.exdrMult < 1) {
+      penTxt += r.exdrMult <= 0 ? ' · fully blocked by ExDR' : ` · ExDR reduces ${Math.round((1 - r.exdrMult) * 100)}%`;
+    }
+    const durPct = part.durable_pct || 0;
+    const durTxt = (durPct > 0 && r.rawEff != null)
+      ? ` · ${r.comp.damage} std / ${r.comp.durable_damage} durable @ ${durPct}% durable = ${r.rawEff.toFixed(1)} eff`
+      : '';
+    return `${r.comp.name}: ${penTxt}${durTxt} → ${r.damage.toFixed(1)} dmg`;
+  });
+
+  const partial  = hit.results.some(r => r.pen === 'partial');
+  const durHeavy = hit.results.some(r => {
+    const std = r.comp.damage, dur = r.comp.durable_damage;
+    return (part.durable_pct || 0) >= 30 && std > 0 && (dur / std) < 0.65 && r.damage > 0;
+  });
+  return { title: lines.join('\n'), partial, durHeavy };
+}
+
 // ── Populate selects ──────────────────────────────────────────────────────────
 
 function buildEnemyGroups() {
@@ -11260,7 +11298,12 @@ function buildEnemyTable(enemy, cols, topN = null, compact = false) {
         <th class="cell-num">HP</th>
         <th>AV</th>
         ${compact ? '' : '<th class="cell-num" title="Durable %">Dur%</th><th class="cell-num" title="Explosion Damage Resistance">ExDR</th>'}
-        ${cols.map(c => `<th class="th-weapon"><span title="${c.label}">${c.label.replace('\n', '<br>')}</span></th>`).join('')}
+        ${cols.map(c => {
+          const apBadges = c.apList.map(ap =>
+            `<span class="tag tag-av${ap} ap-badge" title="Armor Penetration: ${AP_NAMES[ap] || 'AP' + ap}">AP${ap}</span>`
+          ).join('');
+          return `<th class="th-weapon"><span title="${c.label}">${c.label.replace('\n', '<br>')}</span><div class="ap-badge-row">${apBadges}</div></th>`;
+        }).join('')}
       </tr></thead>
       <tbody>
   `;
@@ -11284,12 +11327,19 @@ function buildEnemyTable(enemy, cols, topN = null, compact = false) {
     hitData.forEach((hit, ci) => {
       const n   = stk(hit.total, hp);
       const { txt, cls } = stkLabel(n);
+      const why = hitWhy(hit, part);
       const dmgFmt = hit.total > 0 ? (Math.round(hit.total * 10) / 10).toLocaleString() : '—';
       const ovfl = overflow(hit.total, part);
       const stkM = ovfl > 0 ? stk(ovfl, mainHP) : null;
-      html += `<td class="stk-cell">
+      const titleAttr = why.title.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+      const dmgLine = hit.total > 0
+        ? `<span class="stk-dmg${why.durHeavy ? ' dur-heavy' : ''}">${dmgFmt}/hit${why.partial ? '<span class="pen-partial">65%</span>' : ''}</span>`
+        : `<span class="stk-dmg stk-blocked">no pen</span>`;
+      const overflowHtml = stkM && isFinite(stkM)
+        ? `<span class="stk-overflow" title="shots to kill via main overflow">+${stkM}→main</span>` : '';
+      html += `<td class="stk-cell" title="${titleAttr}">
         <span class="stk-val ${cls}">${txt}</span>
-        <span class="stk-dmg">${dmgFmt}/hit${stkM && isFinite(stkM) ? `<br><span title="shots to kill via main overflow">+${stkM}→main</span>` : ''}</span>
+        ${dmgLine}${overflowHtml}
       </td>`;
     });
 
@@ -11303,7 +11353,8 @@ function resolveCols(activeSlots) {
   return activeSlots.map(s => {
     const w = WEAPONS.find(x => x.id === s.weaponId);
     const m = w ? w.modes[s.modeIdx] : null;
-    return { slot: s, weapon: w, mode: m,
+    const apList = m ? [...new Set(m.components.map(c => c.ap))] : [];
+    return { slot: s, weapon: w, mode: m, apList,
              label: w ? (w.modes.length > 1 ? `${w.name}\n${m?.name}` : w.name) : '?' };
   });
 }

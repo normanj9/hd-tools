@@ -1,3 +1,4 @@
 loadouts.json
 todo.md
 __pycache__/
+.claude/settings.local.json
