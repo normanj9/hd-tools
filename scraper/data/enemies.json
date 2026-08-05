@@ -14,7 +14,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -25,7 +27,9 @@
         "overflow_pct": 80,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Eyes (2)",
@@ -36,7 +40,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fusion Cannons (2)",
@@ -47,7 +53,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Grenade Launchers (2)",
@@ -58,7 +66,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crotch",
@@ -69,7 +79,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Heatsink",
@@ -80,7 +92,9 @@
         "overflow_pct": 70,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hip Joints (2)",
@@ -91,7 +105,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -102,7 +118,9 @@
         "overflow_pct": 80,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Greaves (2)",
@@ -113,7 +131,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -132,7 +152,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stratagem Scrambler",
@@ -143,7 +165,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cannon Turret",
@@ -154,7 +178,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fusion Gatling Guns (2)",
@@ -165,7 +191,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head Armor",
@@ -176,7 +204,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head Body",
@@ -187,7 +217,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Neck Armor",
@@ -198,7 +230,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Neck",
@@ -209,7 +243,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Top Armor",
@@ -220,7 +256,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Engine Weakspot",
@@ -231,7 +269,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Armor",
@@ -242,7 +282,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Side Armor (2)",
@@ -253,7 +295,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Engine Armor",
@@ -264,7 +308,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Engine Weakspot",
@@ -275,7 +321,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor",
@@ -286,7 +334,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (8)",
@@ -297,7 +347,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Knee Armor (4)",
@@ -308,7 +360,9 @@
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Assembly (4)",
@@ -319,7 +373,9 @@
         "overflow_pct": 40,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 2000,
+        "constitution_decay": 0.0
       },
       {
         "name": "Belly Panels (2)",
@@ -330,7 +386,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 1200,
+        "constitution_decay": 0.0
       }
     ]
   },
@@ -349,7 +407,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -360,7 +420,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -371,7 +433,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -382,7 +446,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Heatsink",
@@ -393,7 +459,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 650,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -412,7 +480,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -423,7 +493,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -434,7 +506,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -445,7 +519,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Heatsink",
@@ -456,7 +532,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 650,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -475,7 +553,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -486,7 +566,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -497,7 +579,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -508,7 +592,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Heatsink",
@@ -519,7 +605,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 650,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -538,7 +626,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -549,7 +639,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -560,7 +652,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -571,7 +665,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Heatsink",
@@ -582,7 +678,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 650,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -601,7 +699,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -612,7 +712,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -623,7 +725,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -634,7 +738,9 @@
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -645,7 +751,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -656,7 +764,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -667,7 +777,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -678,7 +790,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -697,7 +811,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -708,7 +824,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -719,7 +837,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -730,7 +850,9 @@
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -741,7 +863,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -752,7 +876,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -763,7 +889,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -774,7 +902,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Backpack",
@@ -785,7 +915,9 @@
         "overflow_pct": 40,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -796,7 +928,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -815,7 +949,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -826,7 +962,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -837,7 +975,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -848,7 +988,9 @@
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -859,7 +1001,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -870,7 +1014,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -881,7 +1027,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -892,7 +1040,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rockets",
@@ -903,7 +1053,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rocket Pods",
@@ -914,7 +1066,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -933,7 +1087,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret Front",
@@ -944,7 +1100,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret Heatsink",
@@ -955,7 +1113,9 @@
         "overflow_pct": 200,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Main",
@@ -966,7 +1126,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Front",
@@ -977,7 +1139,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Sides (2)",
@@ -988,7 +1152,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Engine Bay",
@@ -999,7 +1165,9 @@
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tracks (2)",
@@ -1010,7 +1178,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1029,7 +1199,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret Front and Sides",
@@ -1040,7 +1212,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret Heatsink",
@@ -1051,7 +1225,9 @@
         "overflow_pct": 200,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Main",
@@ -1062,7 +1238,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Front",
@@ -1073,7 +1251,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Side (2)",
@@ -1084,7 +1264,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Engine Bay",
@@ -1095,7 +1277,9 @@
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tracks (2)",
@@ -1106,7 +1290,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1125,7 +1311,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Launch Tubes",
@@ -1136,7 +1324,9 @@
         "overflow_pct": 150,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Main",
@@ -1147,7 +1337,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Front",
@@ -1158,7 +1350,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Sides (2)",
@@ -1169,7 +1363,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Engine Bay",
@@ -1180,7 +1376,9 @@
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tracks (2)",
@@ -1191,7 +1389,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1210,7 +1410,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -1221,7 +1423,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chest",
@@ -1232,7 +1436,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 40,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -1243,7 +1449,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -1254,7 +1462,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulder (2)",
@@ -1265,7 +1475,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arm (2)",
@@ -1276,7 +1488,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg (2)",
@@ -1287,7 +1501,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1306,7 +1522,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -1317,7 +1535,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -1328,7 +1548,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -1339,7 +1561,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -1350,7 +1574,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1369,7 +1595,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fuselage",
@@ -1380,7 +1608,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Thrusters (2)",
@@ -1391,7 +1621,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 85,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Thrusters (2)",
@@ -1402,7 +1634,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1421,7 +1655,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pilot",
@@ -1432,7 +1668,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Plate",
@@ -1443,7 +1681,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "HMG",
@@ -1454,7 +1694,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret System",
@@ -1465,7 +1707,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Waist",
@@ -1476,7 +1720,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -1487,7 +1733,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1506,7 +1754,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Faceplate",
@@ -1517,7 +1767,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "HMG",
@@ -1528,7 +1780,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rocket Rails (2)",
@@ -1539,7 +1793,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 80
+        "exdr": 80,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rockets (4)",
@@ -1550,7 +1806,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret System",
@@ -1561,7 +1819,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Waist",
@@ -1572,7 +1832,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -1583,7 +1845,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1602,7 +1866,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fuselage",
@@ -1613,7 +1879,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Thruster (4)",
@@ -1624,7 +1892,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1643,7 +1913,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -1654,7 +1926,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -1665,7 +1939,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -1676,7 +1952,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -1687,7 +1965,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1706,7 +1986,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -1717,7 +1999,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -1728,7 +2012,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Arm",
@@ -1739,7 +2025,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Arm",
@@ -1750,7 +2038,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg (2)",
@@ -1761,7 +2051,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1780,7 +2072,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -1791,7 +2085,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -1802,7 +2098,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -1813,7 +2111,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -1824,7 +2124,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1843,7 +2145,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Backpack Main",
@@ -1854,7 +2158,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 100,
+        "constitution_decay": 50.0
       },
       {
         "name": "Backpack",
@@ -1865,7 +2171,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 1000,
+        "constitution_decay": 200.0
       },
       {
         "name": "Head",
@@ -1876,7 +2184,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -1887,7 +2197,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -1898,7 +2210,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -1909,7 +2223,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1928,7 +2244,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -1939,7 +2257,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -1950,7 +2270,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -1961,7 +2283,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -1972,7 +2296,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -1991,7 +2317,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2002,7 +2330,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -2013,7 +2343,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2024,7 +2356,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2035,7 +2369,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -2046,7 +2382,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 100,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -2065,7 +2403,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2076,7 +2416,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -2087,7 +2429,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2098,7 +2442,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2109,7 +2455,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -2120,7 +2468,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2139,7 +2489,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2150,7 +2502,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -2161,7 +2515,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2172,7 +2528,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2183,7 +2541,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -2194,7 +2554,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2213,7 +2575,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2224,7 +2588,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -2235,7 +2601,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2246,7 +2614,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2257,7 +2627,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -2268,7 +2640,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2287,7 +2661,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2298,7 +2674,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -2309,7 +2687,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -2320,7 +2700,9 @@
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2331,7 +2713,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -2342,7 +2726,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -2353,7 +2739,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2364,7 +2752,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -2375,7 +2765,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2394,7 +2786,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2405,7 +2799,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2416,7 +2812,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2427,7 +2825,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Jetpack",
@@ -2438,7 +2838,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2457,7 +2859,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2468,7 +2872,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2479,7 +2885,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2490,7 +2898,9 @@
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Jetpack",
@@ -2501,7 +2911,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2520,7 +2932,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2531,7 +2945,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -2542,7 +2958,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2553,7 +2971,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2564,7 +2984,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fuel Tanks Main",
@@ -2575,7 +2997,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 100,
+        "constitution_decay": 50.0
       },
       {
         "name": "Fuel Tanks",
@@ -2586,7 +3010,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 1000,
+        "constitution_decay": 200.0
       }
     ]
   },
@@ -2605,7 +3031,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2616,7 +3044,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -2627,7 +3057,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2638,7 +3070,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2649,7 +3083,9 @@
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2668,7 +3104,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2679,7 +3117,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -2690,7 +3130,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -2701,7 +3143,9 @@
         "overflow_pct": 25,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2712,7 +3156,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -2723,7 +3169,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -2734,7 +3182,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2745,7 +3195,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -2756,7 +3208,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2775,7 +3229,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2786,7 +3242,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -2797,7 +3255,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -2808,7 +3268,9 @@
         "overflow_pct": 25,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -2819,7 +3281,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -2830,7 +3294,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -2841,7 +3307,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -2852,7 +3320,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -2863,7 +3333,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2882,7 +3354,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -2893,7 +3367,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Circuits",
@@ -2904,7 +3380,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pauldron",
@@ -2915,7 +3393,9 @@
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 65
+        "exdr": 65,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Arms (2)",
@@ -2926,7 +3406,9 @@
         "overflow_pct": 80,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 55
+        "exdr": 55,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Forearms (2)",
@@ -2937,7 +3419,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis and Left Leg",
@@ -2948,7 +3432,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Leg",
@@ -2959,7 +3445,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -2978,7 +3466,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Helmet",
@@ -2989,7 +3479,9 @@
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 65
+        "exdr": 65,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -3000,7 +3492,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor",
@@ -3011,7 +3505,9 @@
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 65
+        "exdr": 65,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -3022,7 +3518,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pauldrons (2)",
@@ -3033,7 +3531,9 @@
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 65
+        "exdr": 65,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Arms (2)",
@@ -3044,7 +3544,9 @@
         "overflow_pct": 80,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 55
+        "exdr": 55,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Forearms (2)",
@@ -3055,7 +3557,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis and Left Leg",
@@ -3066,7 +3570,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Leg",
@@ -3077,7 +3583,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -3096,7 +3604,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Sarcophagus",
@@ -3107,7 +3617,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -3118,7 +3630,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cannons (2)",
@@ -3129,7 +3643,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Missile Launchers (2)",
@@ -3140,7 +3656,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Miniguns (2)",
@@ -3151,7 +3669,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Speakers (2)",
@@ -3162,7 +3682,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fog Lights (2)",
@@ -3173,7 +3695,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Flaps (2)",
@@ -3184,7 +3708,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Vents (6)",
@@ -3195,7 +3721,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hatches (2)",
@@ -3206,7 +3734,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Undercarriage",
@@ -3217,7 +3747,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Trackpod Latches (4)",
@@ -3228,7 +3760,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tracks (4)",
@@ -3239,7 +3773,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -3258,7 +3794,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -3269,7 +3807,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 95,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -3280,7 +3820,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -3291,7 +3833,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt Armor",
@@ -3302,7 +3846,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Sac",
@@ -3313,7 +3859,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Sac",
@@ -3324,7 +3872,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -3335,7 +3885,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -3346,7 +3898,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (12)",
@@ -3357,7 +3911,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Left Leg Flesh",
@@ -3368,7 +3924,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 1500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Leg Flesh (3)",
@@ -3379,7 +3937,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 2000,
+        "constitution_decay": 0.0
       }
     ]
   },
@@ -3398,7 +3958,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 750,
+        "constitution_decay": 100.0
       },
       {
         "name": "Head",
@@ -3409,7 +3971,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -3420,7 +3984,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -3431,7 +3997,9 @@
         "overflow_pct": 300,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -3442,7 +4010,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -3453,7 +4023,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -3464,7 +4036,9 @@
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -3475,7 +4049,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Leg Armor (2)",
@@ -3486,7 +4062,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg Armor (2)",
@@ -3497,7 +4075,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -3508,7 +4088,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -3527,7 +4109,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 1000,
+        "constitution_decay": 100.0
       },
       {
         "name": "Head",
@@ -3538,7 +4122,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -3549,7 +4135,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -3560,7 +4148,9 @@
         "overflow_pct": 300,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -3571,7 +4161,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -3582,7 +4174,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -3593,7 +4187,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -3604,7 +4200,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Leg Armor (2)",
@@ -3615,7 +4213,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg Armor (2)",
@@ -3626,7 +4226,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -3637,7 +4239,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -3656,7 +4260,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -3667,7 +4273,9 @@
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tentacle Armor (3)",
@@ -3678,7 +4286,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tentacle Flesh (3)",
@@ -3689,7 +4299,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crest Armor",
@@ -3700,7 +4312,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -3711,7 +4325,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -3722,7 +4338,9 @@
         "overflow_pct": 150,
         "overflow_cap": true,
         "durable_pct": 90,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -3733,7 +4351,9 @@
         "overflow_pct": 150,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -3744,7 +4364,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -3755,7 +4377,9 @@
         "overflow_pct": 140,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (4)",
@@ -3766,7 +4390,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -3777,7 +4403,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -3796,7 +4424,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -3807,7 +4437,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 35,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 75.0
       },
       {
         "name": "Claws (2)",
@@ -3818,7 +4450,9 @@
         "overflow_pct": 25,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Frontal Tarsal Plate Armor (2)",
@@ -3829,7 +4463,9 @@
         "overflow_pct": 45,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Legs (2)",
@@ -3840,7 +4476,9 @@
         "overflow_pct": 45,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Legs (2)",
@@ -3851,7 +4489,9 @@
         "overflow_pct": 35,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -3870,7 +4510,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -3881,7 +4523,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 300,
+        "constitution_decay": 75.0
       },
       {
         "name": "Claws (2)",
@@ -3892,7 +4536,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -3903,7 +4549,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -3922,7 +4570,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -3933,7 +4583,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 300,
+        "constitution_decay": 100.0
       },
       {
         "name": "Claws (2)",
@@ -3944,7 +4596,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -3955,7 +4609,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -3974,7 +4630,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -3985,7 +4643,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs",
@@ -3996,7 +4656,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (2)",
@@ -4007,7 +4669,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4026,7 +4690,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4037,7 +4703,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Body Armor",
@@ -4048,7 +4716,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underbelly",
@@ -4059,7 +4729,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -4070,7 +4742,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -4081,7 +4755,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings",
@@ -4092,7 +4768,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4111,7 +4789,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4122,7 +4802,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mouth",
@@ -4133,7 +4815,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Spinal Plates",
@@ -4144,7 +4828,9 @@
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -4155,7 +4841,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Legs (2)",
@@ -4166,7 +4854,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Legs (2)",
@@ -4177,7 +4867,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4196,7 +4888,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4207,7 +4901,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mouth",
@@ -4218,7 +4914,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Spinal Plates",
@@ -4229,7 +4927,9 @@
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -4240,7 +4940,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Legs (2)",
@@ -4251,7 +4953,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Legs (2)",
@@ -4262,7 +4966,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4281,7 +4987,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4292,7 +5000,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 70.0
       },
       {
         "name": "Claws (2)",
@@ -4303,7 +5013,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -4314,7 +5026,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4333,7 +5047,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4344,7 +5060,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 70.0
       },
       {
         "name": "Claws (2)",
@@ -4355,7 +5073,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -4366,7 +5086,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4385,7 +5107,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4396,7 +5120,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 70.0
       },
       {
         "name": "Claws (2)",
@@ -4407,7 +5133,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs(4)",
@@ -4418,7 +5146,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4437,7 +5167,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4448,7 +5180,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -4459,7 +5193,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -4470,7 +5206,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (2)",
@@ -4481,7 +5219,9 @@
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4500,7 +5240,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4511,7 +5253,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs (6)",
@@ -4522,7 +5266,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4541,7 +5287,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4552,7 +5300,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs (6)",
@@ -4563,7 +5313,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4582,7 +5334,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4593,7 +5347,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs (6)",
@@ -4604,7 +5360,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4623,7 +5381,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crown",
@@ -4634,7 +5394,9 @@
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jaws",
@@ -4645,7 +5407,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mandibles (2)",
@@ -4656,7 +5420,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mouth",
@@ -4667,7 +5433,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Dorsal Plate Armor (6)",
@@ -4678,7 +5446,9 @@
         "overflow_pct": 10,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 35000,
+        "constitution_decay": 0.0
       },
       {
         "name": "Sterna Plate Armor (6)",
@@ -4689,7 +5459,9 @@
         "overflow_pct": 10,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 35000,
+        "constitution_decay": 0.0
       },
       {
         "name": "Lower Sterna Plate Armor",
@@ -4700,7 +5472,9 @@
         "overflow_pct": 10,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 35000,
+        "constitution_decay": 0.0
       },
       {
         "name": "Inner Flesh (6)",
@@ -4711,7 +5485,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fins (14)",
@@ -4722,7 +5498,9 @@
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4741,7 +5519,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 750,
+        "constitution_decay": 100.0
       },
       {
         "name": "Head",
@@ -4752,7 +5532,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -4763,7 +5545,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -4774,7 +5558,9 @@
         "overflow_pct": 300,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -4785,7 +5571,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -4796,7 +5584,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -4807,7 +5597,9 @@
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Spore Flesh (6)",
@@ -4818,7 +5610,9 @@
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -4829,7 +5623,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Leg Armor (2)",
@@ -4840,7 +5636,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg Armor (2)",
@@ -4851,7 +5649,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -4862,7 +5662,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4881,7 +5683,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4892,7 +5696,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 95,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace (2)",
@@ -4903,7 +5709,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -4914,7 +5722,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (4)",
@@ -4925,7 +5735,9 @@
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 2500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Thorax Sac",
@@ -4936,7 +5748,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Abdomen Sac",
@@ -4947,7 +5761,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Thorax Innards",
@@ -4958,7 +5774,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Abdomen Innards",
@@ -4969,7 +5787,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Abdomen Armor",
@@ -4980,7 +5800,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (12)",
@@ -4991,7 +5813,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5010,7 +5834,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5021,7 +5847,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -5032,7 +5860,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -5043,7 +5873,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (2)",
@@ -5054,7 +5886,9 @@
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5073,7 +5907,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5084,7 +5920,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Body Armor",
@@ -5095,7 +5933,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underbelly",
@@ -5106,7 +5946,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -5117,7 +5959,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Legs (2)",
@@ -5128,7 +5972,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Legs (2)",
@@ -5139,7 +5985,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings",
@@ -5150,7 +5998,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5169,7 +6019,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5180,7 +6032,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs (6)",
@@ -5191,7 +6045,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5210,7 +6066,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 35,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5221,7 +6079,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -5232,7 +6092,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -5243,7 +6105,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (2)",
@@ -5254,7 +6118,9 @@
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5273,7 +6139,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5284,7 +6152,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 65.0
       },
       {
         "name": "Claws (2)",
@@ -5295,7 +6165,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -5306,7 +6178,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 35,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5325,7 +6199,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5336,7 +6212,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 95,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -5347,7 +6225,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -5358,7 +6238,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt Armor",
@@ -5369,7 +6251,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Sac",
@@ -5380,7 +6264,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Sac",
@@ -5391,7 +6277,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -5402,7 +6290,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -5413,7 +6303,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (12)",
@@ -5424,7 +6316,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Left Leg Flesh",
@@ -5435,7 +6329,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 1500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Leg Flesh (3)",
@@ -5446,7 +6342,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 2000,
+        "constitution_decay": 0.0
       }
     ]
   },
@@ -5465,7 +6363,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5476,7 +6376,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 160,
+        "constitution_decay": 70.0
       },
       {
         "name": "Legs (4)",
@@ -5487,7 +6389,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -5498,7 +6402,9 @@
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5517,7 +6423,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5528,7 +6436,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mouth",
@@ -5539,7 +6449,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Spinal Plates",
@@ -5550,7 +6462,9 @@
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -5561,7 +6475,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Legs (2)",
@@ -5572,7 +6488,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Legs (2)",
@@ -5583,7 +6501,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5602,7 +6522,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5613,7 +6535,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -5624,7 +6548,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -5635,7 +6561,9 @@
         "overflow_pct": 300,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -5646,7 +6574,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -5657,7 +6587,9 @@
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -5668,7 +6600,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -5679,7 +6613,9 @@
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Frontal Tarsal Plate Armor (2)",
@@ -5690,7 +6626,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Leg Armor (2)",
@@ -5701,7 +6639,9 @@
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg Armor (2)",
@@ -5712,7 +6652,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -5723,7 +6665,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5742,7 +6686,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Eye",
@@ -5753,7 +6699,9 @@
         "overflow_pct": 120,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield Generators (3)",
@@ -5764,7 +6712,9 @@
         "overflow_pct": 10,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chassis",
@@ -5775,7 +6725,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace (2)",
@@ -5786,7 +6738,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace Weakspots (2)",
@@ -5797,7 +6751,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Hip Joint",
@@ -5808,7 +6764,9 @@
         "overflow_pct": 45,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right & Middle Hip Joints (2)",
@@ -5819,7 +6777,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Upper Thigh Armor",
@@ -5830,7 +6790,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right & Middle Upper Thigh Armor (2)",
@@ -5841,7 +6803,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Thigh Armor (3)",
@@ -5852,7 +6816,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shin armor (3)",
@@ -5863,7 +6829,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Foot Armor",
@@ -5874,7 +6842,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right & Middle Foot Armor (2)",
@@ -5885,7 +6855,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Exposed Leg Internals",
@@ -5896,7 +6868,9 @@
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -5907,7 +6881,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5926,7 +6902,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Beamer",
@@ -5937,7 +6915,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 1500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Frontal Fuselage (2)",
@@ -5948,7 +6928,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Fuselage (2)",
@@ -5959,7 +6941,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Engine",
@@ -5970,7 +6954,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stern (2)",
@@ -5981,7 +6967,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Bow",
@@ -5992,7 +6980,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -6003,7 +6993,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6022,7 +7014,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": -150
+        "exdr": -150,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner",
@@ -6033,7 +7027,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -6044,7 +7040,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6063,7 +7061,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6074,7 +7074,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -6085,7 +7087,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chest Armor",
@@ -6096,7 +7100,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crotch Armor",
@@ -6107,7 +7113,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limb Armor",
@@ -6118,7 +7126,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -6129,7 +7139,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Arm",
@@ -6140,7 +7152,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Arm",
@@ -6151,7 +7165,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6162,7 +7178,9 @@
         "overflow_pct": 70,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6181,7 +7199,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6192,7 +7212,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chest Armor",
@@ -6203,7 +7225,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crotch Armor",
@@ -6214,7 +7238,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limb Armor",
@@ -6225,7 +7251,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -6236,7 +7264,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Arm",
@@ -6247,7 +7277,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Arm",
@@ -6258,7 +7290,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6269,7 +7303,9 @@
         "overflow_pct": 70,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6288,7 +7324,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6299,7 +7337,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chest Armor",
@@ -6310,7 +7350,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crotch Armor",
@@ -6321,7 +7363,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limb Armor (8)",
@@ -6332,7 +7376,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -6343,7 +7389,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Arm",
@@ -6354,7 +7402,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Arm",
@@ -6365,7 +7415,9 @@
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6376,7 +7428,9 @@
         "overflow_pct": 70,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -6387,7 +7441,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6406,7 +7462,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 100,
+        "constitution_decay": 5.0
       },
       {
         "name": "Head",
@@ -6417,7 +7475,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Arms (2)",
@@ -6428,7 +7488,9 @@
         "overflow_pct": 40,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 1000,
+        "constitution_decay": 40.0
       },
       {
         "name": "Forearms (2)",
@@ -6439,7 +7501,9 @@
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs",
@@ -6450,7 +7514,9 @@
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6469,7 +7535,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Body",
@@ -6480,7 +7548,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Eye",
@@ -6491,7 +7561,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Fin",
@@ -6502,7 +7574,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Fin",
@@ -6513,7 +7587,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Side Fins (2)",
@@ -6524,7 +7600,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6543,7 +7621,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head Chunks (6)",
@@ -6554,7 +7634,9 @@
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 25,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach Chunks (2)",
@@ -6565,7 +7647,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (4)",
@@ -6576,7 +7660,9 @@
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 40,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6587,7 +7673,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6606,7 +7694,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Gun Ports",
@@ -6617,7 +7707,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6636,7 +7728,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turrets (4)",
@@ -6647,7 +7741,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Vertebra",
@@ -6658,7 +7754,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Fins (2)",
@@ -6669,7 +7767,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Warp Disc",
@@ -6680,7 +7780,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Forward-Middle Vertebra",
@@ -6691,7 +7793,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Forward-Middle Fins (2)",
@@ -6702,7 +7806,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rearward-Middle Vertebra",
@@ -6713,7 +7819,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rearward-Middle Fins (2)",
@@ -6724,7 +7832,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Vertebra",
@@ -6735,7 +7845,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Fins (2)",
@@ -6746,7 +7858,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tail",
@@ -6757,7 +7871,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6776,7 +7892,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Port",
@@ -6787,7 +7905,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -6798,7 +7918,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6817,7 +7939,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6828,7 +7952,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chassis",
@@ -6839,7 +7965,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace (2)",
@@ -6850,7 +7978,9 @@
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Internals (2)",
@@ -6861,7 +7991,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -6872,7 +8004,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pilot",
@@ -6883,7 +8017,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cockpit",
@@ -6894,7 +8030,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cockpit Weakspot",
@@ -6905,7 +8043,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -6916,7 +8056,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Arms (2)",
@@ -6927,7 +8069,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Arms (2)",
@@ -6938,7 +8082,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arm Weakspots (2)",
@@ -6949,7 +8095,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hips (2)",
@@ -6960,7 +8108,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Hip",
@@ -6971,7 +8121,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Legs (2)",
@@ -6982,7 +8134,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Legs (2)",
@@ -6993,7 +8147,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg",
@@ -7004,7 +8160,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7023,7 +8181,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield Generator",
@@ -7034,7 +8194,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chassis",
@@ -7045,7 +8207,9 @@
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace (2)",
@@ -7056,7 +8220,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Weakspot",
@@ -7067,7 +8233,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -7078,7 +8246,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pilot",
@@ -7089,7 +8259,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cockpit",
@@ -7100,7 +8272,9 @@
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cockpit Weakspot",
@@ -7111,7 +8285,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulder Armor (2)",
@@ -7122,7 +8298,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arm Armor (2)",
@@ -7133,7 +8311,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -7144,7 +8324,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Guns (2)",
@@ -7155,7 +8337,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Gun Weakspots (2)",
@@ -7166,7 +8350,9 @@
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (6)",
@@ -7177,7 +8363,9 @@
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hips (3)",
@@ -7188,7 +8376,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (3)",
@@ -7199,7 +8389,9 @@
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7218,7 +8410,9 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Body",
@@ -7229,7 +8423,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Eye",
@@ -7240,7 +8436,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Vertical Fins (2)",
@@ -7251,7 +8449,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lateral Fins (2)",
@@ -7262,7 +8462,9 @@
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   }

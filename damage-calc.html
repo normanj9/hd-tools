@@ -101,6 +101,7 @@ table.compact .tag { white-space: normal; text-align: center; line-height: 1.15;
 .tag-av6 { background: #200a0a; color: #b71c1c; }
 .tag-av7 { background: #200a0a; color: #b71c1c; }
 .cell-num { color: var(--dim); text-align: right; }
+.hp-plus { color: var(--accent); font-weight: 700; margin-left: 1px; cursor: help; }
 
 /* AP badges — shown under each weapon column header, same tier scale as AV tags */
 .ap-badge-row { margin-top: 3px; }
@@ -3695,7 +3696,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -3706,7 +3709,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Eyes (2)",
@@ -3717,7 +3722,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fusion Cannons (2)",
@@ -3728,7 +3735,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Grenade Launchers (2)",
@@ -3739,7 +3748,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crotch",
@@ -3750,7 +3761,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Heatsink",
@@ -3761,7 +3774,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hip Joints (2)",
@@ -3772,7 +3787,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -3783,7 +3800,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Greaves (2)",
@@ -3794,7 +3813,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -3813,7 +3834,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stratagem Scrambler",
@@ -3824,7 +3847,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cannon Turret",
@@ -3835,7 +3860,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fusion Gatling Guns (2)",
@@ -3846,7 +3873,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head Armor",
@@ -3857,7 +3886,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head Body",
@@ -3868,7 +3899,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Neck Armor",
@@ -3879,7 +3912,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Neck",
@@ -3890,7 +3925,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Top Armor",
@@ -3901,7 +3938,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Engine Weakspot",
@@ -3912,7 +3951,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Armor",
@@ -3923,7 +3964,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Side Armor (2)",
@@ -3934,7 +3977,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Engine Armor",
@@ -3945,7 +3990,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Engine Weakspot",
@@ -3956,7 +4003,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor",
@@ -3967,7 +4016,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (8)",
@@ -3978,7 +4029,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Knee Armor (4)",
@@ -3989,7 +4042,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Assembly (4)",
@@ -4000,7 +4055,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 2000,
+        "constitution_decay": 0.0
       },
       {
         "name": "Belly Panels (2)",
@@ -4011,7 +4068,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 40
+        "exdr": 40,
+        "constitution": 1200,
+        "constitution_decay": 0.0
       }
     ]
   },
@@ -4030,7 +4089,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4041,7 +4102,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -4052,7 +4115,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -4063,7 +4128,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Heatsink",
@@ -4074,7 +4141,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 650,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -4093,7 +4162,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4104,7 +4175,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -4115,7 +4188,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -4126,7 +4201,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Heatsink",
@@ -4137,7 +4214,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 650,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -4156,7 +4235,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4167,7 +4248,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -4178,7 +4261,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -4189,7 +4274,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Heatsink",
@@ -4200,7 +4287,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 650,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -4219,7 +4308,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4230,7 +4321,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -4241,7 +4334,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -4252,7 +4347,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Heatsink",
@@ -4263,7 +4360,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 650,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -4282,7 +4381,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4293,7 +4394,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -4304,7 +4407,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -4315,7 +4420,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -4326,7 +4433,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -4337,7 +4446,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -4348,7 +4459,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -4359,7 +4472,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4378,7 +4493,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4389,7 +4506,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -4400,7 +4519,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -4411,7 +4532,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -4422,7 +4545,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -4433,7 +4558,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -4444,7 +4571,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -4455,7 +4584,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Backpack",
@@ -4466,7 +4597,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -4477,7 +4610,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4496,7 +4631,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4507,7 +4644,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -4518,7 +4657,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -4529,7 +4670,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -4540,7 +4683,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -4551,7 +4696,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -4562,7 +4709,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -4573,7 +4722,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rockets",
@@ -4584,7 +4735,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rocket Pods",
@@ -4595,7 +4748,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4614,7 +4769,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret Front",
@@ -4625,7 +4782,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret Heatsink",
@@ -4636,7 +4795,9 @@ const ENEMIES = [
         "overflow_pct": 200,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Main",
@@ -4647,7 +4808,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Front",
@@ -4658,7 +4821,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Sides (2)",
@@ -4669,7 +4834,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Engine Bay",
@@ -4680,7 +4847,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tracks (2)",
@@ -4691,7 +4860,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4710,7 +4881,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret Front and Sides",
@@ -4721,7 +4894,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret Heatsink",
@@ -4732,7 +4907,9 @@ const ENEMIES = [
         "overflow_pct": 200,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Main",
@@ -4743,7 +4920,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Front",
@@ -4754,7 +4933,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Side (2)",
@@ -4765,7 +4946,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Engine Bay",
@@ -4776,7 +4959,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tracks (2)",
@@ -4787,7 +4972,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4806,7 +4993,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Launch Tubes",
@@ -4817,7 +5006,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Main",
@@ -4828,7 +5019,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Front",
@@ -4839,7 +5032,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hull Sides (2)",
@@ -4850,7 +5045,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Engine Bay",
@@ -4861,7 +5058,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tracks (2)",
@@ -4872,7 +5071,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4891,7 +5092,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4902,7 +5105,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chest",
@@ -4913,7 +5118,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 40,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -4924,7 +5131,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -4935,7 +5144,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulder (2)",
@@ -4946,7 +5157,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arm (2)",
@@ -4957,7 +5170,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg (2)",
@@ -4968,7 +5183,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -4987,7 +5204,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -4998,7 +5217,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5009,7 +5230,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -5020,7 +5243,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5031,7 +5256,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5050,7 +5277,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fuselage",
@@ -5061,7 +5290,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Thrusters (2)",
@@ -5072,7 +5303,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 85,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Thrusters (2)",
@@ -5083,7 +5316,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5102,7 +5337,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pilot",
@@ -5113,7 +5350,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Plate",
@@ -5124,7 +5363,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "HMG",
@@ -5135,7 +5376,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret System",
@@ -5146,7 +5389,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Waist",
@@ -5157,7 +5402,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5168,7 +5415,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5187,7 +5436,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Faceplate",
@@ -5198,7 +5449,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "HMG",
@@ -5209,7 +5462,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rocket Rails (2)",
@@ -5220,7 +5475,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 80
+        "exdr": 80,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rockets (4)",
@@ -5231,7 +5488,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turret System",
@@ -5242,7 +5501,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Waist",
@@ -5253,7 +5514,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5264,7 +5527,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5283,7 +5548,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fuselage",
@@ -5294,7 +5561,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Thruster (4)",
@@ -5305,7 +5574,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5324,7 +5595,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5335,7 +5608,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5346,7 +5621,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -5357,7 +5634,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5368,7 +5647,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5387,7 +5668,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5398,7 +5681,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5409,7 +5694,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Arm",
@@ -5420,7 +5707,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Arm",
@@ -5431,7 +5720,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg (2)",
@@ -5442,7 +5733,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5461,7 +5754,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5472,7 +5767,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5483,7 +5780,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -5494,7 +5793,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5505,7 +5806,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5524,7 +5827,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Backpack Main",
@@ -5535,7 +5840,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 100,
+        "constitution_decay": 50.0
       },
       {
         "name": "Backpack",
@@ -5546,7 +5853,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 1000,
+        "constitution_decay": 200.0
       },
       {
         "name": "Head",
@@ -5557,7 +5866,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5568,7 +5879,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -5579,7 +5892,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5590,7 +5905,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5609,7 +5926,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5620,7 +5939,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5631,7 +5952,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -5642,7 +5965,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5653,7 +5978,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5672,7 +5999,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5683,7 +6012,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5694,7 +6025,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -5705,7 +6038,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5716,7 +6051,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -5727,7 +6064,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 100,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -5746,7 +6085,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5757,7 +6098,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5768,7 +6111,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -5779,7 +6124,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5790,7 +6137,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -5801,7 +6150,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5820,7 +6171,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5831,7 +6184,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5842,7 +6197,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -5853,7 +6210,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5864,7 +6223,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -5875,7 +6236,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5894,7 +6257,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5905,7 +6270,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5916,7 +6283,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -5927,7 +6296,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -5938,7 +6309,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -5949,7 +6322,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -5968,7 +6343,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -5979,7 +6356,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -5990,7 +6369,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -6001,7 +6382,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -6012,7 +6395,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -6023,7 +6408,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -6034,7 +6421,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6045,7 +6434,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -6056,7 +6447,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6075,7 +6468,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6086,7 +6481,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -6097,7 +6494,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6108,7 +6507,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Jetpack",
@@ -6119,7 +6520,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6138,7 +6541,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6149,7 +6554,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -6160,7 +6567,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6171,7 +6580,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Jetpack",
@@ -6182,7 +6593,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6201,7 +6614,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6212,7 +6627,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -6223,7 +6640,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -6234,7 +6653,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6245,7 +6666,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fuel Tanks Main",
@@ -6256,7 +6679,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 100,
+        "constitution_decay": 50.0
       },
       {
         "name": "Fuel Tanks",
@@ -6267,7 +6692,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 1000,
+        "constitution_decay": 200.0
       }
     ]
   },
@@ -6286,7 +6713,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6297,7 +6726,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -6308,7 +6739,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -6319,7 +6752,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6330,7 +6765,9 @@ const ENEMIES = [
         "overflow_pct": 65,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6349,7 +6786,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6360,7 +6799,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -6371,7 +6812,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -6382,7 +6825,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -6393,7 +6838,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -6404,7 +6851,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -6415,7 +6864,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6426,7 +6877,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -6437,7 +6890,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6456,7 +6911,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6467,7 +6924,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -6478,7 +6937,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -6489,7 +6950,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -6500,7 +6963,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach",
@@ -6511,7 +6976,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis",
@@ -6522,7 +6989,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -6533,7 +7002,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -6544,7 +7015,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6563,7 +7036,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6574,7 +7049,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Circuits",
@@ -6585,7 +7062,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pauldron",
@@ -6596,7 +7075,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 65
+        "exdr": 65,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Arms (2)",
@@ -6607,7 +7088,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 55
+        "exdr": 55,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Forearms (2)",
@@ -6618,7 +7101,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis and Left Leg",
@@ -6629,7 +7114,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Leg",
@@ -6640,7 +7127,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6659,7 +7148,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Helmet",
@@ -6670,7 +7161,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 65
+        "exdr": 65,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6681,7 +7174,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor",
@@ -6692,7 +7187,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 65
+        "exdr": 65,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -6703,7 +7200,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pauldrons (2)",
@@ -6714,7 +7213,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 65
+        "exdr": 65,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Arms (2)",
@@ -6725,7 +7226,9 @@ const ENEMIES = [
         "overflow_pct": 80,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 55
+        "exdr": 55,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Forearms (2)",
@@ -6736,7 +7239,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pelvis and Left Leg",
@@ -6747,7 +7252,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Leg",
@@ -6758,7 +7265,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6777,7 +7286,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Sarcophagus",
@@ -6788,7 +7299,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -6799,7 +7312,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cannons (2)",
@@ -6810,7 +7325,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Missile Launchers (2)",
@@ -6821,7 +7338,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Miniguns (2)",
@@ -6832,7 +7351,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Speakers (2)",
@@ -6843,7 +7364,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fog Lights (2)",
@@ -6854,7 +7377,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Flaps (2)",
@@ -6865,7 +7390,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Vents (6)",
@@ -6876,7 +7403,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hatches (2)",
@@ -6887,7 +7416,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Undercarriage",
@@ -6898,7 +7429,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Trackpod Latches (4)",
@@ -6909,7 +7442,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tracks (4)",
@@ -6920,7 +7455,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 60
+        "exdr": 60,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -6939,7 +7476,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -6950,7 +7489,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 95,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -6961,7 +7502,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -6972,7 +7515,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt Armor",
@@ -6983,7 +7528,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Sac",
@@ -6994,7 +7541,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Sac",
@@ -7005,7 +7554,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -7016,7 +7567,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -7027,7 +7580,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (12)",
@@ -7038,7 +7593,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Left Leg Flesh",
@@ -7049,7 +7606,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 1500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Leg Flesh (3)",
@@ -7060,7 +7619,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 2000,
+        "constitution_decay": 0.0
       }
     ]
   },
@@ -7079,7 +7640,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 750,
+        "constitution_decay": 100.0
       },
       {
         "name": "Head",
@@ -7090,7 +7653,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -7101,7 +7666,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -7112,7 +7679,9 @@ const ENEMIES = [
         "overflow_pct": 300,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -7123,7 +7692,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -7134,7 +7705,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -7145,7 +7718,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -7156,7 +7731,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Leg Armor (2)",
@@ -7167,7 +7744,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg Armor (2)",
@@ -7178,7 +7757,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -7189,7 +7770,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7208,7 +7791,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 1000,
+        "constitution_decay": 100.0
       },
       {
         "name": "Head",
@@ -7219,7 +7804,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -7230,7 +7817,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -7241,7 +7830,9 @@ const ENEMIES = [
         "overflow_pct": 300,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -7252,7 +7843,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -7263,7 +7856,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -7274,7 +7869,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -7285,7 +7882,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Leg Armor (2)",
@@ -7296,7 +7895,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg Armor (2)",
@@ -7307,7 +7908,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -7318,7 +7921,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7337,7 +7942,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -7348,7 +7955,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tentacle Armor (3)",
@@ -7359,7 +7968,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tentacle Flesh (3)",
@@ -7370,7 +7981,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crest Armor",
@@ -7381,7 +7994,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -7392,7 +8007,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -7403,7 +8020,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": true,
         "durable_pct": 90,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -7414,7 +8033,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -7425,7 +8046,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -7436,7 +8059,9 @@ const ENEMIES = [
         "overflow_pct": 140,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (4)",
@@ -7447,7 +8072,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -7458,7 +8085,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7477,7 +8106,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -7488,7 +8119,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 35,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 75.0
       },
       {
         "name": "Claws (2)",
@@ -7499,7 +8132,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Frontal Tarsal Plate Armor (2)",
@@ -7510,7 +8145,9 @@ const ENEMIES = [
         "overflow_pct": 45,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Legs (2)",
@@ -7521,7 +8158,9 @@ const ENEMIES = [
         "overflow_pct": 45,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Legs (2)",
@@ -7532,7 +8171,9 @@ const ENEMIES = [
         "overflow_pct": 35,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7551,7 +8192,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -7562,7 +8205,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 60,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 300,
+        "constitution_decay": 75.0
       },
       {
         "name": "Claws (2)",
@@ -7573,7 +8218,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -7584,7 +8231,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7603,7 +8252,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -7614,7 +8265,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 300,
+        "constitution_decay": 100.0
       },
       {
         "name": "Claws (2)",
@@ -7625,7 +8278,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -7636,7 +8291,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7655,7 +8312,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -7666,7 +8325,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs",
@@ -7677,7 +8338,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (2)",
@@ -7688,7 +8351,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7707,7 +8372,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -7718,7 +8385,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Body Armor",
@@ -7729,7 +8398,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underbelly",
@@ -7740,7 +8411,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -7751,7 +8424,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -7762,7 +8437,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings",
@@ -7773,7 +8450,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7792,7 +8471,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -7803,7 +8484,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mouth",
@@ -7814,7 +8497,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Spinal Plates",
@@ -7825,7 +8510,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -7836,7 +8523,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Legs (2)",
@@ -7847,7 +8536,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Legs (2)",
@@ -7858,7 +8549,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7877,7 +8570,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -7888,7 +8583,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mouth",
@@ -7899,7 +8596,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Spinal Plates",
@@ -7910,7 +8609,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -7921,7 +8622,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Legs (2)",
@@ -7932,7 +8635,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Legs (2)",
@@ -7943,7 +8648,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -7962,7 +8669,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -7973,7 +8682,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 70.0
       },
       {
         "name": "Claws (2)",
@@ -7984,7 +8695,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -7995,7 +8708,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8014,7 +8729,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8025,7 +8742,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 70.0
       },
       {
         "name": "Claws (2)",
@@ -8036,7 +8755,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -8047,7 +8768,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8066,7 +8789,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8077,7 +8802,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 70.0
       },
       {
         "name": "Claws (2)",
@@ -8088,7 +8815,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs(4)",
@@ -8099,7 +8828,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8118,7 +8849,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8129,7 +8862,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -8140,7 +8875,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -8151,7 +8888,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (2)",
@@ -8162,7 +8901,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8181,7 +8922,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8192,7 +8935,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs (6)",
@@ -8203,7 +8948,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8222,7 +8969,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8233,7 +8982,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs (6)",
@@ -8244,7 +8995,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8263,7 +9016,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8274,7 +9029,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs (6)",
@@ -8285,7 +9042,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8304,7 +9063,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crown",
@@ -8315,7 +9076,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jaws",
@@ -8326,7 +9089,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mandibles (2)",
@@ -8337,7 +9102,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mouth",
@@ -8348,7 +9115,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Dorsal Plate Armor (6)",
@@ -8359,7 +9128,9 @@ const ENEMIES = [
         "overflow_pct": 10,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 35000,
+        "constitution_decay": 0.0
       },
       {
         "name": "Sterna Plate Armor (6)",
@@ -8370,7 +9141,9 @@ const ENEMIES = [
         "overflow_pct": 10,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 35000,
+        "constitution_decay": 0.0
       },
       {
         "name": "Lower Sterna Plate Armor",
@@ -8381,7 +9154,9 @@ const ENEMIES = [
         "overflow_pct": 10,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 35000,
+        "constitution_decay": 0.0
       },
       {
         "name": "Inner Flesh (6)",
@@ -8392,7 +9167,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Fins (14)",
@@ -8403,7 +9180,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8422,7 +9201,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 750,
+        "constitution_decay": 100.0
       },
       {
         "name": "Head",
@@ -8433,7 +9214,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -8444,7 +9227,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -8455,7 +9240,9 @@ const ENEMIES = [
         "overflow_pct": 300,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -8466,7 +9253,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -8477,7 +9266,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -8488,7 +9279,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Spore Flesh (6)",
@@ -8499,7 +9292,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -8510,7 +9305,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Leg Armor (2)",
@@ -8521,7 +9318,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg Armor (2)",
@@ -8532,7 +9331,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -8543,7 +9344,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8562,7 +9365,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8573,7 +9378,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 95,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace (2)",
@@ -8584,7 +9391,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -8595,7 +9404,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (4)",
@@ -8606,7 +9417,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 2500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Thorax Sac",
@@ -8617,7 +9430,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Abdomen Sac",
@@ -8628,7 +9443,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Thorax Innards",
@@ -8639,7 +9456,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Abdomen Innards",
@@ -8650,7 +9469,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Abdomen Armor",
@@ -8661,7 +9482,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (12)",
@@ -8672,7 +9495,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8691,7 +9516,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8702,7 +9529,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -8713,7 +9542,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -8724,7 +9555,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (2)",
@@ -8735,7 +9568,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8754,7 +9589,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8765,7 +9602,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Body Armor",
@@ -8776,7 +9615,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underbelly",
@@ -8787,7 +9628,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -8798,7 +9641,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Legs (2)",
@@ -8809,7 +9654,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Legs (2)",
@@ -8820,7 +9667,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings",
@@ -8831,7 +9680,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8850,7 +9701,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8861,7 +9714,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limbs (6)",
@@ -8872,7 +9727,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8891,7 +9748,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 35,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8902,7 +9761,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -8913,7 +9774,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -8924,7 +9787,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Wings (2)",
@@ -8935,7 +9800,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -8954,7 +9821,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -8965,7 +9834,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 200,
+        "constitution_decay": 65.0
       },
       {
         "name": "Claws (2)",
@@ -8976,7 +9847,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (4)",
@@ -8987,7 +9860,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 35,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -9006,7 +9881,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -9017,7 +9894,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 95,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -9028,7 +9907,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -9039,7 +9920,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt Armor",
@@ -9050,7 +9933,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Sac",
@@ -9061,7 +9946,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Sac",
@@ -9072,7 +9959,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -9083,7 +9972,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -9094,7 +9985,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (12)",
@@ -9105,7 +9998,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Left Leg Flesh",
@@ -9116,7 +10011,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 1500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Leg Flesh (3)",
@@ -9127,7 +10024,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 50
+        "exdr": 50,
+        "constitution": 2000,
+        "constitution_decay": 0.0
       }
     ]
   },
@@ -9146,7 +10045,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -9157,7 +10058,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 20,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 160,
+        "constitution_decay": 70.0
       },
       {
         "name": "Legs (4)",
@@ -9168,7 +10071,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -9179,7 +10084,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -9198,7 +10105,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -9209,7 +10118,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Mouth",
@@ -9220,7 +10131,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Spinal Plates",
@@ -9231,7 +10144,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -9242,7 +10157,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Legs (2)",
@@ -9253,7 +10170,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Legs (2)",
@@ -9264,7 +10183,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -9283,7 +10204,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -9294,7 +10217,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso Armor (2)",
@@ -9305,7 +10230,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner Flesh",
@@ -9316,7 +10243,9 @@ const ENEMIES = [
         "overflow_pct": 300,
         "overflow_cap": true,
         "durable_pct": 30,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Armor Plates",
@@ -9327,7 +10256,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Butt",
@@ -9338,7 +10269,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Underside",
@@ -9349,7 +10282,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Claws (2)",
@@ -9360,7 +10295,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Frontal Tarsal Plate Armor (2)",
@@ -9371,7 +10308,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Leg Armor (2)",
@@ -9382,7 +10321,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg Armor (2)",
@@ -9393,7 +10334,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Flesh (4)",
@@ -9404,7 +10347,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -9423,7 +10368,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Eye",
@@ -9434,7 +10381,9 @@ const ENEMIES = [
         "overflow_pct": 120,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield Generators (3)",
@@ -9445,7 +10394,9 @@ const ENEMIES = [
         "overflow_pct": 10,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chassis",
@@ -9456,7 +10407,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace (2)",
@@ -9467,7 +10420,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace Weakspots (2)",
@@ -9478,7 +10433,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Hip Joint",
@@ -9489,7 +10446,9 @@ const ENEMIES = [
         "overflow_pct": 45,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right & Middle Hip Joints (2)",
@@ -9500,7 +10459,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 70,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Upper Thigh Armor",
@@ -9511,7 +10472,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right & Middle Upper Thigh Armor (2)",
@@ -9522,7 +10485,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Thigh Armor (3)",
@@ -9533,7 +10498,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shin armor (3)",
@@ -9544,7 +10511,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Foot Armor",
@@ -9555,7 +10524,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right & Middle Foot Armor (2)",
@@ -9566,7 +10537,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 75,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Exposed Leg Internals",
@@ -9577,7 +10550,9 @@ const ENEMIES = [
         "overflow_pct": 60,
         "overflow_cap": true,
         "durable_pct": 25,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -9588,7 +10563,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -9607,7 +10584,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Beamer",
@@ -9618,7 +10597,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 1500,
+        "constitution_decay": 0.0
       },
       {
         "name": "Frontal Fuselage (2)",
@@ -9629,7 +10610,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Fuselage (2)",
@@ -9640,7 +10623,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Engine",
@@ -9651,7 +10636,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stern (2)",
@@ -9662,7 +10649,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Bow",
@@ -9673,7 +10662,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -9684,7 +10675,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -9703,7 +10696,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": -150
+        "exdr": -150,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Inner",
@@ -9714,7 +10709,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -9725,7 +10722,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -9744,7 +10743,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -9755,7 +10756,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Jetpack",
@@ -9766,7 +10769,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chest Armor",
@@ -9777,7 +10782,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crotch Armor",
@@ -9788,7 +10795,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limb Armor",
@@ -9799,7 +10808,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -9810,7 +10821,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Arm",
@@ -9821,7 +10834,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Arm",
@@ -9832,7 +10847,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -9843,7 +10860,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -9862,7 +10881,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -9873,7 +10894,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chest Armor",
@@ -9884,7 +10907,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crotch Armor",
@@ -9895,7 +10920,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limb Armor",
@@ -9906,7 +10933,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -9917,7 +10946,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Arm",
@@ -9928,7 +10959,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Arm",
@@ -9939,7 +10972,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -9950,7 +10985,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -9969,7 +11006,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -9980,7 +11019,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chest Armor",
@@ -9991,7 +11032,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Crotch Armor",
@@ -10002,7 +11045,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Limb Armor (8)",
@@ -10013,7 +11058,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Torso",
@@ -10024,7 +11071,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Right Arm",
@@ -10035,7 +11084,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Left Arm",
@@ -10046,7 +11097,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -10057,7 +11110,9 @@ const ENEMIES = [
         "overflow_pct": 70,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -10068,7 +11123,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -10087,7 +11144,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 100,
+        "constitution_decay": 5.0
       },
       {
         "name": "Head",
@@ -10098,7 +11157,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Arms (2)",
@@ -10109,7 +11170,9 @@ const ENEMIES = [
         "overflow_pct": 40,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 1000,
+        "constitution_decay": 40.0
       },
       {
         "name": "Forearms (2)",
@@ -10120,7 +11183,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs",
@@ -10131,7 +11196,9 @@ const ENEMIES = [
         "overflow_pct": 30,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -10150,7 +11217,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Body",
@@ -10161,7 +11230,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Eye",
@@ -10172,7 +11243,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Fin",
@@ -10183,7 +11256,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Fin",
@@ -10194,7 +11269,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Side Fins (2)",
@@ -10205,7 +11282,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -10224,7 +11303,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head Chunks (6)",
@@ -10235,7 +11316,9 @@ const ENEMIES = [
         "overflow_pct": 150,
         "overflow_cap": false,
         "durable_pct": 25,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Stomach Chunks (2)",
@@ -10246,7 +11329,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (4)",
@@ -10257,7 +11342,9 @@ const ENEMIES = [
         "overflow_pct": 25,
         "overflow_cap": true,
         "durable_pct": 40,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (2)",
@@ -10268,7 +11355,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 40,
-        "exdr": 25
+        "exdr": 25,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -10287,7 +11376,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Gun Ports",
@@ -10298,7 +11389,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -10317,7 +11410,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Turrets (4)",
@@ -10328,7 +11423,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 85,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Vertebra",
@@ -10339,7 +11436,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Front Fins (2)",
@@ -10350,7 +11449,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Warp Disc",
@@ -10361,7 +11462,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Forward-Middle Vertebra",
@@ -10372,7 +11475,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Forward-Middle Fins (2)",
@@ -10383,7 +11488,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rearward-Middle Vertebra",
@@ -10394,7 +11501,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rearward-Middle Fins (2)",
@@ -10405,7 +11514,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Vertebra",
@@ -10416,7 +11527,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Fins (2)",
@@ -10427,7 +11540,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Tail",
@@ -10438,7 +11553,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 35
+        "exdr": 35,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -10457,7 +11574,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Port",
@@ -10468,7 +11587,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 100,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -10479,7 +11600,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -10498,7 +11621,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Head",
@@ -10509,7 +11634,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chassis",
@@ -10520,7 +11647,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace (2)",
@@ -10531,7 +11660,9 @@ const ENEMIES = [
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Internals (2)",
@@ -10542,7 +11673,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -10553,7 +11686,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pilot",
@@ -10564,7 +11699,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cockpit",
@@ -10575,7 +11712,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cockpit Weakspot",
@@ -10586,7 +11725,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulders (2)",
@@ -10597,7 +11738,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Arms (2)",
@@ -10608,7 +11751,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Arms (2)",
@@ -10619,7 +11764,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arm Weakspots (2)",
@@ -10630,7 +11777,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hips (2)",
@@ -10641,7 +11790,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Hip",
@@ -10652,7 +11803,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Upper Legs (2)",
@@ -10663,7 +11816,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lower Legs (2)",
@@ -10674,7 +11829,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Leg",
@@ -10685,7 +11842,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -10704,7 +11863,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 100,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield Generator",
@@ -10715,7 +11876,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Chassis",
@@ -10726,7 +11889,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Carapace (2)",
@@ -10737,7 +11902,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Rear Weakspot",
@@ -10748,7 +11915,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shield",
@@ -10759,7 +11928,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Pilot",
@@ -10770,7 +11941,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cockpit",
@@ -10781,7 +11954,9 @@ const ENEMIES = [
         "overflow_pct": 75,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Cockpit Weakspot",
@@ -10792,7 +11967,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 80,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Shoulder Armor (2)",
@@ -10803,7 +11980,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arm Armor (2)",
@@ -10814,7 +11993,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Arms (2)",
@@ -10825,7 +12006,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Guns (2)",
@@ -10836,7 +12019,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Gun Weakspots (2)",
@@ -10847,7 +12032,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Leg Armor (6)",
@@ -10858,7 +12045,9 @@ const ENEMIES = [
         "overflow_pct": 20,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Hips (3)",
@@ -10869,7 +12058,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Legs (3)",
@@ -10880,7 +12071,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": false,
         "durable_pct": 50,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   },
@@ -10899,7 +12092,9 @@ const ENEMIES = [
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 0
+        "exdr": 0,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Body",
@@ -10910,7 +12105,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Eye",
@@ -10921,7 +12118,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Vertical Fins (2)",
@@ -10932,7 +12131,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       },
       {
         "name": "Lateral Fins (2)",
@@ -10943,7 +12144,9 @@ const ENEMIES = [
         "overflow_pct": 100,
         "overflow_cap": true,
         "durable_pct": 0,
-        "exdr": 100
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
       }
     ]
   }
@@ -11274,6 +12477,16 @@ function stk(dmg, hp) {
   return Math.ceil(hp / dmg);
 }
 
+// Effective HP for shots-to-kill purposes: base health plus Constitution, a
+// secondary pool some parts have on top of Health (e.g. Factory Strider's Leg
+// Assembly: 1,500 health + 2,000 constitution = 3,500 total). Most decay at
+// 0/s (pure extra HP); a handful decay over time once Health hits 0, which
+// isn't modeled here — treated as static extra HP for all parts.
+function partHP(part, mainHP) {
+  const base = part.health_is_main ? mainHP : part.health;
+  return base + (part.constitution || 0);
+}
+
 function stkLabel(n) {
   if (!isFinite(n)) return { txt: '✕', cls: 'stk-no' };
   if (n === 1)  return { txt: '1', cls: 'stk-1' };
@@ -11285,7 +12498,7 @@ function stkLabel(n) {
 }
 
 function overflow(dmgPerHit, part) {
-  const capped = part.overflow_cap ? Math.min(dmgPerHit, part.health) : dmgPerHit;
+  const capped = part.overflow_cap ? Math.min(dmgPerHit, part.health + (part.constitution || 0)) : dmgPerHit;
   return capped * (part.overflow_pct / 100);
 }
 
@@ -11615,8 +12828,8 @@ function buildEnemyTable(enemy, cols, topN = null, compact = false) {
     const fatal = enemy.parts.filter(p => p.fatal);
     if (cols.length) {
       fatal.sort((a, b) => {
-        const hpA = a.health_is_main ? mainHP : a.health;
-        const hpB = b.health_is_main ? mainHP : b.health;
+        const hpA = partHP(a, mainHP);
+        const hpB = partHP(b, mainHP);
         const bestA = Math.min(...cols.map(c => stk(calcHit(c.weapon, c.slot.modeIdx, a, c.chargeMult).total, hpA)));
         const bestB = Math.min(...cols.map(c => stk(calcHit(c.weapon, c.slot.modeIdx, b, c.chargeMult).total, hpB)));
         return bestA - bestB;
@@ -11662,16 +12875,22 @@ function buildEnemyTable(enemy, cols, topN = null, compact = false) {
   `;
 
   sorted.forEach(part => {
-    const hp      = part.health_is_main ? mainHP : part.health;
+    const hp      = partHP(part, mainHP);
     const isPinned = pinSet.has(part.name);
     const safeEid  = enemy.id.replace(/'/g, "\\'");
     const safePart = part.name.replace(/'/g, "\\'");
+
+    const baseHp = part.health_is_main ? mainHP : part.health;
+    const hpTitle = part.constitution > 0
+      ? ` title="${baseHp.toLocaleString()} health + ${part.constitution.toLocaleString()} constitution = ${hp.toLocaleString()} total${part.constitution_decay > 0 ? ` · constitution decays ${part.constitution_decay}/s once health is depleted (not modeled here — treated as static extra HP)` : ''}"`
+      : '';
+    const hpFlag = part.constitution > 0 ? '<span class="hp-plus">+</span>' : '';
 
     html += `<tr class="part-row">
       <td class="cell-name">
         <button class="pin-btn${isPinned ? ' pinned' : ''}" onclick="togglePin('${safeEid}','${safePart}')" title="${isPinned ? 'Unpin' : 'Pin this part'}">${isPinned ? '📌' : '○'}</button>${part.fatal ? '<span class="fatal-star">★</span>' : ''}<span style="color:${part.fatal ? '#fff' : 'var(--dim)'}">${esc(part.name)}</span>${part.health_is_main ? ' <span style="font-size:10px;color:var(--dim)">(main pool)</span>' : ''}
       </td>
-      <td class="cell-num">${hp > 0 ? hp.toLocaleString() : '?'}</td>
+      <td class="cell-num"${hpTitle}>${hp > 0 ? hp.toLocaleString() : '?'}${hpFlag}</td>
       <td><span class="tag tag-av${part.av}">${AP_NAMES[part.av] || 'AV'+part.av}</span></td>
       ${compact ? '' : `<td class="cell-num">${part.durable_pct}%</td><td class="cell-num">${part.exdr}%</td>`}`;
 

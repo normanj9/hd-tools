@@ -371,6 +371,25 @@ def parse_int(text):
     except ValueError:
         return 0
 
+def parse_constitution(text):
+    """
+    '2,000 [0/s]' → (2000, 0)   — a secondary HP pool, added on top of Health,
+                                   that must also be depleted to destroy the part.
+    'None' / '-' / '' → (0, 0)
+    The decay rate (second number) is how fast it drains on its own once Health
+    hits 0; almost always 0/s (pure extra HP). A few parts (e.g. Hive Guard's
+    Head, Charger's Main) have real decay — not modeled here, we treat it as
+    static extra HP for all parts, which is exact for the 0/s case and a
+    reasonable approximation for the rare decaying ones.
+    """
+    t = text.strip()
+    if not t or t.lower() == 'none' or t in ('—', '-'):
+        return 0, 0
+    m = re.match(r'^([\d,]+)\s*\[([\d.]+)\s*/\s*s\]$', t)
+    if m:
+        return int(m.group(1).replace(',', '')), float(m.group(2))
+    return 0, 0
+
 def parse_pct(text):
     """'80%' → 80,  '—' → 0,  '95%/100%' → 95  (take first value)"""
     t = text.split('/')[0].strip().rstrip('%').strip()
@@ -427,16 +446,20 @@ def parse_enemy(html, name, faction, wiki_path):
                 if VERBOSE:
                     print(f"      ⚠ unknown AV for {pname} in {name}, defaulting to 4")
 
+            constitution, constitution_decay = parse_constitution(cell('constitution', 'none'))
+
             parts.append({
-                "name":             pname,
-                "health":           health,
-                "health_is_main":   health == -1,
-                "av":               av,
-                "fatal":            cell('fatal?', 'no').lower().startswith('y'),
-                "overflow_pct":     parse_pct(cell('% to main', '0')),
-                "overflow_cap":     cell('overflow cap?', 'no').lower().startswith('y'),
-                "durable_pct":      parse_pct(cell('durable', '0')),
-                "exdr":             parse_pct(cell('exdr', '0')),
+                "name":               pname,
+                "health":             health,
+                "health_is_main":     health == -1,
+                "av":                 av,
+                "fatal":              cell('fatal?', 'no').lower().startswith('y'),
+                "overflow_pct":       parse_pct(cell('% to main', '0')),
+                "overflow_cap":       cell('overflow cap?', 'no').lower().startswith('y'),
+                "durable_pct":        parse_pct(cell('durable', '0')),
+                "exdr":               parse_pct(cell('exdr', '0')),
+                "constitution":       constitution,
+                "constitution_decay": constitution_decay,
             })
 
         if parts:
