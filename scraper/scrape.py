@@ -40,16 +40,24 @@ _only_idx = next((i for i, a in enumerate(sys.argv) if a == '--only'), None)
 ONLY_PATTERN   = sys.argv[_only_idx + 1].lower() if _only_idx and _only_idx + 1 < len(sys.argv) else None
 
 # ── Armor tier name → numeric value ──────────────────────────────────────────
-
+# Wiki tier ladder (see /wiki/Damage#Armor_Penetration_%26_Armor_Values). As of
+# the [40-K crossover] patch the old numbered-suffix convention ("Unarmored I",
+# "Light II") was dropped in favor of clean names, and a "Very Light" tier was
+# inserted between Unarmored and Light, extending the whole ladder up through
+# Tank/Anti-Tank VI and Indestructible.
 AP_MAP = {
-    "unarmored": 0, "unarmored i": 0, "none": 0,
-    "light":     1, "light i":     1,
-    "light ii":  2,
-    "medium":    3, "medium i":    3,
-    "heavy":     4, "heavy i":     4,
-    "anti-tank i":  5, "tank i":  5, "at i":  5,
-    "anti-tank ii": 6, "tank ii": 6, "at ii": 6,
-    "anti-tank iii":7, "tank iii":7, "at iii":7,
+    "no hitbox": 0, "none": 0, "unarmored": 0,
+    "very light": 1,
+    "light":      2,
+    "medium":     3,
+    "heavy":      4,
+    "anti-tank i":   5, "tank i":   5, "at i":   5,
+    "anti-tank ii":  6, "tank ii":  6, "at ii":  6,
+    "anti-tank iii": 7, "tank iii": 7, "at iii": 7,
+    "anti-tank iv":  8, "tank iv":  8, "at iv":  8,
+    "anti-tank v":   9, "tank v":   9, "at v":   9,
+    "anti-tank vi":  10, "tank vi":  10, "at vi":  10,
+    "indestructible": 11,
 }
 
 # ── Enemy pages to scrape ─────────────────────────────────────────────────────
@@ -150,6 +158,9 @@ ENEMY_PAGES = [
     ("Veracitor",                    "squids", "/wiki/Veracitor"),
     ("Gatekeeper",                   "squids", "/wiki/Gatekeeper"),
     ("Obtruder",                     "squids", "/wiki/Obtruder"),
+    # Vote Snatchers
+    ("Wretch",                       "squids", "/wiki/Wretch"),
+    ("Crusher",                      "squids", "/wiki/Crusher"),
 ]
 
 # ── Weapon pages to scrape ────────────────────────────────────────────────────
@@ -185,6 +196,7 @@ WEAPON_PAGES = [
     ("B/FLAM-80 Cremator",               "Support", "/wiki/B/FLAM-80_Cremator"),
     ("M-1000 Maxigun",                   "Support", "/wiki/M-1000_Maxigun"),
     ("MGX-42 Bullet Storm",              "Support", "/wiki/MGX-42_Bullet_Storm"),
+    ("40-K Meltagun",                    "Support", "/wiki/40-K_Meltagun"),
     ("SG-88 Break-Action Shotgun",       "Support", "/wiki/SG-88_Break-Action_Shotgun"),
     ("PLAS-45 Epoch",                    "Support", "/wiki/PLAS-45_Epoch"),
     ("B/MD C4 Pack",                     "Support", "/wiki/B/MD_C4_Pack"),
@@ -219,6 +231,7 @@ WEAPON_PAGES = [
     ("R-36 Eruptor",                     "Primary", "/wiki/R-36_Eruptor"),
     ("R-72 Censor",                      "Primary", "/wiki/R-72_Censor"),
     ("R-4 Hyena",                        "Primary", "/wiki/R-4_Hyena"),
+    ("R/40-K Hot-Shot Marksman Rifle",   "Primary", "/wiki/R/40-K_Hot-Shot_Marksman_Rifle"),
     # SMGs
     ("MP-98 Knight",                     "Primary", "/wiki/MP-98_Knight"),
     ("StA-11 SMG",                       "Primary", "/wiki/StA-11_SMG"),
@@ -270,6 +283,7 @@ WEAPON_PAGES = [
     ("P-92 Warrant",                     "Secondary", "/wiki/P-92_Warrant"),
     ("P-113 Verdict",                    "Secondary", "/wiki/P-113_Verdict"),
     ("M6C/SOCOM Pistol",                 "Secondary", "/wiki/M6C/SOCOM_Pistol"),
+    ("P/40-K Bolt Pistol",               "Secondary", "/wiki/P/40-K_Bolt_Pistol"),
     # Shotgun secondary
     ("SG-22 Bushwhacker",                "Secondary", "/wiki/SG-22_Bushwhacker"),
     # Laser secondary
@@ -303,6 +317,7 @@ WEAPON_PAGES = [
     ("G-4 Gas",                          "Throwable", "/wiki/G-4_Gas"),
     ("TED-63 Dynamite",                  "Throwable", "/wiki/TED-63_Dynamite"),
     ("K-2 Throwing Knife",               "Throwable", "/wiki/K-2_Throwing_Knife"),
+    ("G/40-K Melta Mine",                "Throwable", "/wiki/G/40-K_Melta_Mine"),
 ]
 
 # ── HTTP utilities ────────────────────────────────────────────────────────────
