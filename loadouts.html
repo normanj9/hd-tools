@@ -698,8 +698,8 @@ async function initFS() {
 // ── State ──────────────────────────────────────────────────────────────────
 let rows = loadData();
 let faction = 'all';
-let sortKey = 'name';
-let sortDir = 1;
+let sortKey = 'dateAdded';
+let sortDir = -1; // newest first
 let editId = null;
 
 // ── Render ─────────────────────────────────────────────────────────────────
