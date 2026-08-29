@@ -134,11 +134,12 @@ h1 {
 .btn-export:hover { border-color: var(--accent-dim); color: var(--text); }
 .count { font-size: 11px; color: var(--text-dim); }
 table { width: 100%; border-collapse: collapse; }
-colgroup col:nth-child(1) { width: 16%; }
-colgroup col:nth-child(2) { width: 11%; }
-colgroup col:nth-child(3) { width: 33%; }
-colgroup col:nth-child(4) { width: 35%; }
-colgroup col:nth-child(5) { width: 5%; }
+colgroup col:nth-child(1) { width: 15%; }
+colgroup col:nth-child(2) { width: 9%; }
+colgroup col:nth-child(3) { width: 10%; }
+colgroup col:nth-child(4) { width: 30%; }
+colgroup col:nth-child(5) { width: 31%; }
+colgroup col:nth-child(6) { width: 5%; }
 th {
   text-align: left;
   padding: 7px 12px;
@@ -164,6 +165,7 @@ td {
 }
 tr:hover td { background: var(--surface2); }
 .col-name { font-weight: 600; color: #fff; }
+.col-date { white-space: nowrap; color: var(--text-dim); font-size: 12px; }
 .col-factions { white-space: normal; }
 .badge {
   display: inline-block;
@@ -238,7 +240,12 @@ tr:hover td { background: var(--surface2); }
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 20px;
+  margin-bottom: 6px;
+}
+.modal-date {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-bottom: 14px;
 }
 .field { margin-bottom: 15px; }
 .field label {
@@ -393,10 +400,11 @@ tr:hover td { background: var(--surface2); }
 <div id="factionPanel"></div>
 
 <table>
-  <colgroup><col><col><col><col><col></colgroup>
+  <colgroup><col><col><col><col><col><col></colgroup>
   <thead>
     <tr>
       <th class="sortable" id="th-name" onclick="setSort('name')">Name</th>
+      <th class="sortable" id="th-dateAdded" onclick="setSort('dateAdded')">Added</th>
       <th>Factions</th>
       <th class="sortable" id="th-build" onclick="setSort('build')">Core Build</th>
       <th>Notes</th>
@@ -416,6 +424,7 @@ tr:hover td { background: var(--surface2); }
 <div class="overlay" id="overlay" onclick="overlayClick(event)">
   <div class="modal">
     <div class="modal-title" id="modalTitle">Add Loadout</div>
+    <div class="modal-date" id="modalDateAdded"></div>
     <div class="field">
       <label>Name</label>
       <input type="text" id="fName" placeholder="e.g. 💎 Anti-tank">
@@ -715,6 +724,7 @@ function render() {
     tbody.innerHTML = visible.map(r => `
       <tr>
         <td class="col-name">${x(r.name)}</td>
+        <td class="col-date">${formatDate(r.dateAdded)}</td>
         <td class="col-factions">${factionBadges(r.factions)}</td>
         <td>${x(r.build)}</td>
         <td>${x(r.notes)}</td>
@@ -724,7 +734,7 @@ function render() {
 
   document.getElementById('countLabel').textContent = `${visible.length} / ${rows.length}`;
 
-  ['name', 'build'].forEach(k => {
+  ['name', 'build', 'dateAdded'].forEach(k => {
     const th = document.getElementById('th-' + k);
     th.classList.remove('sort-asc', 'sort-desc');
     if (sortKey === k) th.classList.add(sortDir === 1 ? 'sort-asc' : 'sort-desc');
@@ -739,6 +749,9 @@ function factionBadges(factions) {
 function x(str) {
   return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
+// dateAdded is stored as a full ISO timestamp (sorts correctly as a plain string);
+// shown here as just the date. Older rows added before this feature don't have one.
+function formatDate(iso) { return iso ? iso.slice(0, 10) : '—'; }
 // Strip leading code designator (e.g. "G-31 Arc" → "Arc", "Eagle Airstrike" unchanged)
 function shortName(s) { return s.replace(/^\S*\d\S* /, ''); }
 const GENERIC_WEAPON_WORDS = new Set(['Pistol','Shotgun']);
@@ -752,7 +765,8 @@ function stratColor(name) { const c = STRATAGEM_CATS[name]; return `fp-chip-stra
 
 // ── Sort & Filter ──────────────────────────────────────────────────────────
 function setSort(key) {
-  if (sortKey === key) sortDir *= -1; else { sortKey = key; sortDir = 1; }
+  if (sortKey === key) sortDir *= -1;
+  else { sortKey = key; sortDir = key === 'dateAdded' ? -1 : 1; } // Added: newest first by default
   render();
 }
 
@@ -959,6 +973,7 @@ function openModal(id) {
   document.getElementById('fSquids').checked = r ? r.factions.includes('squids') : false;
   document.getElementById('fBuild').value   = r ? r.build : '';
   document.getElementById('fNotes').value   = r ? r.notes : '';
+  document.getElementById('modalDateAdded').textContent = r && r.dateAdded ? `Added ${formatDate(r.dateAdded)}` : '';
 
   document.getElementById('overlay').classList.add('open');
   setTimeout(() => document.getElementById('fName').focus(), 50);
@@ -988,7 +1003,7 @@ function saveRow() {
     rows[i] = { ...rows[i], name, factions, build, notes };
   } else {
     const nextId = rows.reduce((m, r) => Math.max(m, r.id), 0) + 1;
-    rows.push({ id: nextId, name, factions, build, notes });
+    rows.push({ id: nextId, name, factions, build, notes, dateAdded: new Date().toISOString() });
   }
 
   persist(rows);
