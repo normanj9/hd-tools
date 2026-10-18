@@ -2275,11 +2275,24 @@
         "constitution_decay": 0
       },
       {
-        "name": "Arms (2)",
+        "name": "Left Arm",
         "health": 65,
         "health_is_main": false,
         "av": 0,
         "fatal": false,
+        "overflow_pct": 50,
+        "overflow_cap": false,
+        "durable_pct": 0,
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
+      },
+      {
+        "name": "Right Arm",
+        "health": 65,
+        "health_is_main": false,
+        "av": 0,
+        "fatal": true,
         "overflow_pct": 50,
         "overflow_cap": false,
         "durable_pct": 0,
@@ -2398,7 +2411,7 @@
         "name": "Main",
         "health": 125,
         "health_is_main": false,
-        "av": 0,
+        "av": 1,
         "fatal": true,
         "overflow_pct": 0,
         "overflow_cap": false,
@@ -2411,7 +2424,7 @@
         "name": "Head",
         "health": 40,
         "health_is_main": false,
-        "av": 0,
+        "av": 1,
         "fatal": true,
         "overflow_pct": 100,
         "overflow_cap": true,
@@ -2424,7 +2437,7 @@
         "name": "Torso",
         "health": 100,
         "health_is_main": false,
-        "av": 0,
+        "av": 1,
         "fatal": true,
         "overflow_pct": 100,
         "overflow_cap": true,
@@ -2437,7 +2450,7 @@
         "name": "Arms (2)",
         "health": 65,
         "health_is_main": false,
-        "av": 0,
+        "av": 1,
         "fatal": false,
         "overflow_pct": 50,
         "overflow_cap": false,
@@ -2450,7 +2463,7 @@
         "name": "Legs (2)",
         "health": 90,
         "health_is_main": false,
-        "av": 0,
+        "av": 1,
         "fatal": true,
         "overflow_pct": 65,
         "overflow_cap": true,
@@ -2469,8 +2482,8 @@
         "overflow_cap": true,
         "durable_pct": 0,
         "exdr": 100,
-        "constitution": 0,
-        "constitution_decay": 0
+        "constitution": 100,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -2555,8 +2568,8 @@
         "overflow_cap": true,
         "durable_pct": 0,
         "exdr": 100,
-        "constitution": 0,
-        "constitution_decay": 0
+        "constitution": 100,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -2641,8 +2654,8 @@
         "overflow_cap": true,
         "durable_pct": 0,
         "exdr": 100,
-        "constitution": 0,
-        "constitution_decay": 0
+        "constitution": 100,
+        "constitution_decay": 50.0
       }
     ]
   },
@@ -2911,7 +2924,7 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 70,
-        "exdr": 50,
+        "exdr": 0,
         "constitution": 0,
         "constitution_decay": 0
       }
@@ -6381,10 +6394,10 @@
         "constitution_decay": 70.0
       },
       {
-        "name": "Legs (4)",
-        "health": 100,
+        "name": "Claws (2)",
+        "health": 75,
         "health_is_main": false,
-        "av": 1,
+        "av": 3,
         "fatal": false,
         "overflow_pct": 40,
         "overflow_cap": false,
@@ -6394,10 +6407,10 @@
         "constitution_decay": 0
       },
       {
-        "name": "Claws (2)",
-        "health": 75,
+        "name": "Legs (4)",
+        "health": 100,
         "health_is_main": false,
-        "av": 3,
+        "av": 1,
         "fatal": false,
         "overflow_pct": 40,
         "overflow_cap": false,
@@ -6523,8 +6536,8 @@
         "overflow_cap": false,
         "durable_pct": 100,
         "exdr": 25,
-        "constitution": 0,
-        "constitution_decay": 0
+        "constitution": 750,
+        "constitution_decay": 100.0
       },
       {
         "name": "Head",
@@ -7569,7 +7582,7 @@
         "name": "Upper Fin",
         "health": 200,
         "health_is_main": false,
-        "av": 0,
+        "av": 2,
         "fatal": false,
         "overflow_pct": 100,
         "overflow_cap": true,
@@ -7582,7 +7595,7 @@
         "name": "Lower Fin",
         "health": 200,
         "health_is_main": false,
-        "av": 0,
+        "av": 2,
         "fatal": false,
         "overflow_pct": 100,
         "overflow_cap": true,
@@ -7595,7 +7608,7 @@
         "name": "Side Fins (2)",
         "health": 150,
         "health_is_main": false,
-        "av": 2,
+        "av": 0,
         "fatal": false,
         "overflow_pct": 100,
         "overflow_cap": true,
@@ -8483,7 +8496,7 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 0,
-        "exdr": 100,
+        "exdr": 0,
         "constitution": 0,
         "constitution_decay": 0
       },

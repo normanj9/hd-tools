@@ -183,13 +183,7 @@
             "ap": 5,
             "pellets": 1
           }
-        ],
-        "charge": {
-          "min_s": 0.45,
-          "max_s": 3.0,
-          "min_mult": 1.0,
-          "max_mult": 2.5
-        }
+        ]
       },
       {
         "name": "Railgun Max Charge",
@@ -202,13 +196,7 @@
             "ap": 5,
             "pellets": 1
           }
-        ],
-        "charge": {
-          "min_s": 0.45,
-          "max_s": 3.0,
-          "min_mult": 1.0,
-          "max_mult": 2.5
-        }
+        ]
       }
     ],
     "fire_rate_rpm": 60.0
@@ -350,10 +338,10 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 0,
-            "durable_damage": 0,
+            "damage": 20,
+            "durable_damage": 2,
             "type": "ballistic",
-            "ap": 4,
+            "ap": 0,
             "pellets": 1
           },
           {
@@ -410,10 +398,10 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 0,
-            "durable_damage": 0,
+            "damage": 20,
+            "durable_damage": 2,
             "type": "ballistic",
-            "ap": 4,
+            "ap": 0,
             "pellets": 1
           },
           {
@@ -576,10 +564,10 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 0,
-            "durable_damage": 0,
+            "damage": 20,
+            "durable_damage": 2,
             "type": "ballistic",
-            "ap": 4,
+            "ap": 0,
             "pellets": 1
           },
           {
@@ -738,20 +726,20 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/S-11_Speargun",
     "modes": [
       {
-        "name": "Default",
+        "name": "S-11",
         "components": [
           {
             "name": "Projectile",
             "damage": 650,
             "durable_damage": 275,
-            "type": "damage",
+            "type": "ballistic",
             "ap": 5,
             "pellets": 1
           }
         ]
       },
       {
-        "name": "Default",
+        "name": "S-11 (Explosion)",
         "components": [
           {
             "name": "Explosion",
@@ -861,7 +849,7 @@
         "name": "Default",
         "components": [
           {
-            "name": "Damage",
+            "name": "Spray",
             "damage": 3,
             "durable_damage": 3,
             "type": "fire",
@@ -907,7 +895,7 @@
             "name": "Projectile",
             "damage": 100,
             "durable_damage": 25,
-            "type": "damage",
+            "type": "ballistic",
             "ap": 2,
             "pellets": 1
           }
@@ -915,6 +903,28 @@
       }
     ],
     "fire_rate_rpm": 1300.0
+  },
+  {
+    "id": "40-k-meltagun",
+    "name": "40-K Meltagun",
+    "category": "Support",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/40-K_Meltagun",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Beam",
+            "damage": 2600,
+            "durable_damage": 2600,
+            "type": "laser",
+            "ap": 7,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 50.0
   },
   {
     "id": "sg-88-break-action-shotgun",
@@ -970,8 +980,8 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 800,
-            "durable_damage": 400,
+            "damage": 400,
+            "durable_damage": 200,
             "type": "ballistic",
             "ap": 5,
             "pellets": 1
@@ -1038,7 +1048,7 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-20_Breaching_Hammer",
     "modes": [
       {
-        "name": "Default",
+        "name": "CQC-20 BREACHING HAMMER",
         "components": [
           {
             "name": "Damage",
@@ -1051,7 +1061,7 @@
         ]
       },
       {
-        "name": "Default",
+        "name": "CQC-20 BREACHING HAMMER (Explosion)",
         "components": [
           {
             "name": "Explosion",
@@ -1077,7 +1087,7 @@
           {
             "name": "Damage",
             "damage": 165,
-            "durable_damage": 55,
+            "durable_damage": 83,
             "type": "melee",
             "ap": 3,
             "pellets": 1
@@ -1373,6 +1383,41 @@
     "fire_rate_rpm": 790.0
   },
   {
+    "id": "ar-11-arbitrator",
+    "name": "AR-11 Arbitrator",
+    "category": "Primary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/AR-11_Arbitrator",
+    "modes": [
+      {
+        "name": "4mm",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 70,
+            "durable_damage": 20,
+            "type": "ballistic",
+            "ap": 2,
+            "pellets": 1
+          }
+        ]
+      },
+      {
+        "name": "10g",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 50,
+            "durable_damage": 12,
+            "type": "ballistic",
+            "ap": 3,
+            "pellets": 9
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 1200.0
+  },
+  {
     "id": "br-14-adjudicator",
     "name": "BR-14 Adjudicator",
     "category": "Primary",
@@ -1640,6 +1685,28 @@
     "fire_rate_rpm": 190.0
   },
   {
+    "id": "r-40-k-hot-shot-marksman-rifle",
+    "name": "R/40-K Hot-Shot Marksman Rifle",
+    "category": "Primary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/R/40-K_Hot-Shot_Marksman_Rifle",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 275,
+            "durable_damage": 40,
+            "type": "ballistic",
+            "ap": 3,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 210.0
+  },
+  {
     "id": "mp-98-knight",
     "name": "MP-98 Knight",
     "category": "Primary",
@@ -1819,7 +1886,7 @@
             "name": "Projectile",
             "damage": 65,
             "durable_damage": 13,
-            "type": "damage",
+            "type": "ballistic",
             "ap": 3,
             "pellets": 1
           }
@@ -2189,13 +2256,7 @@
             "ap": 3,
             "pellets": 1
           }
-        ],
-        "charge": {
-          "min_s": 0.45,
-          "max_s": 0.9,
-          "min_mult": 1.0,
-          "max_mult": 2.5
-        }
+        ]
       }
     ],
     "fire_rate_rpm": 550.0
@@ -2443,6 +2504,36 @@
     "fire_rate_rpm": 550.0
   },
   {
+    "id": "gl-15-evictor",
+    "name": "GL-15 Evictor",
+    "category": "Primary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/GL-15_Evictor",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 50,
+            "durable_damage": 2,
+            "type": "ballistic",
+            "ap": 3,
+            "pellets": 1
+          },
+          {
+            "name": "Explosion",
+            "damage": 440,
+            "durable_damage": 440,
+            "type": "explosion",
+            "ap": 3,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 60.0
+  },
+  {
     "id": "p-2-peacemaker",
     "name": "P-2 Peacemaker",
     "category": "Secondary",
@@ -2521,7 +2612,7 @@
             "name": "Projectile",
             "damage": 1000,
             "durable_damage": 1000,
-            "type": "damage",
+            "type": "ballistic",
             "ap": 5,
             "pellets": 1
           },
@@ -2542,7 +2633,7 @@
             "name": "Projectile",
             "damage": 1000,
             "durable_damage": 1000,
-            "type": "damage",
+            "type": "ballistic",
             "ap": 5,
             "pellets": 1
           },
@@ -2702,6 +2793,71 @@
       }
     ],
     "fire_rate_rpm": 900.0
+  },
+  {
+    "id": "p-40-k-bolt-pistol",
+    "name": "P/40-K Bolt Pistol",
+    "category": "Secondary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/P/40-K_Bolt_Pistol",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 325,
+            "durable_damage": 115,
+            "type": "ballistic",
+            "ap": 4,
+            "pellets": 1
+          },
+          {
+            "name": "Explosion",
+            "damage": 175,
+            "durable_damage": 175,
+            "type": "explosion",
+            "ap": 3,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 150.0
+  },
+  {
+    "id": "p-34-breacher",
+    "name": "P-34 Breacher",
+    "category": "Secondary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/P-34_Breacher",
+    "modes": [
+      {
+        "name": "Sticky Round",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 60,
+            "durable_damage": 0,
+            "type": "ballistic",
+            "ap": 4,
+            "pellets": 1
+          }
+        ]
+      },
+      {
+        "name": "Detonation",
+        "components": [
+          {
+            "name": "Explosion",
+            "damage": 2000,
+            "durable_damage": 2000,
+            "type": "explosion",
+            "ap": 7,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 20.0
   },
   {
     "id": "sg-22-bushwhacker",
@@ -3023,7 +3179,7 @@
           {
             "name": "Damage",
             "damage": 165,
-            "durable_damage": 55,
+            "durable_damage": 83,
             "type": "melee",
             "ap": 3,
             "pellets": 1
@@ -3040,7 +3196,7 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/G-6_Frag",
     "modes": [
       {
-        "name": "Default",
+        "name": "Shrapnel",
         "components": [
           {
             "name": "Projectile",
@@ -3053,7 +3209,7 @@
         ]
       },
       {
-        "name": "Default",
+        "name": "G-6 FRAG",
         "components": [
           {
             "name": "Explosion",
@@ -3074,7 +3230,20 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/G-7_Pineapple",
     "modes": [
       {
-        "name": "Default",
+        "name": "G-7 PINEAPPLE E",
+        "components": [
+          {
+            "name": "Explosion",
+            "damage": 300,
+            "durable_damage": 300,
+            "type": "explosion",
+            "ap": 3,
+            "pellets": 1
+          }
+        ]
+      },
+      {
+        "name": "Shrapnel",
         "components": [
           {
             "name": "Projectile",
@@ -3088,19 +3257,6 @@
             "name": "Explosion",
             "damage": 100,
             "durable_damage": 100,
-            "type": "explosion",
-            "ap": 3,
-            "pellets": 1
-          }
-        ]
-      },
-      {
-        "name": "G-7 PINEAPPLE E",
-        "components": [
-          {
-            "name": "Explosion",
-            "damage": 300,
-            "durable_damage": 300,
             "type": "explosion",
             "ap": 3,
             "pellets": 1
@@ -3200,7 +3356,7 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/G-31_Arc",
     "modes": [
       {
-        "name": "Default",
+        "name": "G-31 ARC E",
         "components": [
           {
             "name": "Arc",
@@ -3213,7 +3369,7 @@
         ]
       },
       {
-        "name": "Default",
+        "name": "G-31 ARC",
         "components": [
           {
             "name": "Explosion",
@@ -3318,7 +3474,7 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/G-142_Pyrotech",
     "modes": [
       {
-        "name": "Default",
+        "name": "G-142 PYROTECH",
         "components": [
           {
             "name": "Spray",
@@ -3331,7 +3487,7 @@
         ]
       },
       {
-        "name": "Default",
+        "name": "G-142 PYROTECH (Explosion)",
         "components": [
           {
             "name": "Explosion",
@@ -3409,87 +3565,26 @@
     ]
   },
   {
-    "id": "40-k-meltagun",
-    "name": "40-K Meltagun",
-    "category": "Support",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/40-K_Meltagun",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Beam",
-            "damage": 2600,
-            "durable_damage": 2600,
-            "type": "damage",
-            "ap": 7,
-            "pellets": 1
-          }
-        ]
-      }
-    ],
-    "fire_rate_rpm": 50.0
-  },
-  {
-    "id": "r-40-k-hot-shot-marksman-rifle",
-    "name": "R/40-K Hot-Shot Marksman Rifle",
-    "category": "Primary",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/R/40-K_Hot-Shot_Marksman_Rifle",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Projectile",
-            "damage": 275,
-            "durable_damage": 40,
-            "type": "ballistic",
-            "ap": 3,
-            "pellets": 1
-          }
-        ]
-      }
-    ],
-    "fire_rate_rpm": 210.0
-  },
-  {
-    "id": "p-40-k-bolt-pistol",
-    "name": "P/40-K Bolt Pistol",
-    "category": "Secondary",
-    "wiki_url": "https://helldivers.wiki.gg/wiki/P/40-K_Bolt_Pistol",
-    "modes": [
-      {
-        "name": "Default",
-        "components": [
-          {
-            "name": "Projectile",
-            "damage": 325,
-            "durable_damage": 115,
-            "type": "ballistic",
-            "ap": 4,
-            "pellets": 1
-          },
-          {
-            "name": "Explosion",
-            "damage": 175,
-            "durable_damage": 175,
-            "type": "explosion",
-            "ap": 3,
-            "pellets": 1
-          }
-        ]
-      }
-    ],
-    "fire_rate_rpm": 150.0
-  },
-  {
     "id": "g-40-k-melta-mine",
     "name": "G/40-K Melta Mine",
     "category": "Throwable",
     "wiki_url": "https://helldivers.wiki.gg/wiki/G/40-K_Melta_Mine",
     "modes": [
       {
-        "name": "Default",
+        "name": "FLAMEWALL",
+        "components": [
+          {
+            "name": "Damage",
+            "damage": 600,
+            "durable_damage": 600,
+            "type": "fire",
+            "ap": 7,
+            "pellets": 1
+          }
+        ]
+      },
+      {
+        "name": "G/40-K MELTA MINE",
         "components": [
           {
             "name": "Explosion",
@@ -3497,6 +3592,48 @@
             "durable_damage": 2000,
             "type": "explosion",
             "ap": 7,
+            "pellets": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-8-immolation",
+    "name": "G-8 Immolation",
+    "category": "Throwable",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/G-8_Immolation",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Explosion",
+            "damage": 20,
+            "durable_damage": 20,
+            "type": "explosion",
+            "ap": 0,
+            "pellets": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-60-anti-tank-seeker",
+    "name": "G-60 Anti-Tank Seeker",
+    "category": "Throwable",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/G-60_Anti-Tank_Seeker",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Explosion",
+            "damage": 1800,
+            "durable_damage": 1800,
+            "type": "explosion",
+            "ap": 5,
             "pellets": 1
           }
         ]

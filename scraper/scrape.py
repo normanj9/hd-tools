@@ -15,7 +15,8 @@ Usage:
 rest of the data is preserved.
 
 Requires: pip install requests beautifulsoup4
-Outputs:  data/enemies.json, data/weapons.json, data/stratagems.json, ../damage-calc.html
+Outputs:  data/enemies.json, data/weapons.json, data/stratagems.json,
+          ../damage-calc.html, ../randomizer.html, ../loadouts.html
 """
 
 import json, re, sys, time
@@ -219,6 +220,7 @@ WEAPON_PAGES = [
     ("AR/GL-21 One-Two",                 "Primary", "/wiki/AR/GL-21_One-Two"),
     ("MA5C Assault Rifle",               "Primary", "/wiki/MA5C_Assault_Rifle"),
     ("StA-52 Assault Rifle",             "Primary", "/wiki/StA-52_Assault_Rifle"),
+    ("AR-11 Arbitrator",                 "Primary", "/wiki/AR-11_Arbitrator"),
     # Battle Rifles
     ("BR-14 Adjudicator",                "Primary", "/wiki/BR-14_Adjudicator"),
     ("JAR-5 Dominator",                  "Primary", "/wiki/JAR-5_Dominator"),
@@ -270,6 +272,8 @@ WEAPON_PAGES = [
     ("FLAM-66 Torcher",                  "Primary", "/wiki/FLAM-66_Torcher"),
     # Variable
     ("VG-70 Variable",                   "Primary", "/wiki/VG-70_Variable"),
+    # Explosive
+    ("GL-15 Evictor",                    "Primary", "/wiki/GL-15_Evictor"),
 
     # ── Secondary Weapons ─────────────────────────────────────────────────────
     # Pistols
@@ -284,6 +288,7 @@ WEAPON_PAGES = [
     ("P-113 Verdict",                    "Secondary", "/wiki/P-113_Verdict"),
     ("M6C/SOCOM Pistol",                 "Secondary", "/wiki/M6C/SOCOM_Pistol"),
     ("P/40-K Bolt Pistol",               "Secondary", "/wiki/P/40-K_Bolt_Pistol"),
+    ("P-34 Breacher",                    "Secondary", "/wiki/P-34_Breacher"),
     # Shotgun secondary
     ("SG-22 Bushwhacker",                "Secondary", "/wiki/SG-22_Bushwhacker"),
     # Laser secondary
@@ -318,6 +323,8 @@ WEAPON_PAGES = [
     ("TED-63 Dynamite",                  "Throwable", "/wiki/TED-63_Dynamite"),
     ("K-2 Throwing Knife",               "Throwable", "/wiki/K-2_Throwing_Knife"),
     ("G/40-K Melta Mine",                "Throwable", "/wiki/G/40-K_Melta_Mine"),
+    ("G-8 Immolation",                   "Throwable", "/wiki/G-8_Immolation"),
+    ("G-60 Anti-Tank Seeker",            "Throwable", "/wiki/G-60_Anti-Tank_Seeker"),
 ]
 
 # ── HTTP utilities ────────────────────────────────────────────────────────────
@@ -400,7 +407,7 @@ def parse_constitution(text):
     t = text.strip()
     if not t or t.lower() == 'none' or t in ('—', '-'):
         return 0, 0
-    m = re.match(r'^([\d,]+)\s*\[([\d.]+)\s*/\s*s\]$', t)
+    m = re.match(r'^([\d,]+)\s*\[\s*-?([\d.]+)\s*/\s*s\]$', t)  # decay may be written signed: "[-100/s]"
     if m:
         return int(m.group(1).replace(',', '')), float(m.group(2))
     return 0, 0
@@ -499,6 +506,7 @@ def parse_enemy(html, name, faction, wiki_path):
 # Explosion damage:   Damage section → 'Inner Radius'  → "150 Explosion"
 # Explosion durable:  Damage section → 'Inner Durable' → "150 Explosion"
 # AP:                 Penetration section → 'Direct'   → "Heavy" / "Anti-Tank II"
+#                     (explosions: 'Inner AP' as of 1.007.10x)
 # Linking: projectile table has 'Explosion On Impact' row → name of explosion table
 
 _DMG_VAL_RE = re.compile(
@@ -614,6 +622,7 @@ def _parse_attack_tables(soup):
     """
     primary_tables = {}  # table_name → {comp_label, sections, linked_explosion}
     expl_tables    = {}  # table_name → sections
+    shrapnel_names = set()  # projectile tables spawned by an explosion's 'Shrapnel' row
 
     for t in soup.find_all('table'):
         classes = t.get('class', [])
@@ -655,6 +664,9 @@ def _parse_attack_tables(soup):
 
         if is_expl:
             expl_tables[table_name] = sections
+            for sec in sections.values():
+                if 'Shrapnel' in sec:
+                    shrapnel_names.add(sec['Shrapnel'].replace('_', ' '))
         else:
             primary_tables[table_name] = {
                 'comp_label':      comp_label,
@@ -687,8 +699,8 @@ def _parse_attack_tables(soup):
 
         # Strip trailing type designators: " P", " B", "_S_dm", "_dm", etc.
         mode_name = re.sub(r'(?:\s+[A-Z]|_(?:[A-Z]+_)?dm)\s*$', '', prim_name).strip()
-        if len(primary_tables) == 1:
-            mode_name = 'Default'
+        if prim_name in shrapnel_names:
+            mode_name = 'Shrapnel'
 
         modes.append({"name": mode_name, "components": components})
 
@@ -698,16 +710,18 @@ def _parse_attack_tables(soup):
         for e in primary_tables.values()
     }
     for expl_name, expl_secs in expl_tables.items():
-        if 'overcharge' in expl_name.lower():
-            continue  # self-damage explosion from over-charging — not an attack on the enemy
+        if 'overcharge' in expl_name.lower() or 'backblast' in expl_name.lower():
+            continue  # self-damage (over-charging, launcher backblast) — not an attack on the enemy
         if expl_name not in linked_expl_names and expl_name.replace('_', ' ') not in linked_expl_names:
             expl_comp = _extract_component(expl_secs, is_explosion=True)
             if expl_comp:
-                mode_name = re.sub(r'\s+P\s*IE\s*$', '', expl_name, flags=re.I).strip()
-                if len(expl_tables) == 1:
-                    mode_name = 'Default'
+                mode_name = re.sub(r'\s+(?:P\s*)?I?E\s*$', '', expl_name, flags=re.I).strip()
+                if any(m['name'] == mode_name for m in modes):
+                    mode_name += ' (Explosion)'
                 modes.append({"name": mode_name, "components": [expl_comp]})
 
+    if len(modes) == 1:
+        modes[0]['name'] = 'Default'
     return modes if modes else None
 
 def _extract_component(sections, is_explosion):
@@ -764,7 +778,7 @@ def _extract_component(sections, is_explosion):
 
     # ── Armor Penetration ─────────────────────────────────────────────────────
     ap = 0
-    for key in ['Direct', 'AoE', 'Splash', 'Projectile']:
+    for key in ['Direct', 'Inner AP', 'AoE', 'Splash', 'Projectile']:
         val = pen_sec.get(key, '')
         av  = normalize_av(val)
         if av >= 0:
@@ -850,7 +864,7 @@ def parse_stratagem_page(html):
                 href  = source_link.get('href', '')
                 title = source_link.get('title', '') or source_link.get_text(strip=True)
                 if 'Warbond' in href or 'Warbond' in title:
-                    warbond = re.sub(r'\s+Premium\s+Warbond.*', '', title).strip() or source_link.get_text(strip=True)
+                    warbond = re.sub(r'\s+(?:Premium|Legendary)\s+Warbond.*', '', title).replace('’', "'").strip() or source_link.get_text(strip=True)
                     source  = warbond
                 else:
                     source = source_link.get_text(strip=True)
@@ -898,6 +912,39 @@ def update_randomizer_html(stratagems):
     html_path.write_text(updated, encoding='utf-8', newline='')
     print(f"  → randomizer.html updated ({len(stratagems)} stratagems)")
 
+_ITEMS_RE = re.compile(r'// ITEMS_BEGIN\r?\n[\s\S]*?// ITEMS_END')
+_STRAT_COLOR = {'Offensive Permit': 'r', 'Defensive Permit': 'g', 'Supply Permit': 'b'}
+
+def update_loadouts_html(weapons, stratagems):
+    """Refresh the faction-board pick lists in loadouts.html."""
+    html_path = Path(__file__).parent.parent / 'loadouts.html'
+    if not html_path.exists():
+        print(f"  ⚠ loadouts.html not found — skipping")
+        return
+    dump = lambda v: json.dumps(v, ensure_ascii=False, separators=(',', ':'))
+    # Chip colour is looked up by the designation-less name, same as shortName() in the page
+    short = lambda n: re.sub(r'^\S*\d\S* ', '', n)
+    weapons_list    = sorted(w['name'] for w in weapons if w['category'] in ('Primary', 'Secondary'))
+    grenades_list   = sorted(w['name'] for w in weapons if w['category'] == 'Throwable')
+    stratagems_list = sorted(s['name'] for s in stratagems)
+    cats = dict(sorted((short(s['name']), _STRAT_COLOR.get(s['category'], 'b')) for s in stratagems))
+    new_block = (
+        "// ITEMS_BEGIN\n"
+        f"const WEAPONS_LIST={dump(weapons_list)};\n"
+        f"const GRENADES_LIST={dump(grenades_list)};\n"
+        f"const STRATAGEMS_LIST={dump(stratagems_list)};\n"
+        f"const STRATAGEM_CATS={dump(cats)};\n"
+        "// ITEMS_END"
+    )
+    src = html_path.read_text(encoding='utf-8', newline='')
+    updated, n = _ITEMS_RE.subn(lambda _: new_block, src)
+    if not n:
+        print(f"  ⚠ ITEMS_BEGIN/END markers not found in loadouts.html — skipping")
+        return
+    html_path.write_text(updated, encoding='utf-8', newline='')
+    print(f"  → loadouts.html updated ({len(weapons_list)} weapons, {len(grenades_list)} grenades, "
+          f"{len(stratagems_list)} stratagems)")
+
 def update_html(weapons, enemies):
     html_path = Path(__file__).parent.parent / 'damage-calc.html'
     if not html_path.exists():
@@ -931,6 +978,45 @@ def _load_json(path):
 
 def _save_json(path, items):
     path.write_text(json.dumps(items, indent=2, ensure_ascii=False), encoding='utf-8')
+
+def _mode_sig(mode):
+    return tuple((c['damage'], c['durable_damage'], c['ap'], c['pellets']) for c in mode['components'])
+
+def _carry_over(weapon, prev):
+    """
+    As of 1.007.10x the wiki's attack tables are titled with internal ids
+    ("AC-8 P1") instead of ammo names ("20mm FLAK ROUNDS"), and melee weapons
+    no longer list a fire rate. Keep the previous scrape's mode names / fire
+    rate where the attack is recognizably the same: first by matching all
+    component stats, then pairing any leftovers in order when the same number
+    of modes is left on both sides (covers modes whose stats were rebalanced).
+    """
+    if 'fire_rate_rpm' not in weapon and 'fire_rate_rpm' in prev:
+        weapon['fire_rate_rpm'] = prev['fire_rate_rpm']
+
+    new_modes, old_modes = weapon['modes'], prev.get('modes', [])
+    if len(new_modes) == 1:
+        return
+    old_by_sig = {}
+    for m in old_modes:
+        old_by_sig.setdefault(_mode_sig(m), []).append(m['name'])
+    used, renamed = set(), [None] * len(new_modes)
+    for i, m in enumerate(new_modes):
+        names = [n for n in old_by_sig.get(_mode_sig(m), []) if n not in used]
+        if len(names) == 1 or (names and len(old_by_sig[_mode_sig(m)]) == 1):
+            renamed[i] = names[0]
+            used.add(names[0])
+    left_new = [i for i, r in enumerate(renamed) if r is None]
+    left_old = [m['name'] for m in old_modes if m['name'] not in used]
+    if len(left_new) == len(left_old):
+        for i, name in zip(left_new, left_old):
+            renamed[i] = name
+    for i, m in enumerate(new_modes):
+        if renamed[i] and renamed[i] != 'Default':
+            m['name'] = renamed[i]
+    # Keep the previous mode order so the calculator's default mode doesn't shift
+    old_order = {m['name']: i for i, m in enumerate(old_modes)}
+    new_modes.sort(key=lambda m: old_order.get(m['name'], len(old_order)))
 
 def main():
     data_dir = Path(__file__).parent / 'data'
@@ -1001,12 +1087,15 @@ def main():
         print("=" * 50)
         new_weapons = {}
         failed = []
+        previous_weapons = existing_weapons or _load_json(weapons_path)
         for name, category, path in weapon_list:
             print(f"  {name}")
             html = fetch(path)
             if html:
                 w = parse_weapon(html, name, category, path)
                 if w:
+                    if w['id'] in previous_weapons:
+                        _carry_over(w, previous_weapons[w['id']])
                     new_weapons[w['id']] = w
                 else:
                     failed.append(name)
@@ -1062,6 +1151,9 @@ def main():
     if not STRATAGEMS_ONLY:
         print("\nUpdating damage-calc.html...")
         update_html(all_weapons, all_enemies)
+    strats_path = data_dir / 'stratagems.json'
+    if all_weapons and strats_path.exists():
+        update_loadouts_html(all_weapons, json.loads(strats_path.read_text(encoding='utf-8')))
     print("\nDone.")
 
 if __name__ == '__main__':
