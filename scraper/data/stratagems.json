@@ -5,7 +5,7 @@
     "category": "Offensive Permit",
     "warbond": null,
     "source": "Bridge",
-    "cooldown_s": 90,
+    "cooldown_s": 80,
     "call_in": [
       "right",
       "right",
@@ -188,6 +188,21 @@
       "right"
     ],
     "wiki_url": "https://helldivers.wiki.gg/wiki/Orbital_Railcannon_Strike"
+  },
+  {
+    "id": "eagle-gas-airstrike",
+    "name": "Eagle Gas Airstrike",
+    "category": "Offensive Permit",
+    "warbond": null,
+    "source": "Counterdissident Hammer",
+    "cooldown_s": 15,
+    "call_in": [
+      "up",
+      "right",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/Eagle_Gas_Airstrike"
   },
   {
     "id": "eagle-strafing-run",
@@ -377,22 +392,6 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/APW-1_Anti-Materiel_Rifle"
   },
   {
-    "id": "gr-8-recoilless-rifle",
-    "name": "GR-8 Recoilless Rifle",
-    "category": "Supply Permit",
-    "warbond": null,
-    "source": "Patriotic Administration Center",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "right",
-      "right",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/GR-8_Recoilless_Rifle"
-  },
-  {
     "id": "gl-21-grenade-launcher",
     "name": "GL-21 Grenade Launcher",
     "category": "Supply Permit",
@@ -407,6 +406,22 @@
       "down"
     ],
     "wiki_url": "https://helldivers.wiki.gg/wiki/GL-21_Grenade_Launcher"
+  },
+  {
+    "id": "gr-8-recoilless-rifle",
+    "name": "GR-8 Recoilless Rifle",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Patriotic Administration Center",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "right",
+      "right",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/GR-8_Recoilless_Rifle"
   },
   {
     "id": "flam-40-flamethrower",
@@ -572,6 +587,26 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/StA-X3_W.A.S.P._Launcher"
   },
   {
+    "id": "las-44-nova",
+    "name": "LAS-44 Nova",
+    "category": "Supply Permit",
+    "warbond": "Scope of Authority",
+    "source": "Scope of Authority",
+    "cooldown_s": 0,
+    "call_in": [],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/LAS-44_Nova"
+  },
+  {
+    "id": "amw-20-apex",
+    "name": "AMW-20 Apex",
+    "category": "Supply Permit",
+    "warbond": "Scope of Authority",
+    "source": "Scope of Authority",
+    "cooldown_s": 0,
+    "call_in": [],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/AMW-20_Apex"
+  },
+  {
     "id": "cqc-20-breaching-hammer",
     "name": "CQC-20 Breaching Hammer",
     "category": "Supply Permit",
@@ -619,6 +654,22 @@
       "left"
     ],
     "wiki_url": "https://helldivers.wiki.gg/wiki/MGX-42_Bullet_Storm"
+  },
+  {
+    "id": "tx-41-sterilizer",
+    "name": "TX-41 Sterilizer",
+    "category": "Supply Permit",
+    "warbond": "Chemical Agents",
+    "source": "Chemical Agents",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "up",
+      "down",
+      "left"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/TX-41_Sterilizer"
   },
   {
     "id": "s-11-speargun",
@@ -686,22 +737,6 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/EAT-700_Expendable_Napalm"
   },
   {
-    "id": "tx-41-sterilizer",
-    "name": "TX-41 Sterilizer",
-    "category": "Supply Permit",
-    "warbond": "Chemical Agents",
-    "source": "Chemical Agents",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "down",
-      "left"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/TX-41_Sterilizer"
-  },
-  {
     "id": "eat-411-leveller",
     "name": "EAT-411 Leveller",
     "category": "Supply Permit",
@@ -716,73 +751,6 @@
       "down"
     ],
     "wiki_url": "https://helldivers.wiki.gg/wiki/EAT-411_Leveller"
-  },
-  {
-    "id": "gl-28-belt-fed-grenade-launcher",
-    "name": "GL-28 Belt-Fed Grenade Launcher",
-    "category": "Supply Permit",
-    "warbond": "Siege Breakers",
-    "source": "Siege Breakers",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "left",
-      "up",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/GL-28_Belt-Fed_Grenade_Launcher"
-  },
-  {
-    "id": "b-md-c4-pack",
-    "name": "B/MD C4 Pack",
-    "category": "Supply Permit",
-    "warbond": "Redacted Regiment",
-    "source": "Redacted Regiment",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "right",
-      "up",
-      "up",
-      "right",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/B/MD_C4_Pack"
-  },
-  {
-    "id": "ms-11-solo-silo",
-    "name": "MS-11 Solo Silo",
-    "category": "Supply Permit",
-    "warbond": "Dust Devils",
-    "source": "Dust Devils",
-    "cooldown_s": 180,
-    "call_in": [
-      "down",
-      "up",
-      "right",
-      "down",
-      "down"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/MS-11_Solo_Silo"
-  },
-  {
-    "id": "b-flam-80-cremator",
-    "name": "B/FLAM-80 Cremator",
-    "category": "Supply Permit",
-    "warbond": "Entrenched Division",
-    "source": "Entrenched Division",
-    "cooldown_s": 480,
-    "call_in": [
-      "down",
-      "down",
-      "right",
-      "down",
-      "up",
-      "up"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/B/FLAM-80_Cremator"
   },
   {
     "id": "m-1000-maxigun",
@@ -802,6 +770,90 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/M-1000_Maxigun"
   },
   {
+    "id": "gl-28-belt-fed-grenade-launcher",
+    "name": "GL-28 Belt-Fed Grenade Launcher",
+    "category": "Supply Permit",
+    "warbond": "Siege Breakers",
+    "source": "Siege Breakers",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "up",
+      "left",
+      "up",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/GL-28_Belt-Fed_Grenade_Launcher"
+  },
+  {
+    "id": "b-flam-80-cremator",
+    "name": "B/FLAM-80 Cremator",
+    "category": "Supply Permit",
+    "warbond": "Entrenched Division",
+    "source": "Entrenched Division",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "down",
+      "right",
+      "down",
+      "up",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/B/FLAM-80_Cremator"
+  },
+  {
+    "id": "ms-11-solo-silo",
+    "name": "MS-11 Solo Silo",
+    "category": "Supply Permit",
+    "warbond": "Dust Devils",
+    "source": "Dust Devils",
+    "cooldown_s": 180,
+    "call_in": [
+      "down",
+      "up",
+      "right",
+      "down",
+      "down"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/MS-11_Solo_Silo"
+  },
+  {
+    "id": "40-k-meltagun",
+    "name": "40-K Meltagun",
+    "category": "Supply Permit",
+    "warbond": "Castellan's Creed",
+    "source": "Castellan's Creed",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "left",
+      "up",
+      "left",
+      "left",
+      "down"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/40-K_Meltagun"
+  },
+  {
+    "id": "b-md-c4-pack",
+    "name": "B/MD C4 Pack",
+    "category": "Supply Permit",
+    "warbond": "Redacted Regiment",
+    "source": "Redacted Regiment",
+    "cooldown_s": 480,
+    "call_in": [
+      "down",
+      "right",
+      "up",
+      "up",
+      "right",
+      "up"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/B/MD_C4_Pack"
+  },
+  {
     "id": "cqc-1-one-true-flag",
     "name": "CQC-1 One True Flag",
     "category": "Supply Permit",
@@ -816,23 +868,6 @@
       "up"
     ],
     "wiki_url": "https://helldivers.wiki.gg/wiki/CQC-1_One_True_Flag"
-  },
-  {
-    "id": "40-k-meltagun",
-    "name": "40-K Meltagun",
-    "category": "Supply Permit",
-    "warbond": "Castellan’s Creed Legendary Warbond",
-    "source": "Castellan’s Creed Legendary Warbond",
-    "cooldown_s": 410,
-    "call_in": [
-      "down",
-      "left",
-      "up",
-      "left",
-      "left",
-      "down"
-    ],
-    "wiki_url": "https://helldivers.wiki.gg/wiki/40-K_Meltagun"
   },
   {
     "id": "b-1-supply-pack",
@@ -1058,7 +1093,7 @@
     "name": "M-103 Supply FRV",
     "category": "Supply Permit",
     "warbond": null,
-    "source": "Hangar",
+    "source": "Census Thunder",
     "cooldown_s": 480,
     "call_in": [
       "left",
@@ -1072,11 +1107,31 @@
     "wiki_url": "https://helldivers.wiki.gg/wiki/M-103_Supply_FRV"
   },
   {
+    "id": "td-110-maelstrom",
+    "name": "TD-110 Maelstrom",
+    "category": "Supply Permit",
+    "warbond": null,
+    "source": "Armored Eagle",
+    "cooldown_s": 780,
+    "call_in": [
+      "left",
+      "down",
+      "right",
+      "down",
+      "left",
+      "down",
+      "up",
+      "left",
+      "right"
+    ],
+    "wiki_url": "https://helldivers.wiki.gg/wiki/TD-110_Maelstrom"
+  },
+  {
     "id": "m-104-incinerator-frv",
     "name": "M-104 Incinerator FRV",
     "category": "Supply Permit",
     "warbond": null,
-    "source": "Hangar",
+    "source": "N/A",
     "cooldown_s": 480,
     "call_in": [
       "left",
