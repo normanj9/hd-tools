@@ -913,10 +913,11 @@ def update_randomizer_html(stratagems):
     print(f"  → randomizer.html updated ({len(stratagems)} stratagems)")
 
 _ITEMS_RE = re.compile(r'// ITEMS_BEGIN\r?\n[\s\S]*?// ITEMS_END')
+_CALC_RE  = re.compile(r'// CALC_BEGIN\r?\n[\s\S]*?// CALC_END')
 _STRAT_COLOR = {'Offensive Permit': 'r', 'Defensive Permit': 'g', 'Supply Permit': 'b'}
 
-def update_loadouts_html(weapons, stratagems):
-    """Refresh the faction-board pick lists in loadouts.html."""
+def update_loadouts_html(weapons, stratagems, enemies):
+    """Refresh the pick lists and the breakpoint data (CALC_*) in loadouts.html."""
     html_path = Path(__file__).parent.parent / 'loadouts.html'
     if not html_path.exists():
         print(f"  ⚠ loadouts.html not found — skipping")
@@ -936,10 +937,18 @@ def update_loadouts_html(weapons, stratagems):
         f"const STRATAGEM_CATS={dump(cats)};\n"
         "// ITEMS_END"
     )
+    strip = lambda items: [{k: v for k, v in it.items() if k != 'wiki_url'} for it in items]
+    calc_block = (
+        "// CALC_BEGIN\n"
+        f"const CALC_WEAPONS={dump(strip(weapons))};\n"
+        f"const CALC_ENEMIES={dump(strip(enemies))};\n"
+        "// CALC_END"
+    )
     src = html_path.read_text(encoding='utf-8', newline='')
     updated, n = _ITEMS_RE.subn(lambda _: new_block, src)
-    if not n:
-        print(f"  ⚠ ITEMS_BEGIN/END markers not found in loadouts.html — skipping")
+    updated, n_calc = _CALC_RE.subn(lambda _: calc_block, updated)
+    if not (n and n_calc):
+        print(f"  ⚠ ITEMS/CALC markers not found in loadouts.html — skipping")
         return
     html_path.write_text(updated, encoding='utf-8', newline='')
     print(f"  → loadouts.html updated ({len(weapons_list)} weapons, {len(grenades_list)} grenades, "
@@ -1153,7 +1162,7 @@ def main():
         update_html(all_weapons, all_enemies)
     strats_path = data_dir / 'stratagems.json'
     if all_weapons and strats_path.exists():
-        update_loadouts_html(all_weapons, json.loads(strats_path.read_text(encoding='utf-8')))
+        update_loadouts_html(all_weapons, json.loads(strats_path.read_text(encoding='utf-8')), all_enemies)
     print("\nDone.")
 
 if __name__ == '__main__':
