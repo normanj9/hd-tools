@@ -53,7 +53,7 @@
         "overflow_pct": 0,
         "overflow_cap": false,
         "durable_pct": 80,
-        "exdr": 40,
+        "exdr": 60,
         "constitution": 0,
         "constitution_decay": 0
       },
@@ -7223,6 +7223,19 @@
         "av": 3,
         "fatal": true,
         "overflow_pct": 100,
+        "overflow_cap": true,
+        "durable_pct": 0,
+        "exdr": 100,
+        "constitution": 0,
+        "constitution_decay": 0
+      },
+      {
+        "name": "Backpack",
+        "health": 300,
+        "health_is_main": false,
+        "av": 2,
+        "fatal": true,
+        "overflow_pct": 50,
         "overflow_cap": true,
         "durable_pct": 0,
         "exdr": 100,
