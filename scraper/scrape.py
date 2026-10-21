@@ -234,6 +234,7 @@ WEAPON_PAGES = [
     ("R-72 Censor",                      "Primary", "/wiki/R-72_Censor"),
     ("R-4 Hyena",                        "Primary", "/wiki/R-4_Hyena"),
     ("R/40-K Hot-Shot Marksman Rifle",   "Primary", "/wiki/R/40-K_Hot-Shot_Marksman_Rifle"),
+    ("R-40 Sightliner",                  "Primary", "/wiki/R-40_Sightliner"),
     # SMGs
     ("MP-98 Knight",                     "Primary", "/wiki/MP-98_Knight"),
     ("StA-11 SMG",                       "Primary", "/wiki/StA-11_SMG"),
@@ -268,6 +269,7 @@ WEAPON_PAGES = [
     ("LAS-13 Trident",                   "Primary", "/wiki/LAS-13_Trident"),
     ("LAS-16 Sickle",                    "Primary", "/wiki/LAS-16_Sickle"),
     ("LAS-17 Double-Edge Sickle",        "Primary", "/wiki/LAS-17_Double-Edge_Sickle"),
+    ("LAS-12 Sai",                       "Primary", "/wiki/LAS-12_Sai"),
     # Flamethrower
     ("FLAM-66 Torcher",                  "Primary", "/wiki/FLAM-66_Torcher"),
     # Variable
@@ -289,6 +291,7 @@ WEAPON_PAGES = [
     ("M6C/SOCOM Pistol",                 "Secondary", "/wiki/M6C/SOCOM_Pistol"),
     ("P/40-K Bolt Pistol",               "Secondary", "/wiki/P/40-K_Bolt_Pistol"),
     ("P-34 Breacher",                    "Secondary", "/wiki/P-34_Breacher"),
+    ("P-44 Mist",                        "Secondary", "/wiki/P-44_Mist"),
     # Shotgun secondary
     ("SG-22 Bushwhacker",                "Secondary", "/wiki/SG-22_Bushwhacker"),
     # Laser secondary
@@ -325,6 +328,7 @@ WEAPON_PAGES = [
     ("G/40-K Melta Mine",                "Throwable", "/wiki/G/40-K_Melta_Mine"),
     ("G-8 Immolation",                   "Throwable", "/wiki/G-8_Immolation"),
     ("G-60 Anti-Tank Seeker",            "Throwable", "/wiki/G-60_Anti-Tank_Seeker"),
+    ("G-11 Caltrops",                    "Throwable", "/wiki/G-11_Caltrops"),
 ]
 
 # ── HTTP utilities ────────────────────────────────────────────────────────────
@@ -1052,6 +1056,7 @@ def main():
         print(f"Scraping enemies ({len(enemy_list)})...")
         print("=" * 50)
         new_enemies = {}
+        previous_enemies = existing_enemies or _load_json(enemies_path)
         for name, faction, path in enemy_list:
             print(f"  {name}")
             html = fetch(path)
@@ -1059,6 +1064,11 @@ def main():
                 e = parse_enemy(html, name, faction, path)
                 if e:
                     new_enemies[e['id']] = e
+                    continue
+            # Keep last-known data so a fetch/parse failure doesn't drop the enemy
+            prev = previous_enemies.get(make_id(name))
+            if prev:
+                new_enemies[prev['id']] = prev
 
         if targeted:
             existing_enemies.update(new_enemies)
@@ -1106,10 +1116,12 @@ def main():
                     if w['id'] in previous_weapons:
                         _carry_over(w, previous_weapons[w['id']])
                     new_weapons[w['id']] = w
-                else:
-                    failed.append(name)
-            else:
-                failed.append(name)
+                    continue
+            failed.append(name)
+            # Keep last-known data so a broken wiki page doesn't drop the weapon
+            prev = previous_weapons.get(make_id(name))
+            if prev:
+                new_weapons[prev['id']] = prev
 
         if targeted:
             existing_weapons.update(new_weapons)

@@ -385,7 +385,7 @@
         ]
       }
     ],
-    "fire_rate_rpm": 320.0
+    "fire_rate_rpm": 240.0
   },
   {
     "id": "gl-52-de-escalator",
@@ -1350,7 +1350,7 @@
           {
             "name": "Projectile",
             "damage": 90,
-            "durable_damage": 16,
+            "durable_damage": 20,
             "type": "ballistic",
             "ap": 3,
             "pellets": 1
@@ -1707,6 +1707,28 @@
     "fire_rate_rpm": 210.0
   },
   {
+    "id": "r-40-sightliner",
+    "name": "R-40 Sightliner",
+    "category": "Primary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/R-40_Sightliner",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 350,
+            "durable_damage": 205,
+            "type": "ballistic",
+            "ap": 4,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 40.0
+  },
+  {
     "id": "mp-98-knight",
     "name": "MP-98 Knight",
     "category": "Primary",
@@ -1739,8 +1761,8 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 90,
-            "durable_damage": 18,
+            "damage": 100,
+            "durable_damage": 20,
             "type": "ballistic",
             "ap": 2,
             "pellets": 1
@@ -1906,8 +1928,8 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 45,
-            "durable_damage": 12,
+            "damage": 54,
+            "durable_damage": 15,
             "type": "ballistic",
             "ap": 2,
             "pellets": 9
@@ -2050,8 +2072,8 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 30,
-            "durable_damage": 6,
+            "damage": 36,
+            "durable_damage": 8,
             "type": "ballistic",
             "ap": 2,
             "pellets": 11
@@ -2072,8 +2094,8 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 15,
-            "durable_damage": 4,
+            "damage": 18,
+            "durable_damage": 5,
             "type": "ballistic",
             "ap": 2,
             "pellets": 16
@@ -2160,8 +2182,8 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 55,
-            "durable_damage": 20,
+            "damage": 66,
+            "durable_damage": 24,
             "type": "ballistic",
             "ap": 2,
             "pellets": 11
@@ -2461,6 +2483,28 @@
     "fire_rate_rpm": 700.0
   },
   {
+    "id": "las-12-sai",
+    "name": "LAS-12 Sai",
+    "category": "Primary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/LAS-12_Sai",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 80,
+            "durable_damage": 4,
+            "type": "ballistic",
+            "ap": 3,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 800.0
+  },
+  {
     "id": "flam-66-torcher",
     "name": "FLAM-66 Torcher",
     "category": "Primary",
@@ -2545,7 +2589,7 @@
           {
             "name": "Projectile",
             "damage": 100,
-            "durable_damage": 32,
+            "durable_damage": 20,
             "type": "ballistic",
             "ap": 2,
             "pellets": 1
@@ -2860,6 +2904,28 @@
     "fire_rate_rpm": 20.0
   },
   {
+    "id": "p-44-mist",
+    "name": "P-44 Mist",
+    "category": "Secondary",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/P-44_Mist",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 110,
+            "durable_damage": 18,
+            "type": "ballistic",
+            "ap": 2,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 400.0
+  },
+  {
     "id": "sg-22-bushwhacker",
     "name": "SG-22 Bushwhacker",
     "category": "Secondary",
@@ -2870,8 +2936,8 @@
         "components": [
           {
             "name": "Projectile",
-            "damage": 45,
-            "durable_damage": 12,
+            "damage": 54,
+            "durable_damage": 15,
             "type": "ballistic",
             "ap": 2,
             "pellets": 9
@@ -3634,6 +3700,27 @@
             "durable_damage": 1800,
             "type": "explosion",
             "ap": 5,
+            "pellets": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-11-caltrops",
+    "name": "G-11 Caltrops",
+    "category": "Throwable",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/G-11_Caltrops",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Explosion",
+            "damage": 50,
+            "durable_damage": 10,
+            "type": "explosion",
+            "ap": 3,
             "pellets": 1
           }
         ]
