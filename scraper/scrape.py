@@ -205,6 +205,8 @@ WEAPON_PAGES = [
     ("CQC-20 Breaching Hammer",          "Support", "/wiki/CQC-20_Breaching_Hammer"),
     ("CQC-72 Entrenchment Tool",         "Support", "/wiki/CQC-72_Entrenchment_Tool"),
     ("CQC-1 One True Flag",              "Support", "/wiki/CQC-1_One_True_Flag"),
+    ("LAS-44 Nova",                      "Support", "/wiki/LAS-44_Nova"),
+    ("AMW-20 Apex",                      "Support", "/wiki/AMW-20_Apex"),
 
 
     # ── Primary Weapons ───────────────────────────────────────────────────────

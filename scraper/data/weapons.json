@@ -3726,5 +3726,49 @@
         ]
       }
     ]
+  },
+  {
+    "id": "las-44-nova",
+    "name": "LAS-44 Nova",
+    "category": "Support",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/LAS-44_Nova",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 880,
+            "durable_damage": 880,
+            "type": "ballistic",
+            "ap": 5,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 30.0
+  },
+  {
+    "id": "amw-20-apex",
+    "name": "AMW-20 Apex",
+    "category": "Support",
+    "wiki_url": "https://helldivers.wiki.gg/wiki/AMW-20_Apex",
+    "modes": [
+      {
+        "name": "Default",
+        "components": [
+          {
+            "name": "Projectile",
+            "damage": 1550,
+            "durable_damage": 930,
+            "type": "ballistic",
+            "ap": 5,
+            "pellets": 1
+          }
+        ]
+      }
+    ],
+    "fire_rate_rpm": 50.0
   }
 ]
