@@ -134,6 +134,7 @@ h1 {
 .btn-export:hover { border-color: var(--accent-dim); color: var(--text); }
 .count { font-size: 11px; color: var(--text-dim); }
 table { width: 100%; border-collapse: collapse; }
+.table-wrap { overflow-x: auto; }   /* keeps a wide table from widening the page on phones */
 colgroup col:nth-child(1) { width: 15%; }
 colgroup col:nth-child(2) { width: 9%; }
 colgroup col:nth-child(3) { width: 10%; }
@@ -498,6 +499,16 @@ details.bp summary:hover { color: var(--accent); }
 .btn-delete + .modal-hint { margin-right: 0; margin-left: 8px; }
 .section-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin: 4px 0 8px; font-weight: 700; }
 
+/* ── Sync ────────────────────────────────────────────────────────── */
+.btn-export.sync-ok   { border-color: #1f3a1f; }
+.btn-export.sync-busy { border-color: var(--accent-dim); }
+.btn-export.sync-warn { border-color: var(--bots); color: var(--bots); }
+.sync-help { font-size: 12px; color: var(--text-dim); line-height: 1.55; margin-bottom: 14px; }
+.sync-help a { color: var(--accent); }
+.sync-help b { color: var(--text); font-weight: 600; }
+.sync-help code { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; font-size: 11px; }
+.sync-steps { margin: 6px 0 0 18px; }
+
 @media (max-width: 700px) {
   body { padding: 14px 16px; }
   .grip { font-size: 18px; padding: 6px 5px; }
@@ -516,6 +527,7 @@ details.bp summary:hover { color: var(--accent); }
 <header>
   <h1>⚡ HD2 Loadouts</h1>
   <div class="spacer"></div>
+  <button class="btn-export" id="syncBtn" onclick="openSync()" title="Sync loadouts between devices through a secret GitHub gist">☁ Sync</button>
   <button class="btn-export" onclick="exportJSON()" title="Download all loadouts + faction boards as JSON">⬇ Export JSON</button>
   <button class="btn-export" onclick="document.getElementById('importFile').click()" title="Replace loadouts + faction boards from a JSON export">⬆ Import JSON</button>
   <button class="btn-export" onclick="exportHTML()" title="Download this page with your loadouts baked in as the default data">⬇ Export HTML</button>
@@ -584,6 +596,43 @@ details.bp summary:hover { color: var(--accent); }
 <datalist id="dl-strat"></datalist>
 <datalist id="dl-booster"></datalist>
 <datalist id="dl-role"></datalist>
+
+<!-- Sync dialog -->
+<div class="overlay" id="syncOverlay" onclick="if (event.target === this) closeSync()">
+  <div class="modal">
+    <div class="modal-title">☁ Sync between devices</div>
+    <div class="modal-date" id="syncState"></div>
+    <div id="syncSetup">
+      <div class="sync-help">
+        Your loadouts and faction boards are kept in a secret GitHub gist that each device reads and writes.
+        Only your token can change it, and the gist keeps every past version.
+        <ol class="sync-steps">
+          <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Create a fine-grained token</a>
+            with <b>Account permissions → Gists → Read and write</b> and nothing else (a classic token with only the <code>gist</code> scope also works).</li>
+          <li>First device: paste the token and leave the gist field empty. A gist is created for you.</li>
+          <li>Other devices: paste the same token and that gist’s ID.</li>
+        </ol>
+      </div>
+      <div class="field"><label>GitHub token</label><input type="password" id="syncToken" autocomplete="off" spellcheck="false"></div>
+      <div class="field"><label>Gist ID or URL <span style="text-transform:none;letter-spacing:0">(empty = create a new one)</span></label><input type="text" id="syncGist" autocomplete="off" spellcheck="false"></div>
+      <div class="sync-help">The token is stored only in this browser. It isn’t included in exports.</div>
+    </div>
+    <div id="syncLinked">
+      <div class="sync-help">
+        Gist: <a id="syncGistLink" target="_blank" rel="noopener"></a> <button class="fb-btn" onclick="copyGistId()">Copy ID</button><br>
+        To add another device, open this page there, choose ☁ Sync, and paste the same token and this gist ID.
+        <br><br>Changes upload a couple of seconds after you make them. Other devices pick them up when the page is opened or switched back to.
+      </div>
+    </div>
+    <div class="warn-line" id="syncErr"></div>
+    <div class="modal-footer">
+      <button class="btn-delete" id="syncDisconnect" onclick="syncDisconnect()">Disconnect</button>
+      <div class="spacer"></div>
+      <button class="btn-cancel" onclick="closeSync()">Close</button>
+      <button class="btn-save" id="syncGo" onclick="syncConnect()">Connect</button>
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="overlay" id="overlay" onclick="overlayClick(event)">
@@ -1072,6 +1121,7 @@ function loadData() {
 function persist(data) {
   localStorage.setItem(LS_KEY, JSON.stringify(data));  // always keep as fallback
   fsWrite(data);                                        // also write to file if linked
+  markSyncDirty();                                      // and upload to the gist if sync is on
 }
 
 // ── File System API ────────────────────────────────────────────────────────
@@ -1316,7 +1366,7 @@ function render() {
         (isCol ? '' : `<div class="cards">${g.rows.map(r => cardHTML(r, g.key)).join('')}</div>`);
     }).join('');
   } else {
-    list.innerHTML = `<table>
+    list.innerHTML = `<div class="table-wrap"><table>
       <colgroup><col style="width:28px"><col style="width:16%"><col style="width:8%"><col style="width:9%"><col><col style="width:26%"><col style="width:104px"></colgroup>
       <thead><tr>
         <th class="sortable${prefs.sortKey === 'manual' ? ' sort-on' : ''}" onclick="headerSort('manual')" title="My order">⠿</th>
@@ -1328,7 +1378,7 @@ function render() {
         const isCol = g.label && collapsed.has(g.key);
         return (g.label ? `<tr class="group-row"><td colspan="7">${groupHead(g, isCol)}</td></tr>` : '') +
           (isCol ? '' : g.rows.map(r => rowHTML(r, g.key)).join(''));
-      }).join('')}</tbody></table>`;
+      }).join('')}</tbody></table></div>`;
   }
 
   document.getElementById('countLabel').textContent = `${visible.length} / ${rows.length}`;
@@ -1442,7 +1492,13 @@ function updateRow(id, fn) {
   render();
 }
 function markUsed(id)  { updateRow(id, r => { r.uses = (r.uses || 0) + 1; r.lastUsed = new Date().toISOString(); }); }
-function nextId() { return rows.reduce((m, r) => Math.max(m, r.id), 0) + 1; }
+// Time-based + random, so two devices adding loadouts before syncing don't collide.
+// Still a plain number (ids are used unquoted in onclick handlers).
+function nextId() {
+  let id;
+  do { id = Date.now() * 1000 + Math.floor(Math.random() * 1000); } while (rows.some(r => r.id === id));
+  return id;
+}
 function duplicateRow(id) {
   const src = rows.find(r => r.id === id);
   if (!src) return;
@@ -1583,7 +1639,7 @@ const BOARD_ROWS = [
 ];
 
 function loadBoards() { try { return JSON.parse(localStorage.getItem(BOARDS_KEY) || '{}'); } catch { return {}; } }
-function saveBoards() { localStorage.setItem(BOARDS_KEY, JSON.stringify(boards)); fsWrite(rows); }
+function saveBoards() { localStorage.setItem(BOARDS_KEY, JSON.stringify(boards)); fsWrite(rows); markSyncDirty(); }
 
 let boards = loadBoards();
 let dragState = null;
@@ -1835,6 +1891,7 @@ function checkStratDupes() {
 function closeModal() {
   $('overlay').classList.remove('open');
   editId = null;
+  if (syncOn() && sync.dirty) queueSync();   // sync waits while the form is open
 }
 
 function overlayClick(e) {
@@ -1928,10 +1985,251 @@ function exportHTML() {
   download('loadouts.html', html, 'text/html; charset=utf-8');
 }
 
+// ── Sync (secret GitHub gist) ──────────────────────────────────────────────
+// The whole { rows, boards } doc lives in one file in a gist. Every upload gets a
+// random rev id, and each device remembers the revs it has seen: a rev it doesn't
+// know means another device saved since. Pull when the page opens or comes back
+// into view, push ~2s after a change. If both sides changed, ask which to keep;
+// nothing is lost (the gist keeps its history, and a dropped local copy is
+// downloaded as JSON). The token lives only in this browser's localStorage.
+const SYNC_KEY  = LS_KEY + '_sync';
+const GIST_FILE = 'hd2-loadouts.json';
+let sync = (() => { try { return JSON.parse(localStorage.getItem(SYNC_KEY) || 'null'); } catch { return null; } })();
+// sync = { token, gistId, rev, known[], dirty, lastSync }
+let syncStatus = 'idle';   // idle | pending | busy | ok | offline | error
+let syncError  = '';
+let syncTimer  = null;
+let syncChain  = Promise.resolve();
+let lastPull   = 0;
+
+const syncOn = () => !!(sync && sync.token && sync.gistId);
+const newRev = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+function saveSyncState() {
+  try { sync ? localStorage.setItem(SYNC_KEY, JSON.stringify(sync)) : localStorage.removeItem(SYNC_KEY); } catch {}
+}
+function rememberRev(rev) {
+  sync.rev = rev;
+  sync.known = [rev, ...(sync.known || []).filter(r => r !== rev)].slice(0, 100);
+}
+
+async function gh(path, opts = {}) {
+  let res;
+  try {
+    res = await fetch('https://api.github.com' + path, {
+      ...opts, cache: 'no-store',
+      headers: { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + sync.token,
+                 ...(opts.body ? { 'Content-Type': 'application/json' } : {}) },
+    });
+  } catch { const e = new Error('Offline: changes are kept here and will upload later'); e.offline = true; throw e; }
+  if (!res.ok) {
+    const e = new Error(
+      res.status === 401 ? 'GitHub rejected the token (expired or mistyped?)' :
+      res.status === 404 ? 'Gist not found, or the token can’t access it' :
+      res.status === 403 ? 'GitHub refused (token lacks Gists read/write, or rate limited)' :
+      `GitHub error ${res.status}`);
+    e.status = res.status;
+    throw e;
+  }
+  return res.json();
+}
+
+function syncPayload(rev) {
+  return JSON.stringify({ app: 'hd2-loadouts', schema: SCHEMA, rev, savedAt: new Date().toISOString(), rows, boards }, null, 1);
+}
+async function readGist() {
+  const g = await gh('/gists/' + encodeURIComponent(sync.gistId));
+  const f = g.files?.[GIST_FILE];
+  if (!f) return null;
+  const txt = f.truncated ? await (await fetch(f.raw_url, { cache: 'no-store' })).text() : f.content;
+  if (!txt || !txt.trim()) return null;
+  const d = JSON.parse(txt);
+  return Array.isArray(d.rows) ? { ...d, rev: d.rev || 'unversioned' } : null;
+}
+async function writeGist() {
+  const rev = newRev();
+  await gh('/gists/' + encodeURIComponent(sync.gistId), { method: 'PATCH',
+    body: JSON.stringify({ files: { [GIST_FILE]: { content: syncPayload(rev) } } }) });
+  rememberRev(rev);
+  sync.dirty = false;
+  sync.lastSync = new Date().toISOString();
+  saveSyncState();
+}
+function applyRemote(d) {
+  rows = migrateAll(d.rows);
+  if (d.boards) boards = d.boards;
+  localStorage.setItem(LS_KEY, JSON.stringify(rows));
+  localStorage.setItem(BOARDS_KEY, JSON.stringify(boards));
+  fsWrite(rows);
+  rememberRev(d.rev);
+  sync.dirty = false;
+  sync.lastSync = new Date().toISOString();
+  saveSyncState();
+  fillDatalists();
+  render();
+  renderPanel();
+}
+function backupLocal(why) {
+  const data = { app: 'hd2-loadouts', schema: SCHEMA, exportedAt: new Date().toISOString(), note: why, rows, boards };
+  download(`loadouts-backup-${new Date().toISOString().slice(0, 16).replace(':', '')}.json`, JSON.stringify(data, null, 2), 'application/json');
+}
+
+// Pull; push if this device has unsynced changes (or the gist is empty)
+async function syncNow() {
+  if (!syncOn()) return;
+  if ($('overlay').classList.contains('open')) { setSyncStatus(sync.dirty ? 'pending' : syncStatus); return; }  // not under the edit form
+  lastPull = Date.now();
+  setSyncStatus('busy');
+  const remote = await readGist();
+  const remoteNew = remote && !(sync.known || []).includes(remote.rev);
+  if (remoteNew && sync.dirty) {
+    const keepLocal = confirm('Loadouts were changed on another device, and this device has changes that haven’t synced yet.\n\n' +
+      'OK: keep THIS device’s version (the other one stays in the gist’s history)\n' +
+      'Cancel: load the other device’s version (this device’s version is downloaded as a backup JSON)');
+    if (!keepLocal) { backupLocal('Local copy replaced by a sync conflict'); applyRemote(remote); setSyncStatus('ok'); return; }
+  } else if (remoteNew) {
+    applyRemote(remote);
+    setSyncStatus('ok');
+    flash('Loaded changes from another device');
+    return;
+  }
+  if (sync.dirty || !remote) await writeGist();
+  else { sync.lastSync = new Date().toISOString(); saveSyncState(); }
+  setSyncStatus('ok');
+}
+function syncFail(e) {
+  syncError = e.message;
+  setSyncStatus(e.offline ? 'offline' : 'error');
+}
+function queueSync() {
+  clearTimeout(syncTimer);
+  syncChain = syncChain.then(syncNow).catch(syncFail);
+  return syncChain;
+}
+function markSyncDirty() {
+  if (!syncOn()) return;
+  sync.dirty = true;
+  saveSyncState();
+  setSyncStatus('pending');
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(queueSync, 2000);
+}
+function syncPullSoon() {
+  if (syncOn() && Date.now() - lastPull > 15000) queueSync();
+}
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) syncPullSoon();
+  else if (syncOn() && sync.dirty) queueSync();   // flush before the tab/app goes to the background
+});
+window.addEventListener('focus', syncPullSoon);
+window.addEventListener('online', () => { if (syncOn()) queueSync(); });
+
+function agoText(iso) {
+  if (!iso) return 'never';
+  const s = (Date.now() - Date.parse(iso)) / 1000;
+  return s < 60 ? 'just now' : s < 3600 ? `${Math.floor(s / 60)}m ago` : s < 86400 ? `${Math.floor(s / 3600)}h ago` : iso.slice(0, 10);
+}
+function syncStateText() {
+  if (!syncOn()) return 'Not set up on this device';
+  return { idle: `Last synced ${agoText(sync.lastSync)}`, pending: 'Changes waiting to upload…', busy: 'Syncing…',
+           ok: `Synced ${agoText(sync.lastSync)}`, offline: 'Offline: changes are kept here and will upload later',
+           error: '⚠ ' + syncError }[syncStatus];
+}
+function setSyncStatus(st) {
+  syncStatus = st;
+  const btn = $('syncBtn');
+  const on = syncOn();
+  btn.textContent = !on ? '☁ Sync' : { pending: '☁ Saving…', busy: '☁ Syncing…', offline: '☁ Offline', error: '⚠ Sync' }[st] || '☁ Synced';
+  btn.className = 'btn-export' + (!on ? '' : st === 'error' || st === 'offline' ? ' sync-warn' : st === 'busy' || st === 'pending' ? ' sync-busy' : ' sync-ok');
+  btn.title = on ? syncStateText() : 'Sync loadouts between devices through a secret GitHub gist';
+  if ($('syncOverlay').classList.contains('open')) renderSyncPanel();
+}
+setInterval(() => { if (syncOn()) setSyncStatus(syncStatus); }, 30000);   // refresh "synced 3m ago"
+
+function renderSyncPanel() {
+  const on = syncOn();
+  $('syncSetup').style.display = on ? 'none' : '';
+  $('syncLinked').style.display = on ? '' : 'none';
+  $('syncDisconnect').style.display = on ? '' : 'none';
+  $('syncGo').textContent = on ? 'Sync now' : 'Connect';
+  $('syncState').textContent = syncStateText();
+  syncMsg('', false);
+  const link = $('syncGistLink');
+  if (on) { link.href = 'https://gist.github.com/' + sync.gistId; link.textContent = sync.gistId; }
+}
+function syncMsg(text, isError = true) {
+  const el = $('syncErr');
+  el.textContent = text;
+  el.style.color = isError ? '' : 'var(--text-dim)';
+}
+function openSync() { renderSyncPanel(); $('syncOverlay').classList.add('open'); }
+function closeSync() {
+  $('syncOverlay').classList.remove('open');
+  // Keep the token and gist id out of the DOM (Export HTML copies the page)
+  $('syncToken').value = ''; $('syncGist').value = '';
+  const link = $('syncGistLink'); link.removeAttribute('href'); link.textContent = '';
+}
+async function copyGistId() {
+  try { await navigator.clipboard.writeText(sync.gistId); syncMsg('Copied', false); }
+  catch { prompt('Gist ID:', sync.gistId); }
+}
+
+async function syncConnect() {
+  if (syncOn()) { await queueSync(); renderSyncPanel(); if (syncStatus === 'error') syncMsg(syncError); return; }
+  const token = $('syncToken').value.trim();
+  const gistIn = $('syncGist').value.trim().replace(/[#?].*$/, '').replace(/\/+$/, '');
+  const gistId = gistIn.split('/').pop();
+  if (!token) { syncMsg('Paste a GitHub token first.'); return; }
+  if (gistIn && !/^[0-9a-f]{20,}$/i.test(gistId)) { syncMsg('That doesn’t look like a gist ID or URL.'); return; }
+  sync = { token, gistId: gistId || null, known: [], dirty: false };
+  $('syncGo').disabled = true;
+  syncMsg(gistId ? 'Connecting…' : 'Creating gist…', false);
+  try {
+    if (!gistId) {
+      const rev = newRev();
+      const g = await gh('/gists', { method: 'POST', body: JSON.stringify({
+        description: 'HD2 loadouts (hd-tools sync)', public: false,
+        files: { [GIST_FILE]: { content: syncPayload(rev) } } }) });
+      sync.gistId = g.id;
+      rememberRev(rev);
+      sync.lastSync = new Date().toISOString();
+    } else {
+      const remote = await readGist();
+      if (remote && confirm(`The gist has ${remote.rows.length} loadouts.\n\n` +
+          `OK: load them on this device (replaces the ${rows.length} here)\n` +
+          `Cancel: keep this device’s loadouts and upload them to the gist (its history keeps the old version)`)) {
+        applyRemote(remote);
+      } else {
+        await writeGist();
+      }
+    }
+    saveSyncState();
+    lastPull = Date.now();
+    $('syncToken').value = ''; $('syncGist').value = '';
+    setSyncStatus('ok');
+    renderSyncPanel();
+    if (!gistId) syncMsg('Gist created. Copy its ID for your other devices.', false);
+  } catch (e) {
+    sync = null;
+    saveSyncState();
+    setSyncStatus('idle');
+    syncMsg(e.message);
+  } finally {
+    $('syncGo').disabled = false;
+  }
+}
+function syncDisconnect() {
+  if (!confirm('Stop syncing on this device?\nYour loadouts stay here, and the gist is left as it is.')) return;
+  clearTimeout(syncTimer);
+  sync = null;
+  saveSyncState();
+  setSyncStatus('idle');
+  renderSyncPanel();
+}
+
 // ── Keyboard ───────────────────────────────────────────────────────────────
 // Ctrl/Cmd+Enter saves — plain Enter is left alone so slot suggestions can be picked.
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') { closeModal(); closeSync(); }
   if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && $('overlay').classList.contains('open')) saveRow();
 });
 
@@ -1951,7 +2249,9 @@ fillDatalists();
 syncControls();
 render();
 renderPanel();
-initFS();  // async — loads from file if handle stored, re-renders if data differs
+setSyncStatus('idle');
+// async — loads from file if handle stored, re-renders if data differs; then sync with the gist
+initFS().finally(() => { if (syncOn()) queueSync(); });
 </script>
 </body>
 </html>
