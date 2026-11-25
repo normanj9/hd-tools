@@ -156,6 +156,7 @@ th.sortable { cursor: pointer; }
 th.sortable:hover { color: #fff; }
 th.sort-asc::after { content: ' ↑'; }
 th.sort-desc::after { content: ' ↓'; }
+th.sort-on { color: #fff; }
 td {
   padding: 9px 12px;
   border-bottom: 1px solid var(--border);
@@ -404,10 +405,22 @@ tr.group-row td { padding: 0; background: var(--bg) !important; border-bottom: n
 .group-squids { color: var(--squids); }
 
 /* ── Row / card content ──────────────────────────────────────────── */
-.col-fav { text-align: center; width: 28px; }
-.btn-fav { background: none; border: none; cursor: pointer; font-size: 15px; line-height: 1; color: var(--border); padding: 2px; }
-.btn-fav:hover { color: var(--accent-dim); }
-.btn-fav.on { color: var(--accent); }
+.col-grip { text-align: center; width: 28px; padding-left: 4px; padding-right: 4px; }
+.grip {
+  background: none; border: none; cursor: grab; font-size: 15px; line-height: 1; color: var(--text-dim);
+  padding: 4px 3px; border-radius: 3px; touch-action: none; font-family: inherit;
+}
+.grip:hover, .grip:focus-visible { color: var(--accent); background: var(--surface2); }
+.grip.off { color: var(--border); cursor: pointer; }
+.fav-mark { color: var(--accent); margin-right: 4px; font-size: 12px; }
+body.row-dragging, body.row-dragging * { cursor: grabbing !important; user-select: none; -webkit-user-select: none; }
+tr.row-drag td, .card.row-drag { opacity: .4; }
+tr.drop-before td { box-shadow: inset 0 3px 0 var(--accent); }
+tr.drop-after td  { box-shadow: inset 0 -3px 0 var(--accent); }
+.card.drop-before { box-shadow: -3px 0 0 var(--accent); }
+.card.drop-after  { box-shadow:  3px 0 0 var(--accent); }
+.cards.one-col .card.drop-before { box-shadow: 0 -3px 0 var(--accent); }
+.cards.one-col .card.drop-after  { box-shadow: 0  3px 0 var(--accent); }
 .name-tags { margin-left: 4px; }
 .role-label { display: block; font-size: 10px; font-weight: 400; color: var(--text-dim); letter-spacing: .5px; text-transform: uppercase; margin-top: 2px; }
 .tag-badge { display: inline-block; font-size: 10px; color: var(--text-dim); border: 1px solid var(--border); border-radius: 10px; padding: 0 6px; margin: 2px 3px 0 0; white-space: nowrap; }
@@ -487,6 +500,7 @@ details.bp summary:hover { color: var(--accent); }
 
 @media (max-width: 700px) {
   body { padding: 14px 16px; }
+  .grip { font-size: 18px; padding: 6px 5px; }
   .search-wrap { flex: 1 1 100%; }
   .slot-grid { grid-template-columns: 1fr; }
   .slot-grid .span2 { grid-column: auto; }
@@ -538,13 +552,13 @@ details.bp summary:hover { color: var(--accent); }
   </select>
   <span class="ctl-label">Sort</span>
   <select class="ctl-select" id="sortSel" onchange="setPref('sortKey', this.value)">
+    <option value="manual">My order</option>
     <option value="dateAdded">Recently added</option>
     <option value="updatedAt">Recently edited</option>
     <option value="lastUsed">Recently used</option>
     <option value="uses">Most used</option>
     <option value="name">Name A–Z</option>
   </select>
-  <label class="ctl-check"><input type="checkbox" id="favFirst" onchange="setPref('favFirst', this.checked)"> ★ first</label>
   <div class="spacer"></div>
   <div class="view-toggle">
     <button class="filter-btn" id="view-table" onclick="setPref('view', 'table')">☰ Table</button>
@@ -785,6 +799,7 @@ const CALC_ENEMIES=[{"id":"war-strider","name":"War Strider","faction":"bots","p
 //     slots: { armor, booster, primary, secondary, grenade, stratagems[4] },
 //     extra,            // free-text build notes that don't fit a slot
 //     notes,
+//     order,            // position in "My order" (ascending; drag the ⠿ grip to change)
 //     dateAdded, dateEstimated?, updatedAt, lastUsed, uses,
 //     buildOriginal?,   // pre-migration free-text build, kept until discarded
 //     schema }
@@ -949,9 +964,22 @@ function backfillDates(list) {
   });
 }
 
+// Manual order: rows without one (pre-ordering data, imports) go on top, laid
+// out as the old default view showed them (★ favorites first, then newest).
+function ensureOrder(list) {
+  if (list.every(r => Number.isFinite(r.order))) return;
+  const missing = list.filter(r => !Number.isFinite(r.order)).sort((a, b) =>
+    (b.favorite - a.favorite) || (b.dateAdded || '').localeCompare(a.dateAdded || '') || a.name.localeCompare(b.name));
+  const ordered = list.filter(r => Number.isFinite(r.order)).sort((a, b) => a.order - b.order);
+  [...missing, ...ordered].forEach((r, i) => { r.order = i; });
+}
+function renumber(ordered) { ordered.forEach((r, i) => { r.order = i; }); }
+const byOrder = (a, b) => a.order - b.order;
+
 function migrateAll(list) {
   const out = (list || []).map(migrateRow);
   backfillDates(out);
+  ensureOrder(out);
   return out;
 }
 
@@ -1159,9 +1187,14 @@ const openBreakpoints = new Set();   // row ids whose breakpoint table is expand
 
 const PREFS_KEY = LS_KEY + '_prefs';
 const prefs = Object.assign(
-  { view: 'table', groupBy: 'none', sortKey: 'dateAdded', favFirst: true, collapsed: [] },
+  { view: 'table', groupBy: 'none', sortKey: 'manual', collapsed: [] },
   (() => { try { return JSON.parse(localStorage.getItem(PREFS_KEY) || '{}'); } catch { return {}; } })()
 );
+// One-time switch to "My order" for prefs saved before manual ordering existed
+if (!prefs.manualOrder) {
+  prefs.sortKey = 'manual'; prefs.manualOrder = true; delete prefs.favFirst;
+  try { localStorage.setItem(PREFS_KEY, JSON.stringify(prefs)); } catch {}
+}
 function setPref(key, val) {
   prefs[key] = val;
   try { localStorage.setItem(PREFS_KEY, JSON.stringify(prefs)); } catch {}
@@ -1171,7 +1204,6 @@ function setPref(key, val) {
 function syncControls() {
   document.getElementById('groupSel').value = prefs.groupBy;
   document.getElementById('sortSel').value  = prefs.sortKey;
-  document.getElementById('favFirst').checked = prefs.favFirst;
   document.getElementById('view-table').classList.toggle('active', prefs.view === 'table');
   document.getElementById('view-cards').classList.toggle('active', prefs.view === 'cards');
 }
@@ -1235,10 +1267,10 @@ function visibleRows() {
 
 function sortRows(list) {
   const k = prefs.sortKey;
+  if (k === 'manual') return [...list].sort(byOrder);
   const val = r => k === 'uses' ? (r.uses || 0) : k === 'name' ? r.name.toLowerCase() : (r[k] || r.dateAdded || '');
   const dir = k === 'name' ? 1 : -1;   // name A–Z; everything else newest / most first
   return [...list].sort((a, b) => {
-    if (prefs.favFirst && a.favorite !== b.favorite) return a.favorite ? -1 : 1;
     const av = val(a), bv = val(b);
     return av < bv ? -dir : av > bv ? dir : a.name.localeCompare(b.name);
   });
@@ -1281,13 +1313,13 @@ function render() {
     list.innerHTML = groups.map(g => {
       const isCol = g.label && collapsed.has(g.key);
       return (g.label ? groupHead(g, isCol) : '') +
-        (isCol ? '' : `<div class="cards">${g.rows.map(cardHTML).join('')}</div>`);
+        (isCol ? '' : `<div class="cards">${g.rows.map(r => cardHTML(r, g.key)).join('')}</div>`);
     }).join('');
   } else {
     list.innerHTML = `<table>
       <colgroup><col style="width:28px"><col style="width:16%"><col style="width:8%"><col style="width:9%"><col><col style="width:26%"><col style="width:104px"></colgroup>
       <thead><tr>
-        <th></th>
+        <th class="sortable${prefs.sortKey === 'manual' ? ' sort-on' : ''}" onclick="headerSort('manual')" title="My order">⠿</th>
         <th class="sortable${sortMark('name')}" onclick="headerSort('name')">Name</th>
         <th class="sortable${sortMark('dateAdded')}" onclick="headerSort('dateAdded')">Added</th>
         <th>Factions</th><th>Build</th><th>Notes</th><th></th>
@@ -1295,7 +1327,7 @@ function render() {
       <tbody>${groups.map(g => {
         const isCol = g.label && collapsed.has(g.key);
         return (g.label ? `<tr class="group-row"><td colspan="7">${groupHead(g, isCol)}</td></tr>` : '') +
-          (isCol ? '' : g.rows.map(rowHTML).join(''));
+          (isCol ? '' : g.rows.map(r => rowHTML(r, g.key)).join(''));
       }).join('')}</tbody></table>`;
   }
 
@@ -1352,19 +1384,22 @@ function slotsHTML(r) {
 
 function nameHTML(r) {
   const icons = r.tags.map(tagIcon).join('');
-  return `${x(r.name)}${icons ? `<span class="name-tags">${icons}</span>` : ''}${r.role ? `<span class="role-label">${x(r.role)}</span>` : ''}`;
+  return `${r.favorite ? '<span class="fav-mark" title="Favorite">★</span>' : ''}${x(r.name)}${icons ? `<span class="name-tags">${icons}</span>` : ''}${r.role ? `<span class="role-label">${x(r.role)}</span>` : ''}`;
 }
 function actionsHTML(r) {
   const weapons = loadoutWeapons(r);
   return `${weapons.length ? `<a class="btn-act" href="${calcLink(r, weapons)}" target="_blank" title="Open these weapons in the damage calc">🎯</a>` : ''}<button class="btn-act" onclick="markUsed(${r.id})" title="Log a run with this loadout${r.lastUsed ? ' — last used ' + formatDate(r.lastUsed) : ''}">✓${r.uses ? `<span class="used-count">${r.uses}</span>` : ''}</button><button class="btn-act" onclick="copyLoadout(${r.id})" title="Copy as text">📋</button><button class="btn-act" onclick="duplicateRow(${r.id})" title="Duplicate">⧉</button><button class="btn-act" onclick="openModal(${r.id})" title="Edit">✎</button>`;
 }
-function favBtn(r) {
-  return `<button class="btn-fav${r.favorite ? ' on' : ''}" onclick="toggleFav(${r.id})" title="${r.favorite ? 'Unfavorite' : 'Favorite'}">★</button>`;
+function gripBtn(r) {
+  const on = prefs.sortKey === 'manual';
+  return `<button class="grip${on ? '' : ' off'}" data-grip="${r.id}" aria-label="Move ${x(r.name)}"
+    title="${on ? 'Drag to reorder (or focus and use ↑/↓)' : 'Click to switch to My order, then drag to reorder'}">⠿</button>`;
 }
+const dragAttrs = (r, group) => `data-row-id="${r.id}" data-group="${x(group)}"`;
 
-function rowHTML(r) {
-  return `<tr>
-    <td class="col-fav">${favBtn(r)}</td>
+function rowHTML(r, group = 'all') {
+  return `<tr ${dragAttrs(r, group)}>
+    <td class="col-grip">${gripBtn(r)}</td>
     <td class="col-name">${nameHTML(r)}${r.tags.filter(t => !TAG_BY_ID[t]).map(t => `<span class="tag-badge">#${x(t)}</span>`).join('')}</td>
     <td class="col-date" title="${r.dateEstimated ? 'Estimated — added before dates were tracked' : ''}">${formatDate(r.dateAdded, r.dateEstimated)}</td>
     <td class="col-factions">${factionBadges(r.factions)}</td>
@@ -1374,9 +1409,9 @@ function rowHTML(r) {
   </tr>`;
 }
 
-function cardHTML(r) {
-  return `<div class="card">
-    <div class="card-head">${favBtn(r)}<div class="card-title">${nameHTML(r)}</div></div>
+function cardHTML(r, group = 'all') {
+  return `<div class="card" ${dragAttrs(r, group)}>
+    <div class="card-head">${gripBtn(r)}<div class="card-title">${nameHTML(r)}</div></div>
     <div class="card-meta">${factionBadges(r.factions)}${r.tags.map(t => `<span class="tag-badge">${x(tagLabel(t))}</span>`).join('')}</div>
     ${slotsHTML(r)}
     ${r.notes ? `<div class="card-notes">${x(r.notes)}</div>` : ''}
@@ -1406,7 +1441,6 @@ function updateRow(id, fn) {
   persist(rows);
   render();
 }
-function toggleFav(id) { updateRow(id, r => { r.favorite = !r.favorite; }); }
 function markUsed(id)  { updateRow(id, r => { r.uses = (r.uses || 0) + 1; r.lastUsed = new Date().toISOString(); }); }
 function nextId() { return rows.reduce((m, r) => Math.max(m, r.id), 0) + 1; }
 function duplicateRow(id) {
@@ -1414,9 +1448,10 @@ function duplicateRow(id) {
   if (!src) return;
   const now = new Date().toISOString();
   const copy = { ...structuredClone(src), id: nextId(), name: src.name + ' (copy)', favorite: false,
-                 dateAdded: now, updatedAt: now, uses: 0 };
+                 dateAdded: now, updatedAt: now, uses: 0, order: src.order + 0.5 };   // right below the original
   delete copy.lastUsed; delete copy.dateEstimated; delete copy.buildOriginal;
   rows.push(copy);
+  renumber([...rows].sort(byOrder));
   persist(rows);
   render();
   openModal(copy.id);
@@ -1447,6 +1482,97 @@ function flash(msg) {
   el.textContent = msg;
   setTimeout(() => { if (el.textContent === msg) el.textContent = prev; }, 1500);
 }
+
+// ── Manual ordering (drag the ⠿ grip) ─────────────────────────────────────
+// Pointer events rather than HTML5 drag-and-drop so it works with touch too.
+// Moves happen within the visible list (filters/search/group) but are applied to
+// the full order, so hidden rows keep their place relative to each other.
+function moveRow(id, targetId, after) {
+  if (id === targetId) return;
+  const ordered = [...rows].sort(byOrder);
+  const from = ordered.findIndex(r => r.id === id);
+  if (from < 0) return;
+  const [item] = ordered.splice(from, 1);
+  const to = ordered.findIndex(r => r.id === targetId);
+  if (to < 0) return;
+  ordered.splice(to + (after ? 1 : 0), 0, item);
+  renumber(ordered);
+  persist(rows);
+  render();
+}
+
+let rowDrag = null;   // { id, el, group, target, after, pointerId, scrollV, raf }
+
+function dropTargetAt(px, py) {
+  const el = document.elementFromPoint(px, py)?.closest('[data-row-id]');
+  if (!el || el === rowDrag.el || el.dataset.group !== rowDrag.group) return null;
+  const rect = el.getBoundingClientRect();
+  const horizontal = el.classList.contains('card') && !el.parentElement.classList.contains('one-col');
+  const after = horizontal ? px > rect.left + rect.width / 2 : py > rect.top + rect.height / 2;
+  return { el, after };
+}
+function clearDropMarks() {
+  document.querySelectorAll('.drop-before,.drop-after').forEach(el => el.classList.remove('drop-before', 'drop-after'));
+}
+function dragAutoScroll() {
+  if (!rowDrag) return;
+  if (rowDrag.scrollV) window.scrollBy(0, rowDrag.scrollV);
+  rowDrag.raf = requestAnimationFrame(dragAutoScroll);
+}
+function updateDrag(px, py) {
+  const edge = 70;
+  rowDrag.scrollV = py < edge ? -Math.ceil((edge - py) / 6) : py > innerHeight - edge ? Math.ceil((py - innerHeight + edge) / 6) : 0;
+  clearDropMarks();
+  const t = dropTargetAt(px, py);
+  rowDrag.target = t;
+  if (t) t.el.classList.add(t.after ? 'drop-after' : 'drop-before');
+}
+function endDrag(commit) {
+  if (!rowDrag) return;
+  cancelAnimationFrame(rowDrag.raf);
+  const { id, target, el } = rowDrag;
+  rowDrag = null;
+  el.classList.remove('row-drag');
+  document.body.classList.remove('row-dragging');
+  clearDropMarks();
+  if (commit && target) moveRow(id, +target.el.dataset.rowId, target.after);
+}
+
+const listEl = document.getElementById('list');
+listEl.addEventListener('pointerdown', e => {
+  const grip = e.target.closest('[data-grip]');
+  if (!grip || e.button > 0) return;
+  if (prefs.sortKey !== 'manual') { setPref('sortKey', 'manual'); flash('Sorted by My order: drag ⠿ to rearrange'); return; }
+  e.preventDefault();
+  const el = grip.closest('[data-row-id]');
+  document.querySelectorAll('.cards').forEach(c =>
+    c.classList.toggle('one-col', getComputedStyle(c).gridTemplateColumns.split(' ').length < 2));
+  rowDrag = { id: +grip.dataset.grip, el, group: el.dataset.group, target: null, pointerId: e.pointerId, scrollV: 0 };
+  el.classList.add('row-drag');
+  document.body.classList.add('row-dragging');
+  rowDrag.raf = requestAnimationFrame(dragAutoScroll);
+});
+document.addEventListener('pointermove', e => {
+  if (rowDrag && e.pointerId === rowDrag.pointerId) { e.preventDefault(); updateDrag(e.clientX, e.clientY); }
+}, { passive: false });
+document.addEventListener('pointerup',     e => { if (rowDrag && e.pointerId === rowDrag.pointerId) endDrag(true); });
+document.addEventListener('pointercancel', e => { if (rowDrag && e.pointerId === rowDrag.pointerId) endDrag(false); });
+
+// Keyboard: focus a grip, ↑/↓ moves the loadout one place among the visible ones in its group
+listEl.addEventListener('keydown', e => {
+  const grip = e.target.closest('[data-grip]');
+  if (!grip || (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') || prefs.sortKey !== 'manual') return;
+  e.preventDefault();
+  const el = grip.closest('[data-row-id]');
+  const peers = [...listEl.querySelectorAll('[data-row-id]')].filter(p => p.dataset.group === el.dataset.group);
+  const i = peers.indexOf(el);
+  const up = e.key === 'ArrowUp';
+  const peer = peers[up ? i - 1 : i + 1];
+  if (!peer) return;
+  const id = +grip.dataset.grip;
+  moveRow(id, +peer.dataset.rowId, !up);
+  listEl.querySelector(`[data-row-id="${id}"][data-group="${CSS.escape(el.dataset.group)}"] [data-grip]`)?.focus();
+});
 
 // ── Faction boards ─────────────────────────────────────────────────────────────
 const BOARDS_KEY = LS_KEY + '_boards';
@@ -1740,7 +1866,10 @@ function saveRow() {
     const i = rows.findIndex(r => r.id === editId);
     rows[i] = { ...rows[i], ...fields };
   } else {
-    rows.push({ id: nextId(), ...fields, uses: 0, dateAdded: fields.updatedAt });
+    // New loadouts go to the top of My order
+    rows.push({ id: nextId(), ...fields, uses: 0, dateAdded: fields.updatedAt,
+                order: rows.reduce((m, r) => Math.min(m, r.order), 0) - 1 });
+    renumber([...rows].sort(byOrder));
   }
 
   persist(rows);

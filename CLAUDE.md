@@ -64,13 +64,14 @@ Row shape (schema 2, see the comment above `const SCHEMA` in `loadouts.html`):
 ```
 { id, name, role, factions[], tags[], favorite,
   slots: { armor, booster, primary, secondary, grenade, stratagems[4] },
-  extra, notes, dateAdded, updatedAt, lastUsed, uses, schema: 2 }
+  extra, notes, order, dateAdded, updatedAt, lastUsed, uses, schema: 2 }
 ```
 
 - `factions` takes `bugs`, `bots` and `squids` (Illuminate). An empty list means "General".
 - `tags` takes `experimental`, `fun`, `stealth`, `arc`, `fire`, `gas` and `solo`.
 - `role` presets: Anti-tank, Crowd control, Generalist, Support, Stealth, Fun.
-- `favorite` means a go-to build (★; the old 💎 name prefix).
+- `favorite` means a go-to build (★; the old 💎 name prefix). It's set in the edit modal and shown as a ★ by the name; the list no longer sorts by it.
+- `order` is the row's position in "My order" (the default sort), set by dragging the ⠿ grip. Lower comes first. Rows missing it (old data, imports) get placed on top by `ensureOrder`, favorites first then newest, so it can be left out of suggested rows.
 - A slot value can be `"A / B"` for an either-or pick. A stratagem can be `"Flex"` for an open slot.
 - Use exact item names from the pick lists (e.g. `R-36 Eruptor`, `GP-20 Ultimatum`). Otherwise breakpoints and the calc link won't match. Common shorthand is mapped in `ALIASES`.
 
