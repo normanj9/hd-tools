@@ -76,6 +76,10 @@ Row shape (schema 2, see the comment above `const SCHEMA` in `loadouts.html`):
 
 ## Suggesting loadouts
 
+**Who it's for:** the user usually plays in a 4-person squad on Difficulty 10 (Super Helldive). Every loadout has to hold up there: it needs a real answer to that faction's heavies and to large patrols/breaches, whether that comes from the build itself or from a stated role in the squad. Since it's a full squad, a build can specialize (e.g. dedicated anti-tank, or crowd control that leans on teammates for heavies), but say what it leans on the team for.
+
+**Taste:** fun and variety over pure meta. Don't default to the same meta staples (Eruptor especially) in every build. A strong pick is fine when the build is about it, but look for less common weapons and stratagems that still work at D10, and give the reason they work (breakpoints, armor pen, synergy). Several of the user's existing builds already lean on Eruptor/Ultimatum, so new ideas should branch out.
+
 Present a suggested loadout in the same structure as a row: armor (passive), booster, primary, secondary, grenade, four stratagems, then notes. That makes it quick to enter. Base breakpoint claims on the data in this repo, and run the numbers through `hd-calc.js` where you can rather than going from memory. Patches change values often, so if the scraped data might be stale, say so.
 
 ## Conventions
