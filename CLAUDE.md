@@ -55,22 +55,25 @@ python scrape.py --only "Sai"    # targeted; merges into existing JSON
 **The user's real loadouts are not in this repo.** They live on the user's own machine:
 
 - `loadouts.json`, a save file linked through the File System Access API (gitignored). Its shape is `{ schema, rows, boards }`.
-- Browser localStorage keys: `hd2_v1` (rows), `hd2_v1_prefs`, `hd2_v1_boards`.
+- Browser localStorage keys: `hd2_v1` (rows), `hd2_v1_prefs`, `hd2_v1_boards`, `hd2_v1_sync` (sync config, including the GitHub token).
+- A secret GitHub gist, when sync is set up (the ☁ Sync button). It holds one file, `hd2-loadouts.json`: `{ app, schema, rev, savedAt, rows, boards }`. Each device pulls when the page opens or regains focus and pushes ~2s after a change. Each push has a random `rev`, and a rev a device hasn't seen means another device saved, so if both changed the user is asked which to keep. The token must never end up in the repo, the gist, exports or the DOM.
 
-The `SEED` in `loadouts.html` is an old snapshot from before the slot schema, so it's out of date. A cloud session can't read or write the live file. When suggesting or changing loadouts, give the details in chat (or as JSON rows the user can import) unless the user has provided a current export. The user plans to solve syncing later. `todo.md` is also local and gitignored.
+The `SEED` in `loadouts.html` is an old snapshot from before the slot schema, so it's out of date. A cloud session can't read or write the live file. When suggesting or changing loadouts, give the details in chat (or as JSON rows the user can import) unless the user has provided a current export. Sync goes through the user's own gist and token, which a cloud session doesn't have. `todo.md` is also local and gitignored.
 
 Row shape (schema 2, see the comment above `const SCHEMA` in `loadouts.html`):
 
 ```
 { id, name, role, factions[], tags[], favorite,
   slots: { armor, booster, primary, secondary, grenade, stratagems[4] },
-  extra, notes, dateAdded, updatedAt, lastUsed, uses, schema: 2 }
+  extra, notes, order, dateAdded, updatedAt, lastUsed, uses, schema: 2 }
 ```
 
+- `id` is a number. Older rows have small ones; new rows get `Date.now() * 1000 + random` so two devices adding loadouts before syncing don't collide.
 - `factions` takes `bugs`, `bots` and `squids` (Illuminate). An empty list means "General".
 - `tags` takes `experimental`, `fun`, `stealth`, `arc`, `fire`, `gas` and `solo`.
 - `role` presets: Anti-tank, Crowd control, Generalist, Support, Stealth, Fun.
-- `favorite` means a go-to build (★; the old 💎 name prefix).
+- `favorite` means a go-to build (★; the old 💎 name prefix). It's set in the edit modal and shown as a ★ by the name; the list no longer sorts by it.
+- `order` is the row's position in "My order" (the default sort), set by dragging the ⠿ grip. Lower comes first. Rows missing it (old data, imports) get placed on top by `ensureOrder`, favorites first then newest, so it can be left out of suggested rows.
 - A slot value can be `"A / B"` for an either-or pick. A stratagem can be `"Flex"` for an open slot.
 - Use exact item names from the pick lists (e.g. `R-36 Eruptor`, `GP-20 Ultimatum`). Otherwise breakpoints and the calc link won't match. Common shorthand is mapped in `ALIASES`.
 
